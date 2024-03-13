@@ -1323,16 +1323,16 @@
         },
         {
             "name": "doctrine/persistence",
-            "version": "3.3.1",
+            "version": "3.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/persistence.git",
-                "reference": "b6fd1f126b13c1f7e7321f7338b14a19116b5de4"
+                "reference": "477da35bd0255e032826f440b94b3e37f2d56f42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/persistence/zipball/b6fd1f126b13c1f7e7321f7338b14a19116b5de4",
-                "reference": "b6fd1f126b13c1f7e7321f7338b14a19116b5de4",
+                "url": "https://api.github.com/repos/doctrine/persistence/zipball/477da35bd0255e032826f440b94b3e37f2d56f42",
+                "reference": "477da35bd0255e032826f440b94b3e37f2d56f42",
                 "shasum": ""
             },
             "require": {
@@ -1401,7 +1401,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/persistence/issues",
-                "source": "https://github.com/doctrine/persistence/tree/3.3.1"
+                "source": "https://github.com/doctrine/persistence/tree/3.3.2"
             },
             "funding": [
                 {
@@ -1417,7 +1417,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-03-01T19:53:13+00:00"
+            "time": "2024-03-12T14:54:36+00:00"
         },
         {
             "name": "doctrine/sql-formatter",
@@ -2236,12 +2236,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spomky-Labs/pwa-bundle.git",
-                "reference": "d0515837fca769e4cad409b667d430f043950762"
+                "reference": "990500809ce7f1997ada204854787fb4fe7f8548"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spomky-Labs/pwa-bundle/zipball/d0515837fca769e4cad409b667d430f043950762",
-                "reference": "d0515837fca769e4cad409b667d430f043950762",
+                "url": "https://api.github.com/repos/Spomky-Labs/pwa-bundle/zipball/990500809ce7f1997ada204854787fb4fe7f8548",
+                "reference": "990500809ce7f1997ada204854787fb4fe7f8548",
                 "shasum": ""
             },
             "require": {
@@ -2337,11 +2337,11 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2024-03-09T08:31:33+00:00"
+            "time": "2024-03-09T17:09:06+00:00"
         },
         {
             "name": "survos/core-bundle",
-            "version": "1.5.181",
+            "version": "1.5.183",
             "source": {
                 "type": "git",
                 "url": "https://github.com/survos/SurvosCoreBundle.git",
@@ -2417,7 +2417,7 @@
             ],
             "support": {
                 "issues": "https://github.com/survos/SurvosCoreBundle/issues",
-                "source": "https://github.com/survos/SurvosCoreBundle/tree/1.5.181"
+                "source": "https://github.com/survos/SurvosCoreBundle/tree/1.5.183"
             },
             "funding": [
                 {
@@ -2429,22 +2429,22 @@
         },
         {
             "name": "survos/pwa-extra-bundle",
-            "version": "1.5.181",
+            "version": "1.5.183",
             "source": {
                 "type": "git",
                 "url": "https://github.com/survos/SurvosPwaExtraBundle.git",
-                "reference": "ba3645f0bf4b109ea0dce8efa5e6ef66c8c0c3d7"
+                "reference": "f25ea23b33fc3c7e2d4e44f2ad929d53781e8781"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/survos/SurvosPwaExtraBundle/zipball/ba3645f0bf4b109ea0dce8efa5e6ef66c8c0c3d7",
-                "reference": "ba3645f0bf4b109ea0dce8efa5e6ef66c8c0c3d7",
+                "url": "https://api.github.com/repos/survos/SurvosPwaExtraBundle/zipball/f25ea23b33fc3c7e2d4e44f2ad929d53781e8781",
+                "reference": "f25ea23b33fc3c7e2d4e44f2ad929d53781e8781",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.1",
                 "spomky-labs/pwa-bundle": "^1.1",
-                "survos/core-bundle": "^1.5.181",
+                "survos/core-bundle": "^1.5.183",
                 "symfony/asset-mapper": "^6.4 || ^7.0",
                 "symfony/config": "^6.4 || ^7.0",
                 "symfony/dependency-injection": "^6.4 || ^7.0",
@@ -2478,7 +2478,7 @@
             ],
             "support": {
                 "issues": "https://github.com/survos/SurvosPwaExtraBundle/issues",
-                "source": "https://github.com/survos/SurvosPwaExtraBundle/tree/1.5.181"
+                "source": "https://github.com/survos/SurvosPwaExtraBundle/tree/1.5.183"
             },
             "funding": [
                 {
@@ -2486,7 +2486,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-09T14:29:46+00:00"
+            "time": "2024-03-13T12:50:04+00:00"
         },
         {
             "name": "symfony/asset",
@@ -9464,6 +9464,7 @@
                     "type": "github"
                 }
             ],
+            "abandoned": true,
             "time": "2020-09-28T06:45:17+00:00"
         },
         {

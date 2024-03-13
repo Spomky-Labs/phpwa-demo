@@ -32,13 +32,24 @@ pwa:
         src: "sw.js"
         skip_waiting: true
         workbox:
-            page_cache:
-                strategy: 'staleWhileRevalidate'
-                broadcast: true
-                broadcast_headers:
-                    - 'X-App-Cache'
-                urls:
-                - 'app_homepage'
+            page_caches:
+                  - cache_name: page_cache
+                    regex: "/$"
+                    strategy: 'staleWhileRevalidate'
+                    broadcast: true
+                    broadcast_headers:
+                        - 'X-App-Cache'
+                    urls:
+                    - 'app_homepage'
+                  - cache_name: pages 
+                    regex: "/api"
+                    strategy: 'cacheFirst'
+                    broadcast: true
+                    broadcast_headers:
+                        - 'X-App-Cache'
+                    urls:
+                        - 'api_doc'
+                        - '_api_/items{._format}_get_collection' 
             offline_fallback:
                 page: 'app_homepage'
             background_sync:
