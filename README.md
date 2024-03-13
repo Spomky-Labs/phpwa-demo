@@ -4,7 +4,7 @@
 
 This application is a PWA (Progressive Web Application) built with Symfony and PHPWA.
 
-## Getting Started
+## Getting Started (Docker)
 
 ### With Docker
 
@@ -27,6 +27,27 @@ This application is a PWA (Progressive Web Application) built with Symfony and P
 8. Run `symfony open:local` to open the app in your default web browser
 9. Run `symfony server:stop` to stop the server
 
+## Getting Started
+
+Install Symfony CLI and PostgreSQL
+
+composer require spomky-labs/phpwa
+
+bin/console d:d:c
+
 ## License
 
 It is available under the MIT License.
+
+## Quick Install
+
+```bash
+git clone git@github.com:spomky-labs/phpwa-demo.git && cd phpwa-demo
+#git clone git@github.com:tacman/phpwa-demo.git && cd phpwa-demo
+composer install
+echo "DATABASE_URL=sqlite:///%kernel.project_dir%/var/data.db" > .env.local
+bin/console d:schema:update --force --complete
+bin/console tailwind:build
+symfony server:start -d
+symfony open:local
+```

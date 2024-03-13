@@ -75,6 +75,12 @@
     "spomky-labs/pwa-bundle": {
         "version": "1.1.x-dev"
     },
+    "survos/core-bundle": {
+        "version": "1.5.181"
+    },
+    "survos/pwa-extra-bundle": {
+        "version": "1.5.181"
+    },
     "symfony/asset-mapper": {
         "version": "7.0",
         "recipe": {
