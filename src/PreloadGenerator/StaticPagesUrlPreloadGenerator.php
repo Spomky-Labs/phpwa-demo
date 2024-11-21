@@ -7,11 +7,13 @@ use SpomkyLabs\PwaBundle\Dto\Url;
 use SpomkyLabs\PwaBundle\Dto\Manifest;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 
-final readonly class StaticPagesUrlPreloadGenerator implements PreloadUrlsGeneratorInterface
+final class StaticPagesUrlPreloadGenerator implements PreloadUrlsGeneratorInterface
 {
+    private null|array $urls = null;
+
     public function __construct(
         #[Autowire('%kernel.enabled_locales%')]
-        private array $locales,
+        private readonly array $locales,
     ){}
 
     public function getAlias(): string
@@ -24,13 +26,26 @@ final readonly class StaticPagesUrlPreloadGenerator implements PreloadUrlsGenera
      */
     public function generateUrls(): iterable
     {
-        foreach ($this->locales as $locale) {
-            yield Url::create(
-                'app_homepage',
-                [
-                    '_locale' => $locale,
-                ]
-            );
+        if (null === $this->urls) {
+            foreach ($this->locales as $locale) {
+                $this->urls[] = Url::create(
+                    'app_homepage',
+                    [
+                        '_locale' => $locale,
+                    ]
+                );
+            }
+
+            /*foreach (range(1, 10) as $i) {
+                $this->urls[] = Url::create(
+                    'download_file',
+                    [
+                        'filename' => 'page-'.$i,
+                    ]
+                );
+            }*/
         }
+
+        yield from $this->urls;
     }
 }

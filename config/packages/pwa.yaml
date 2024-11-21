@@ -7,15 +7,15 @@ pwa:
         enabled: true
         src: "images/todo.png"
         tile_color: "#c026d3"
-#        background_color: "#c3d7f7"
-#        image_scale: 66
-#        border_radius: 50
-#        low_resolution: true
-#        safari_pinned_tab_color: "#c3d7f7"
-#        use_silhouette: true
+        background_color: "#c3d7f7"
+        image_scale: 66
+        border_radius: 50
+        low_resolution: true
+        safari_pinned_tab_color: "#c3d7f7"
+        use_silhouette: true
     manifest:
         enabled: true
-        public_url: '/site.{locale}.webmanifest'
+        public_url: '/pwa/site.{locale}.webmanifest'
         background_color: "#c026d3"
         theme_color: "#c026d3"
         name: 'app.name'
@@ -29,7 +29,15 @@ pwa:
         start_url: "app.start_url"
         icons:
             - src: "images/todo.png"
-              sizes: "any"
+              sizes: [48, 96, 128, 144, 192, 256, 384, 512]
+              image_scale: 90
+              purpose: 'any'
+            - src: "images/todo.png"
+              sizes: [48, 96, 128, 144, 192, 256, 384, 512]
+              background_color: "#c3d7f7"
+              image_scale: 50
+              border_radius: 25
+              purpose: 'maskable'
         screenshots:
             - "images/screenshot1.png"
             - "images/screenshot2.png"
@@ -46,12 +54,9 @@ pwa:
         src: "sw.js"
         skip_waiting: true
 #        background_fetch:
-#            enabled: false
+#            enabled: true
 #            cache_name: 'downloads'
-#            success_url: 'download_success'
-#            success_message: 'app.download_success'
 #            progress_url: 'download_progress'
-#            failure_message: 'app.download_failure'
         workbox:
             resource_caches:
                 - match_callback: 'navigate'
@@ -80,6 +85,10 @@ pwa:
                 - queue_name: 'items'
                   match_callback: 'startsWith: /items/'
                   broadcast_channel: 'items-sync'
+                  error_on_5xx: true
+                  expected_status_codes: [201, 204]
                 - queue_name: 'add'
                   match_callback: 'startsWith: /add'
                   broadcast_channel: 'add-item'
+                  error_on_5xx: true
+                  expected_status_codes: [201, 204]

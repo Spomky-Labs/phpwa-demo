@@ -31,6 +31,7 @@ final class RootController extends AbstractController
             $this->defaultLocale
         ;
 
+
         return $this->redirectToRoute('app_homepage', [
             '_locale' => $locale,
         ], Response::HTTP_SEE_OTHER);

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Symfony+PWA=💕{% endblock %}
+
+{% block body %}
+    <div
+        class="flex justify-center items-center h-screen bg-gray-200"
+        {{ stimulus_controller('@pwa/receiver') }}
+    >
+        <div class="p-10">
+            <h1>🚀 Symfony + PWA = 💕</h1>
+            <p>👋 Hello from Symfony!</p>
+        </div>
+    </div>
+{% endblock %}

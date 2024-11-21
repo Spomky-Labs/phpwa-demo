@@ -1,21 +1,61 @@
 {
     "controllers": {
         "@spomky-labs/pwa-bundle": {
-            "connection-status": {
-                "enabled": true,
-                "fetch": "lazy"
-            },
             "backgroundsync-form": {
                 "enabled": true,
-                "fetch": "lazy"
+                "fetch": "eager"
             },
-            "sync-broadcast": {
+            "badge": {
                 "enabled": true,
-                "fetch": "lazy"
+                "fetch": "eager"
+            },
+            "battery": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "connection-status": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "device-orientation": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "fullscreen": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "geolocation": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "install": {
+                "enabled": true,
+                "fetch": "eager"
             },
             "prefetch-on-demand": {
                 "enabled": true,
-                "fetch": "lazy"
+                "fetch": "eager"
+            },
+            "presentation": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "receiver": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "share": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "sync-broadcast": {
+                "enabled": true,
+                "fetch": "eager"
+            },
+            "vibration": {
+                "enabled": true,
+                "fetch": "eager"
             }
         }
     },

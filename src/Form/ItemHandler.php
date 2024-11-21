@@ -27,7 +27,7 @@ final readonly class ItemHandler
         return $this->formFactory->create(ItemType::class, $data, $options);
     }
 
-    public function handle(FormInterface $form, Request $request): ?Item
+    public function handle(FormInterface $form, Request $request): null|false|Item
     {
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -43,6 +43,6 @@ final readonly class ItemHandler
             return $item;
         }
 
-        return null;
+        return $form->isSubmitted() ? false : null;
     }
 }

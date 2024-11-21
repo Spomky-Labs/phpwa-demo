@@ -4,57 +4,6 @@
 {% block javascripts %}
     {{ parent() }}
     <script type="module" defer>
-        async function getInstalledApps() {
-            const relatedApps = await navigator.getInstalledRelatedApps();
-            console.log(relatedApps);
-        }
-
-        if ('getInstalledRelatedApps' in navigator) {
-            getInstalledApps();
-        } else {
-            console.log('getInstalledRelatedApps is not supported');
-        }
-        window.addEventListener('DOMContentLoaded', () => {
-            let displayMode = 'browser tab';
-            if (window.matchMedia('(display-mode: minimal-ui)').matches) {
-                displayMode = 'standalone';
-            } else if(window.matchMedia('(display-mode: standalone)').matches) {
-                displayMode = 'standalone';
-            } else if(window.matchMedia('(display-mode: fullscreen)').matches) {
-                displayMode = 'standalone';
-            } else {
-                displayMode = 'browser';
-            }
-            // Log launch display mode to analytics
-            console.log('DISPLAY_MODE_LAUNCH:', displayMode);
-        });
-
-        let installPrompt = null;
-
-        window.addEventListener("beforeinstallprompt", (event) => {
-            event.preventDefault();
-            installPrompt = event;
-            console.log("Install prompt was fired", event);
-            installButton.classList.remove('text-white', 'bg-blue-400', 'dark:bg-blue-500', 'cursor-not-allowed', 'font-medium', 'rounded-lg', 'text-sm', 'px-5', 'py-2.5', 'text-center');
-            installButton.classList.add('hover:bg-gray-50', 'dark:hover:bg-gray-800');
-        });
-
-        const installButton = document.querySelector("#install");
-        installButton.addEventListener("click", async () => {
-            if (!installPrompt) {
-                return;
-            }
-            const result = await installPrompt.prompt();
-            console.log(`Install prompt was: ${result.outcome}`);
-            disableInAppInstallPrompt();
-        });
-
-        function disableInAppInstallPrompt() {
-            installPrompt = null;
-            installButton.classList.remove('hover:bg-gray-50', 'dark:hover:bg-gray-800');
-            installButton.classList.add('text-white', 'bg-blue-400', 'dark:bg-blue-500', 'cursor-not-allowed', 'font-medium', 'rounded-lg', 'text-sm', 'px-5', 'py-2.5', 'text-center');
-        }
-
         navigator.serviceWorker.addEventListener('message', async event => {
             if (event.data.meta === 'workbox-broadcast-update') {
                 const {updatedURL} = event.data.payload;
@@ -161,7 +110,9 @@
             </div>
         </main>
     </div>
-    <section {{ stimulus_controller('@pwa/backgroundfetch', {id: 'downloads'}) }}>
+    <section
+        {{ stimulus_controller('@pwa/install') }}
+    >
         <main>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -173,7 +124,7 @@
             Author: <a href="/en_US/">John Doe</a>
             Other articles: <a href="/fr_FR/">How to Foo</a>
             <button
-                {{ stimulus_action('@pwa/backgroundfetch', 'fetch', 'click', {requests: ['/example1.png'], title: 'Téléchargements', icons: [{sizes: '512x512', type: 'image/png', src: asset('images/todo.png')}], downloadTotal: 511978400}) }}
+                {{ stimulus_action('@pwa/backgroundfetch', 'download', 'click', {requests: ['/download/foo'], title: 'Foo', icons: [{sizes: '512x512', type: 'image/png', src: asset('images/todo.png')}]}) | stimulus_action('@pwa/backgroundfetch', 'download', 'click', {requests: ['/download/bar'], title: 'Bar', icons: [{sizes: '512x512', type: 'image/png', src: asset('images/todo.png')}]}) }}
                 class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
             >
                 Fetch
@@ -183,6 +134,32 @@
                 class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
             >
                 Status
+            </button>
+            <button
+                hidden
+                {{ stimulus_target('@pwa/install', 'install') }}
+                {{ stimulus_action('@pwa/install', 'install', 'click') }}
+                class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >
+                Install
+            </button>
+            <button
+                {{ stimulus_controller('@pwa/share') }}
+                {{ stimulus_action('@pwa/share', 'share', 'click', {data: {
+                    url: 'https://google.com',
+                    title: 'Web Search',
+                    text: 'This is for searching on the Internet'
+                }}) }}
+                class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >
+                Share
+            </button>
+            <button
+                {{ stimulus_controller('@pwa/clipboard') }}
+                {{ stimulus_action('@pwa/clipboard', 'read', 'click') }}
+                class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
+            >
+                Read clipboard
             </button>
         </aside>
     </section>

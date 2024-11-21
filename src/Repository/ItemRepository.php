@@ -30,6 +30,9 @@ class ItemRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return array<Item>
+     */
     public function findAll(): array
     {
         return $this->createQueryBuilder('item')

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Item;
 use App\Form\ItemHandler;
 use App\Repository\ItemRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -21,36 +22,36 @@ class ItemController extends AbstractController
     {
         $form = $this->itemHandler->prepare();
         $item = $this->itemHandler->handle($form, $request);
-        if ($item !== null) {
-            $this->addFlash('success', 'Item added');
-            return $this->redirectToRoute('app_homepage');
-        }
-        $this->addFlash('error', 'Item not added');
-        return $this->redirectToRoute('app_homepage');
+
+        return match (true) {
+            $item instanceof Item => new Response('', Response::HTTP_NO_CONTENT),
+            $item === false => new Response('', Response::HTTP_BAD_REQUEST),
+            default => new Response('', Response::HTTP_UNPROCESSABLE_ENTITY),
+        };
     }
 
     #[Route('/items/{id}/toggle', name: 'app_toggle', methods: [Request::METHOD_POST])]
     public function toggle(string $id): Response
     {
         $item = $this->itemRepository->findOneById($id);
-        if ($item !== null) {
-            $item->toggle();
-            $this->itemRepository->save($item);
+        if ($item === null) {
+            return new Response('', Response::HTTP_NOT_FOUND);
         }
-        $this->addFlash('success', 'Item state changed');
 
-        return $this->redirectToRoute('app_homepage');
+        $item->toggle();
+        $this->itemRepository->save($item);
+        return new Response('', Response::HTTP_NO_CONTENT);
     }
 
     #[Route('/items/{id}/remove', name: 'app_remove', methods: [Request::METHOD_POST])]
     public function remove(string $id): Response
     {
         $item = $this->itemRepository->findOneById($id);
-        if ($item !== null) {
-            $this->itemRepository->remove($item);
+        if ($item === null) {
+            return new Response('', Response::HTTP_NOT_FOUND);
         }
-        $this->addFlash('success', 'Item removed');
+        $this->itemRepository->remove($item);
 
-        return $this->redirectToRoute('app_homepage');
+        return new Response('', Response::HTTP_NO_CONTENT);
     }
 }

@@ -5,15 +5,15 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="M4RAXb_" resname="diff.empty">
+      <trans-unit id="eFwvDbf" resname="diff.empty">
         <source>diff.empty</source>
         <target>__diff.empty</target>
       </trans-unit>
-      <trans-unit id="erNVD2d" resname="duration.none">
+      <trans-unit id="WQXkOJK" resname="duration.none">
         <source>duration.none</source>
         <target>__duration.none</target>
       </trans-unit>
-      <trans-unit id="AT9UQAy" resname="age">
+      <trans-unit id="Nj4wK9p" resname="age">
         <source>age</source>
         <target>__age</target>
       </trans-unit>

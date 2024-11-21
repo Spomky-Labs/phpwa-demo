@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\Routing\Attribute\Route;
 
 #[Route('/download')]
@@ -28,17 +29,21 @@ class DownloadController extends AbstractController
     #[Route('/{filename}', name: 'download_file', methods: [Request::METHOD_GET])]
     public function filename(string $filename): Response
     {
-        $finder = new Finder();
-        $finder->files()->in(__DIR__.'/../../public/')->name($filename);
-        if (!$finder->hasResults()) {
-            throw $this->createNotFoundException('File not found');
-        }
-        $files = iterator_to_array($finder->getIterator());
-        if (count($files) > 1) {
-            throw $this->createNotFoundException('Multiple files found');
-        }
-        $file = current($files);
+        $fileSize = random_int(10, 100) * 1024 * 1024;
+        $response = new StreamedResponse();
+        $response->headers->set('Content-Type', 'application/octet-stream');
+        $response->headers->set('Content-Disposition', 'attachment; filename="' . $filename . '.foo"');
+        $response->headers->set('Content-Length', $fileSize);
+        $response->setCallback(function () use ($fileSize): void {
+            $chunkSize = 1024 * 1024;
+            $chunkCount = $fileSize / $chunkSize;
+            for ($i = 0; $i < $chunkCount; $i++) {
+                echo str_repeat('.', $chunkSize);
+                flush();
+                sleep(2);
+            }
+        });
 
-        return new BinaryFileResponse($file);
+        return $response;
     }
 }

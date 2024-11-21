@@ -24,9 +24,11 @@
 /assets/vendor/
 ###< symfony/asset-mapper ###
 
-/public/favicon.ico
-/public/favicons
 /public/workbox
-/public/site.webmanifest
-/public/site.*.webmanifest
+/public/pwa
+/public/favicon.ico
 /public/sw.js
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###

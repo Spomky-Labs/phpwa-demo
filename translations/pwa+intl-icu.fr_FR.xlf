@@ -5,27 +5,27 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="f3U2Gqw" resname="app.name">
+      <trans-unit id="pQWw280" resname="app.name">
         <source>app.name</source>
         <target>À Faire!</target>
       </trans-unit>
-      <trans-unit id="q2FYgid" resname="app.short_name">
+      <trans-unit id="vQzUOUz" resname="app.short_name">
         <source>app.short_name</source>
         <target>À Faire!</target>
       </trans-unit>
-      <trans-unit id="fsrtHZB" resname="app.description">
+      <trans-unit id="n7KUaOy" resname="app.description">
         <source>app.description</source>
         <target>Une application de liste de tâches simple et légère.</target>
       </trans-unit>
-      <trans-unit id="aQsSByu" resname="app.start_url">
+      <trans-unit id="EsH78Fy" resname="app.start_url">
         <source>app.start_url</source>
         <target>/fr_FR/?pwa</target>
       </trans-unit>
-      <trans-unit id="aQsSByu1" resname="app.download_success">
+      <trans-unit id="UdTXS39" resname="app.download_success">
         <source>app.download_success</source>
         <target>Youpi !!!!!!</target>
       </trans-unit>
-      <trans-unit id="aQsSByu2" resname="app.download_failure">
+      <trans-unit id="kFnSxp9" resname="app.download_failure">
         <source>app.download_failure</source>
         <target>Ah mince !!!!!!</target>
       </trans-unit>
