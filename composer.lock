@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1009d5380c51abccf0de7e4d6e88c986",
+    "content-hash": "c8038289a9f38cbd28a85139c3979680",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -6534,16 +6534,16 @@
         },
         {
             "name": "symfonycasts/tailwind-bundle",
-            "version": "v0.5.3",
+            "version": "v0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SymfonyCasts/tailwind-bundle.git",
-                "reference": "61d6d35c860f61e0d17adbee2f21c0f95ba9172d"
+                "reference": "28db7cfe23758cffc79f25a7c75cdb2fca52e9d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SymfonyCasts/tailwind-bundle/zipball/61d6d35c860f61e0d17adbee2f21c0f95ba9172d",
-                "reference": "61d6d35c860f61e0d17adbee2f21c0f95ba9172d",
+                "url": "https://api.github.com/repos/SymfonyCasts/tailwind-bundle/zipball/28db7cfe23758cffc79f25a7c75cdb2fca52e9d9",
+                "reference": "28db7cfe23758cffc79f25a7c75cdb2fca52e9d9",
                 "shasum": ""
             },
             "require": {
@@ -6555,10 +6555,10 @@
                 "symfony/process": "^5.4|^6.3|^7.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "1.11.x-dev",
+                "phpunit/phpunit": "^9.6",
                 "symfony/filesystem": "^6.3|^7.0",
                 "symfony/framework-bundle": "^6.3|^7.0",
-                "symfony/phpunit-bridge": "^6.3|^7.0"
+                "symfony/phpunit-bridge": "^6.3.9|^7.0"
             },
             "type": "library",
             "autoload": {
@@ -6583,9 +6583,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SymfonyCasts/tailwind-bundle/issues",
-                "source": "https://github.com/SymfonyCasts/tailwind-bundle/tree/v0.5.3"
+                "source": "https://github.com/SymfonyCasts/tailwind-bundle/tree/v0.6.1"
             },
-            "time": "2024-05-24T13:08:53+00:00"
+            "time": "2024-11-06T18:41:22+00:00"
         },
         {
             "name": "twig/extra-bundle",
@@ -9464,6 +9464,6 @@
         "ext-iconv": "*",
         "ext-imagick": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
