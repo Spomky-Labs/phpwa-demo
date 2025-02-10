@@ -5858,16 +5858,16 @@
         },
         {
             "name": "symfony/ux-map",
-            "version": "v2.22.0",
+            "version": "v2.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-map.git",
-                "reference": "dab7b0791c6ae42b1fe8be45975de23a6644197e"
+                "reference": "45abfd49f8c58f28a34eed7f607b0d032f925db4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-map/zipball/dab7b0791c6ae42b1fe8be45975de23a6644197e",
-                "reference": "dab7b0791c6ae42b1fe8be45975de23a6644197e",
+                "url": "https://api.github.com/repos/symfony/ux-map/zipball/45abfd49f8c58f28a34eed7f607b0d032f925db4",
+                "reference": "45abfd49f8c58f28a34eed7f607b0d032f925db4",
                 "shasum": ""
             },
             "require": {
@@ -5920,7 +5920,7 @@
                 "symfony-ux"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-map/tree/v2.22.0"
+                "source": "https://github.com/symfony/ux-map/tree/v2.23.0"
             },
             "funding": [
                 {
@@ -5936,7 +5936,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-11-26T08:01:52+00:00"
+            "time": "2025-02-07T23:56:36+00:00"
         },
         {
             "name": "symfony/ux-twig-component",
@@ -10306,6 +10306,6 @@
         "ext-iconv": "*",
         "ext-imagick": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
