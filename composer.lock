@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb65b1d4b3f9837f546439b2c2f39a5a",
+    "content-hash": "3d58cfe6c2f00c4e2b061c63df649fc4",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -6433,16 +6433,16 @@
         },
         {
             "name": "symfonycasts/tailwind-bundle",
-            "version": "v0.6.1",
+            "version": "v0.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SymfonyCasts/tailwind-bundle.git",
-                "reference": "28db7cfe23758cffc79f25a7c75cdb2fca52e9d9"
+                "reference": "43100c1ad793a1574a675aaf8a1f633fd7fe6e4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SymfonyCasts/tailwind-bundle/zipball/28db7cfe23758cffc79f25a7c75cdb2fca52e9d9",
-                "reference": "28db7cfe23758cffc79f25a7c75cdb2fca52e9d9",
+                "url": "https://api.github.com/repos/SymfonyCasts/tailwind-bundle/zipball/43100c1ad793a1574a675aaf8a1f633fd7fe6e4a",
+                "reference": "43100c1ad793a1574a675aaf8a1f633fd7fe6e4a",
                 "shasum": ""
             },
             "require": {
@@ -6450,6 +6450,7 @@
                 "symfony/asset-mapper": "^6.3|^7.0",
                 "symfony/cache": "^6.3|^7.0",
                 "symfony/console": "^5.4|^6.3|^7.0",
+                "symfony/deprecation-contracts": "^2.2|^3.0",
                 "symfony/http-client": "^5.4|^6.3|^7.0",
                 "symfony/process": "^5.4|^6.3|^7.0"
             },
@@ -6482,9 +6483,9 @@
             ],
             "support": {
                 "issues": "https://github.com/SymfonyCasts/tailwind-bundle/issues",
-                "source": "https://github.com/SymfonyCasts/tailwind-bundle/tree/v0.6.1"
+                "source": "https://github.com/SymfonyCasts/tailwind-bundle/tree/v0.8.0"
             },
-            "time": "2024-11-06T18:41:22+00:00"
+            "time": "2025-03-04T15:35:32+00:00"
         },
         {
             "name": "twig/extra-bundle",
@@ -10307,6 +10308,6 @@
         "ext-iconv": "*",
         "ext-imagick": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
