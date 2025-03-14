@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb65b1d4b3f9837f546439b2c2f39a5a",
+    "content-hash": "7575146d91f05f705ee3c3889648cd40",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -9255,16 +9255,16 @@
         },
         {
             "name": "shipmonk/dead-code-detector",
-            "version": "0.6.0",
+            "version": "0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shipmonk-rnd/dead-code-detector.git",
-                "reference": "e3c37299fce6523c9708f24cd3675d65a33bec12"
+                "reference": "a4fef66901d2e282ccf4ff1e60ea2c922046059a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/e3c37299fce6523c9708f24cd3675d65a33bec12",
-                "reference": "e3c37299fce6523c9708f24cd3675d65a33bec12",
+                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/a4fef66901d2e282ccf4ff1e60ea2c922046059a",
+                "reference": "a4fef66901d2e282ccf4ff1e60ea2c922046059a",
                 "shasum": ""
             },
             "require": {
@@ -9273,20 +9273,20 @@
             },
             "require-dev": {
                 "doctrine/orm": "^2.19 || ^3.0",
-                "editorconfig-checker/editorconfig-checker": "^10.3.0",
-                "ergebnis/composer-normalize": "^2.28",
+                "editorconfig-checker/editorconfig-checker": "^10.6.0",
+                "ergebnis/composer-normalize": "^2.45.0",
                 "nette/application": "^3.1",
                 "nette/component-model": "^3.0",
                 "nette/utils": "^3.0 || ^4.0",
-                "nikic/php-parser": "^5.3.1",
-                "phpstan/phpstan-phpunit": "^2.0.0",
-                "phpstan/phpstan-strict-rules": "^2.0.0",
-                "phpstan/phpstan-symfony": "^2.0.0",
-                "phpunit/phpunit": "^9.6.21",
-                "shipmonk/composer-dependency-analyser": "^1.6",
-                "shipmonk/name-collision-detector": "^2.0.0",
-                "shipmonk/phpstan-rules": "^4.0.0",
-                "slevomat/coding-standard": "^8.15.0",
+                "nikic/php-parser": "^5.4.0",
+                "phpstan/phpstan-phpunit": "^2.0.4",
+                "phpstan/phpstan-strict-rules": "^2.0.3",
+                "phpstan/phpstan-symfony": "^2.0.2",
+                "phpunit/phpunit": "^9.6.22",
+                "shipmonk/composer-dependency-analyser": "^1.8.2",
+                "shipmonk/name-collision-detector": "^2.1.1",
+                "shipmonk/phpstan-rules": "^4.1.0",
+                "slevomat/coding-standard": "^8.16.0",
                 "symfony/contracts": "^2.5 || ^3.0",
                 "symfony/event-dispatcher": "^5.4 || ^6.0 || ^7.0",
                 "symfony/http-kernel": "^5.4 || ^6.0 || ^7.0",
@@ -9309,7 +9309,7 @@
             "license": [
                 "MIT"
             ],
-            "description": "Dead code detector to find unused PHP code via PHPStan extension.",
+            "description": "Dead code detector to find unused PHP code via PHPStan extension. Can automatically remove dead PHP code. Supports libraries like Symfony, Doctrine, PHPUnit etc. Detects dead cycles. Can detect dead code that is tested.",
             "keywords": [
                 "PHPStan",
                 "dead code",
@@ -9318,9 +9318,9 @@
             ],
             "support": {
                 "issues": "https://github.com/shipmonk-rnd/dead-code-detector/issues",
-                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/0.6.0"
+                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/0.9.2"
             },
-            "time": "2024-11-11T15:02:18+00:00"
+            "time": "2025-03-07T09:23:22+00:00"
         },
         {
             "name": "staabm/phpstan-todo-by",
@@ -10307,6 +10307,6 @@
         "ext-iconv": "*",
         "ext-imagick": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
