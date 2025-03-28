@@ -10168,21 +10168,21 @@
         },
         {
             "name": "shipmonk/dead-code-detector",
-            "version": "0.10.0",
+            "version": "0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shipmonk-rnd/dead-code-detector.git",
-                "reference": "1a94628f79323774b60728a01aa653f2693a4ed1"
+                "reference": "080f8b92fb4eda6a25d69639e9ae5cf399a2c99d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/1a94628f79323774b60728a01aa653f2693a4ed1",
-                "reference": "1a94628f79323774b60728a01aa653f2693a4ed1",
+                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/080f8b92fb4eda6a25d69639e9ae5cf399a2c99d",
+                "reference": "080f8b92fb4eda6a25d69639e9ae5cf399a2c99d",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpstan": "^2.1.7"
+                "phpstan/phpstan": "^2.1.9"
             },
             "require-dev": {
                 "composer-runtime-api": "^2.0",
@@ -10204,9 +10204,11 @@
                 "slevomat/coding-standard": "^8.16.0",
                 "symfony/contracts": "^2.5 || ^3.0",
                 "symfony/dependency-injection": "^5.4 || ^6.0 || ^7.0",
+                "symfony/doctrine-bridge": "^5.4 || ^6.0 || ^7.0",
                 "symfony/event-dispatcher": "^5.4 || ^6.0 || ^7.0",
                 "symfony/http-kernel": "^5.4 || ^6.0 || ^7.0",
-                "symfony/routing": "^5.4 || ^6.0 || ^7.0"
+                "symfony/routing": "^5.4 || ^6.0 || ^7.0",
+                "symfony/validator": "^5.4 || ^6.0 || ^7.0"
             },
             "type": "phpstan-extension",
             "extra": {
@@ -10234,9 +10236,9 @@
             ],
             "support": {
                 "issues": "https://github.com/shipmonk-rnd/dead-code-detector/issues",
-                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/0.10.0"
+                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/0.10.2"
             },
-            "time": "2025-03-21T13:07:21+00:00"
+            "time": "2025-03-28T12:09:54+00:00"
         },
         {
             "name": "staabm/phpstan-todo-by",
@@ -11213,8 +11215,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "spomky-labs/pwa-bundle": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "spomky-labs/pwa-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -11224,6 +11226,6 @@
         "ext-iconv": "*",
         "ext-imagick": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
