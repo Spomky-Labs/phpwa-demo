@@ -1221,16 +1221,16 @@
         },
         {
             "name": "symfony/asset-mapper",
-            "version": "v7.2.3",
+            "version": "v7.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/asset-mapper.git",
-                "reference": "d9a514cbaba040691d5b10afc20755590d2ac80a"
+                "reference": "6428e4b6d8cff9c5fe6f40ddbee4c9f6bfdaa0b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/asset-mapper/zipball/d9a514cbaba040691d5b10afc20755590d2ac80a",
-                "reference": "d9a514cbaba040691d5b10afc20755590d2ac80a",
+                "url": "https://api.github.com/repos/symfony/asset-mapper/zipball/6428e4b6d8cff9c5fe6f40ddbee4c9f6bfdaa0b8",
+                "reference": "6428e4b6d8cff9c5fe6f40ddbee4c9f6bfdaa0b8",
                 "shasum": ""
             },
             "require": {
@@ -1280,7 +1280,7 @@
             "description": "Maps directories of assets & makes them available in a public directory with versioned filenames.",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/asset-mapper/tree/v7.2.3"
+                "source": "https://github.com/symfony/asset-mapper/tree/v7.2.5"
             },
             "funding": [
                 {
@@ -1296,7 +1296,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-01-27T11:08:17+00:00"
+            "time": "2025-03-26T11:29:07+00:00"
         },
         {
             "name": "symfony/cache",
@@ -11213,8 +11213,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "spomky-labs/pwa-bundle": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "spomky-labs/pwa-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -11224,6 +11224,6 @@
         "ext-iconv": "*",
         "ext-imagick": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
