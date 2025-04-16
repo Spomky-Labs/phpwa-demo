@@ -7666,16 +7666,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.9",
+            "version": "2.1.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "0876262406b99b6e7909fbb213c1f245023a2362"
+                "reference": "96dde49e967c0c22812bcfa7bda4ff82c09f3b0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0876262406b99b6e7909fbb213c1f245023a2362",
-                "reference": "0876262406b99b6e7909fbb213c1f245023a2362",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/96dde49e967c0c22812bcfa7bda4ff82c09f3b0c",
+                "reference": "96dde49e967c0c22812bcfa7bda4ff82c09f3b0c",
                 "shasum": ""
             },
             "require": {
@@ -7720,7 +7720,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-23T11:45:29+00:00"
+            "time": "2025-04-16T13:19:18+00:00"
         },
         {
             "name": "phpstan/phpstan-beberlei-assert",
@@ -11213,8 +11213,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "spomky-labs/pwa-bundle": 20,
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "spomky-labs/pwa-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
@@ -11224,6 +11224,6 @@
         "ext-iconv": "*",
         "ext-imagick": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
