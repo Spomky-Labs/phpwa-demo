@@ -10,7 +10,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-imagick": "*",
-        "nelmio/cors-bundle": "^2.5",
+        "nelmio/cors-bundle": "^2.4",
         "nelmio/security-bundle": "^3.3",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^2.0",
