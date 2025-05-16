@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "35e5edf944164e5fb399484043690fe5",
+    "content-hash": "019a41e62e2d9579b802a1bc4daf5043",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -7666,16 +7666,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.9",
+            "version": "2.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "0876262406b99b6e7909fbb213c1f245023a2362"
+                "reference": "b8c1cf533cba0c305d91c6ccd23f3dd0566ba5f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/0876262406b99b6e7909fbb213c1f245023a2362",
-                "reference": "0876262406b99b6e7909fbb213c1f245023a2362",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b8c1cf533cba0c305d91c6ccd23f3dd0566ba5f9",
+                "reference": "b8c1cf533cba0c305d91c6ccd23f3dd0566ba5f9",
                 "shasum": ""
             },
             "require": {
@@ -7720,7 +7720,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-23T11:45:29+00:00"
+            "time": "2025-05-16T09:40:10+00:00"
         },
         {
             "name": "phpstan/phpstan-beberlei-assert",
