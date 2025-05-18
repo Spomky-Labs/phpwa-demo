@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f115d34dec1fca11ee6e3fe476270abc",
+    "content-hash": "02c5dfd9eb95a20c9b4a5225c5120a13",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -10268,16 +10268,16 @@
         },
         {
             "name": "shipmonk/dead-code-detector",
-            "version": "0.10.2",
+            "version": "0.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shipmonk-rnd/dead-code-detector.git",
-                "reference": "080f8b92fb4eda6a25d69639e9ae5cf399a2c99d"
+                "reference": "1f0c70ec4e9868c785f6505592dfb01ef53af2ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/080f8b92fb4eda6a25d69639e9ae5cf399a2c99d",
-                "reference": "080f8b92fb4eda6a25d69639e9ae5cf399a2c99d",
+                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/1f0c70ec4e9868c785f6505592dfb01ef53af2ca",
+                "reference": "1f0c70ec4e9868c785f6505592dfb01ef53af2ca",
                 "shasum": ""
             },
             "require": {
@@ -10308,7 +10308,8 @@
                 "symfony/event-dispatcher": "^5.4 || ^6.0 || ^7.0",
                 "symfony/http-kernel": "^5.4 || ^6.0 || ^7.0",
                 "symfony/routing": "^5.4 || ^6.0 || ^7.0",
-                "symfony/validator": "^5.4 || ^6.0 || ^7.0"
+                "symfony/validator": "^5.4 || ^6.0 || ^7.0",
+                "twig/twig": "^3.0"
             },
             "type": "phpstan-extension",
             "extra": {
@@ -10336,9 +10337,9 @@
             ],
             "support": {
                 "issues": "https://github.com/shipmonk-rnd/dead-code-detector/issues",
-                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/0.10.2"
+                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/0.12.0"
             },
-            "time": "2025-03-28T12:09:54+00:00"
+            "time": "2025-05-16T13:02:10+00:00"
         },
         {
             "name": "staabm/phpstan-todo-by",
