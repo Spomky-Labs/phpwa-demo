@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f115d34dec1fca11ee6e3fe476270abc",
+    "content-hash": "7ff8feb5b878842c34e76c6e5cf4bc53",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -10462,19 +10462,20 @@
         },
         {
             "name": "struggle-for-php/sfp-phpstan-psr-log",
-            "version": "0.23.0",
+            "version": "0.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/struggle-for-php/sfp-phpstan-psr-log.git",
-                "reference": "92a1d2c0b7c2d19c057f2fa6f20adef50f3bf902"
+                "reference": "3ffcc02668195e046518b4e7e50241e0a8e11f35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/struggle-for-php/sfp-phpstan-psr-log/zipball/92a1d2c0b7c2d19c057f2fa6f20adef50f3bf902",
-                "reference": "92a1d2c0b7c2d19c057f2fa6f20adef50f3bf902",
+                "url": "https://api.github.com/repos/struggle-for-php/sfp-phpstan-psr-log/zipball/3ffcc02668195e046518b4e7e50241e0a8e11f35",
+                "reference": "3ffcc02668195e046518b4e7e50241e0a8e11f35",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "php": "^7.2.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0",
                 "phpstan/phpstan": "^1.12 || ^2.0",
                 "struggle-for-php/sfp-stubs-psr-log": "^1.0.1 || ^2 || ^3.0.1"
@@ -10492,6 +10493,9 @@
                 "squizlabs/php_codesniffer": "^3.7",
                 "vimeo/psalm": "^4 || ^5.26"
             },
+            "bin": [
+                "bin/phpstan-type-mapping-from-bigquery"
+            ],
             "type": "phpstan-extension",
             "extra": {
                 "phpstan": {
@@ -10520,9 +10524,9 @@
             ],
             "support": {
                 "issues": "https://github.com/struggle-for-php/sfp-phpstan-psr-log/issues",
-                "source": "https://github.com/struggle-for-php/sfp-phpstan-psr-log/tree/0.23.0"
+                "source": "https://github.com/struggle-for-php/sfp-phpstan-psr-log/tree/0.24.0"
             },
-            "time": "2024-11-11T12:09:49+00:00"
+            "time": "2025-04-24T13:53:54+00:00"
         },
         {
             "name": "struggle-for-php/sfp-stubs-psr-log",

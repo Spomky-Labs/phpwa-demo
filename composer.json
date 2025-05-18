@@ -122,7 +122,7 @@
         "shipmonk/composer-dependency-analyser": "^1.8",
         "shipmonk/dead-code-detector": "^0.10",
         "staabm/phpstan-todo-by": "^0.2.0",
-        "struggle-for-php/sfp-phpstan-psr-log": "^0.23.0",
+        "struggle-for-php/sfp-phpstan-psr-log": "^0.24.0",
         "symfony/browser-kit": "7.3.*",
         "symfony/css-selector": "7.3.*",
         "symfony/debug-bundle": "7.3.*",
