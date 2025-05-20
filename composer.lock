@@ -5930,20 +5930,20 @@
         },
         {
             "name": "symfony/ux-map",
-            "version": "v2.24.0",
+            "version": "v2.25.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-map.git",
-                "reference": "d1cf390f7d7ecea9fa0ad40c90638eeb16974130"
+                "reference": "698357494dd36fc4b3726a8883505348883000e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-map/zipball/d1cf390f7d7ecea9fa0ad40c90638eeb16974130",
-                "reference": "d1cf390f7d7ecea9fa0ad40c90638eeb16974130",
+                "url": "https://api.github.com/repos/symfony/ux-map/zipball/698357494dd36fc4b3726a8883505348883000e3",
+                "reference": "698357494dd36fc4b3726a8883505348883000e3",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.3",
+                "php": ">=8.1",
                 "symfony/stimulus-bundle": "^2.18.1"
             },
             "conflict": {
@@ -5952,7 +5952,7 @@
             "require-dev": {
                 "symfony/asset-mapper": "^6.4|^7.0",
                 "symfony/framework-bundle": "^6.4|^7.0",
-                "symfony/phpunit-bridge": "^6.4|^7.0",
+                "symfony/phpunit-bridge": "^7.2",
                 "symfony/twig-bundle": "^6.4|^7.0",
                 "symfony/ux-icons": "^2.18",
                 "symfony/ux-twig-component": "^2.18"
@@ -5993,7 +5993,7 @@
                 "symfony-ux"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-map/tree/v2.24.0"
+                "source": "https://github.com/symfony/ux-map/tree/v2.25.2"
             },
             "funding": [
                 {
@@ -6009,7 +6009,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-04-01T21:44:17+00:00"
+            "time": "2025-05-20T08:17:01+00:00"
         },
         {
             "name": "symfony/ux-turbo",
