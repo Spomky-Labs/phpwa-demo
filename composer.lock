@@ -5765,26 +5765,27 @@
         },
         {
             "name": "symfony/ux-leaflet-map",
-            "version": "v2.24.0",
+            "version": "v2.25.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-leaflet-map.git",
-                "reference": "0c8f2d5ca37ae5dc0631ca14c04a30455851896d"
+                "reference": "288f55281291a87374a1113f8507ae31a35ea2b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-leaflet-map/zipball/0c8f2d5ca37ae5dc0631ca14c04a30455851896d",
-                "reference": "0c8f2d5ca37ae5dc0631ca14c04a30455851896d",
+                "url": "https://api.github.com/repos/symfony/ux-leaflet-map/zipball/288f55281291a87374a1113f8507ae31a35ea2b9",
+                "reference": "288f55281291a87374a1113f8507ae31a35ea2b9",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.3",
+                "php": ">=8.1",
                 "symfony/stimulus-bundle": "^2.18.1",
                 "symfony/ux-map": "^2.19"
             },
             "require-dev": {
-                "spatie/phpunit-snapshot-assertions": "^5.1.8",
-                "symfony/phpunit-bridge": "^6.4|^7.0",
+                "phpunit/phpunit": "^9.6.22",
+                "spatie/phpunit-snapshot-assertions": "^4.2.17",
+                "symfony/phpunit-bridge": "^7.2",
                 "symfony/ux-icons": "^2.18"
             },
             "type": "symfony-ux-map-bridge",
@@ -5816,7 +5817,7 @@
                 "symfony-ux"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-leaflet-map/tree/v2.24.0"
+                "source": "https://github.com/symfony/ux-leaflet-map/tree/v2.25.2"
             },
             "funding": [
                 {
@@ -5832,7 +5833,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-03-27T17:10:30+00:00"
+            "time": "2025-05-19T11:54:27+00:00"
         },
         {
             "name": "symfony/ux-live-component",
