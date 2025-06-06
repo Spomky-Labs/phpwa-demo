@@ -6144,16 +6144,16 @@
         },
         {
             "name": "symfony/ux-live-component",
-            "version": "v2.25.2",
+            "version": "v2.26.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-live-component.git",
-                "reference": "79e8cc179eb21119547c492ae21e4bf529ac1a15"
+                "reference": "92b300bb90d87f14aeae47b0f5c9e058b15f5c2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-live-component/zipball/79e8cc179eb21119547c492ae21e4bf529ac1a15",
-                "reference": "79e8cc179eb21119547c492ae21e4bf529ac1a15",
+                "url": "https://api.github.com/repos/symfony/ux-live-component/zipball/92b300bb90d87f14aeae47b0f5c9e058b15f5c2f",
+                "reference": "92b300bb90d87f14aeae47b0f5c9e058b15f5c2f",
                 "shasum": ""
             },
             "require": {
@@ -6166,7 +6166,9 @@
                 "twig/twig": "^3.10.3"
             },
             "conflict": {
-                "symfony/config": "<5.4.0"
+                "symfony/config": "<5.4.0",
+                "symfony/property-info": "~7.0.0",
+                "symfony/type-info": "<7.2"
             },
             "require-dev": {
                 "doctrine/annotations": "^1.0",
@@ -6219,7 +6221,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-live-component/tree/v2.25.2"
+                "source": "https://github.com/symfony/ux-live-component/tree/v2.26.1"
             },
             "funding": [
                 {
@@ -6235,7 +6237,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-19T11:54:27+00:00"
+            "time": "2025-06-06T19:57:53+00:00"
         },
         {
             "name": "symfony/ux-map",
