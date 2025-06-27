@@ -6241,16 +6241,16 @@
         },
         {
             "name": "symfony/ux-map",
-            "version": "v2.26.1",
+            "version": "v2.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-map.git",
-                "reference": "6064968cfb9cd3b4a133b3d83b87ad570a036b16"
+                "reference": "20710e90cf42f93b2987c0c9f6b72387cd26a0ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-map/zipball/6064968cfb9cd3b4a133b3d83b87ad570a036b16",
-                "reference": "6064968cfb9cd3b4a133b3d83b87ad570a036b16",
+                "url": "https://api.github.com/repos/symfony/ux-map/zipball/20710e90cf42f93b2987c0c9f6b72387cd26a0ae",
+                "reference": "20710e90cf42f93b2987c0c9f6b72387cd26a0ae",
                 "shasum": ""
             },
             "require": {
@@ -6306,7 +6306,7 @@
                 "symfony-ux"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-map/tree/v2.26.1"
+                "source": "https://github.com/symfony/ux-map/tree/v2.27.0"
             },
             "funding": [
                 {
@@ -6322,7 +6322,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-05T17:25:17+00:00"
+            "time": "2025-06-23T12:21:48+00:00"
         },
         {
             "name": "symfony/ux-turbo",
