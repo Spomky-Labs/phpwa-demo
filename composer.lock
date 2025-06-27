@@ -6144,16 +6144,16 @@
         },
         {
             "name": "symfony/ux-live-component",
-            "version": "v2.26.1",
+            "version": "v2.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-live-component.git",
-                "reference": "92b300bb90d87f14aeae47b0f5c9e058b15f5c2f"
+                "reference": "05def4e467d378810f46f826dc67506180df8bd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-live-component/zipball/92b300bb90d87f14aeae47b0f5c9e058b15f5c2f",
-                "reference": "92b300bb90d87f14aeae47b0f5c9e058b15f5c2f",
+                "url": "https://api.github.com/repos/symfony/ux-live-component/zipball/05def4e467d378810f46f826dc67506180df8bd2",
+                "reference": "05def4e467d378810f46f826dc67506180df8bd2",
                 "shasum": ""
             },
             "require": {
@@ -6221,7 +6221,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-live-component/tree/v2.26.1"
+                "source": "https://github.com/symfony/ux-live-component/tree/v2.27.0"
             },
             "funding": [
                 {
@@ -6237,7 +6237,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-06T19:57:53+00:00"
+            "time": "2025-06-22T19:07:55+00:00"
         },
         {
             "name": "symfony/ux-map",
