@@ -5983,16 +5983,16 @@
         },
         {
             "name": "symfony/ux-icons",
-            "version": "v2.26.0",
+            "version": "v2.27.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/ux-icons.git",
-                "reference": "e5c1e5b5093ae26dba45d0f3390a1e21f305c47a"
+                "reference": "af6d09779e786717c6e3b5a8a004e8c18ce3ef00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/ux-icons/zipball/e5c1e5b5093ae26dba45d0f3390a1e21f305c47a",
-                "reference": "e5c1e5b5093ae26dba45d0f3390a1e21f305c47a",
+                "url": "https://api.github.com/repos/symfony/ux-icons/zipball/af6d09779e786717c6e3b5a8a004e8c18ce3ef00",
+                "reference": "af6d09779e786717c6e3b5a8a004e8c18ce3ef00",
                 "shasum": ""
             },
             "require": {
@@ -6052,7 +6052,7 @@
                 "twig"
             ],
             "support": {
-                "source": "https://github.com/symfony/ux-icons/tree/v2.26.0"
+                "source": "https://github.com/symfony/ux-icons/tree/v2.27.0"
             },
             "funding": [
                 {
@@ -6068,7 +6068,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-30T02:07:34+00:00"
+            "time": "2025-06-17T06:15:15+00:00"
         },
         {
             "name": "symfony/ux-leaflet-map",
