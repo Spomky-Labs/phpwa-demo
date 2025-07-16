@@ -4,39 +4,16 @@
 
 {% block body %}
     <turbo-frame id="content">
-        <section
-            class="bg-white dark:bg-gray-900"
-            data-controller="battery pwa--battery"
-        >
+        <section class="bg-white dark:bg-gray-900">
             <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                     Battery
                 </h2>
-                <p
-                    class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl"
-                    data-controller="pwa--file-handling"
-                >
+                <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
                     The Battery API provides information about the battery status of the device.
                     <br>
                 </p>
-                <dl class="divide-y divide-gray-100">
-                    <div  class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                        <dt class="text-sm/6 font-medium text-gray-900">Charging</dt>
-                        <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0" data-battery-target="charging"></dd>
-                    </div>
-                    <div  class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                        <dt class="text-sm/6 font-medium text-gray-900">Level</dt>
-                        <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0" data-battery-target="level"></dd>
-                    </div>
-                    <div  class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                        <dt class="text-sm/6 font-medium text-gray-900">Discharging Time</dt>
-                        <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0" data-battery-target="dischargingTime"></dd>
-                    </div>
-                    <div  class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                        <dt class="text-sm/6 font-medium text-gray-900">Charging Time</dt>
-                        <dd class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0" data-battery-target="chargingTime"></dd>
-                    </div>
-                </dl>
+                <twig:Battery />
             </div>
         </section>
     </turbo-frame>
