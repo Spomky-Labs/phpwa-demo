@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notifications{% endblock %}
+
+{% block body %}
+<turbo-frame id="content">
+    <section class="bg-white dark:bg-gray-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                Notifications
+            </h2>
+            <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
+                The Web Push API allows you to send notifications to users even when the web application is not open,
+                by leveraging the browser’s service worker to display messages. <br>
+                These notifications are highly customizable: they can range from basic text messages to rich, interactive content with icons,
+                images, action buttons, and event handling allowing users to engage directly from the notification.
+            </p>
+            <twig:WebPush />
+        </div>
+    </section>
+</turbo-frame>
+{% endblock %}

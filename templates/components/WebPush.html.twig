@@ -1,0 +1,23 @@
+<div {{ stimulus_controller('@pwa/web-push', { applicationServerKey: 'BB4W1qfBi7MF_Lnrc6i2oL-glAuKF4kevy9T0k2vyKV4qvuBrN3T6o9-7-NR3mKHwzDXzD3fe7XvIqIU1iADpGQ'})|stimulus_controller('live') }} {{ attributes }} class="card bg-base-100 shadow-md p-6 space-y-4 w-full max-w-md mx-auto">
+    <h2 class="text-xl font-semibold">Web Push Notifications</h2>
+    <div class="flex flex-col gap-2">
+        {% if this.status == 'unsubscribed' %}
+        <button class="btn btn-success" {{ stimulus_action('@pwa/web-push', 'subscribe', 'click')}}>
+            Subscribe
+        </button>
+        {% endif %}
+        {% if this.status == 'subscribed' %}
+        <button class="btn btn-warning" {{ stimulus_action('@pwa/web-push', 'unsubscribe', 'click')}}>
+            Unsubscribe
+        </button>
+        <button class="btn btn-info" {{ stimulus_action('live', 'action', 'click', {action: 'notify'})}}>
+            Send Test Message
+        </button>
+        {% endif %}
+    </div>
+    {% if this.status == 'unknown' %}
+    <div class="text-sm text-gray-500 pt-2">
+        Status: <span class="font-mono">Not initialized</span>
+    </div>
+    {% endif %}
+</div>

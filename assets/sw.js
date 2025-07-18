@@ -8,12 +8,8 @@
 registerPushTask(structuredPushNotificationSupport);
 //registerPushTask(simplePushNotificationSupport);
 
-registerNotificationAction('google', async () => {
-  await clients.openWindow('https://google.com');
-});
-registerNotificationAction('linkedin', async () => {
-  await clients.openWindow('https://linkedin.com');
-});
-registerNotificationAction('', async () => {
-  await clients.openWindow('https://facebook.com');
+registerNotificationAction('*', async (event) => {
+  const data = JSON.parse(event.notification.data);
+  const action = event.action || 'default';
+  await clients.openWindow(data[action]);
 });
