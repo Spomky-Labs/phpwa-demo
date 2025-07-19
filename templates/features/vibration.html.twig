@@ -34,7 +34,7 @@ SOS
                 </button>
                 <button
                     class="text-white btn bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
-                    {{ stimulus_action('@pwa/vibration', 'persistent', parameters={pattern: [300, 150, 300, 150, 600, 150, 300, 150], interval: 10000}) }}
+                    {{ stimulus_action('@pwa/vibration', 'vibrate', parameters={pattern: [300, 150, 300, 150, 600, 150, 300, 150], interval: 5000}) }}
                 >
                     <twig:ux:icon name="simple-icons:persistent" class="w-3.5 h-3.5 me-2" fill="currentColor" />
                     Persistent
