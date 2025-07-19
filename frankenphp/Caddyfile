@@ -53,10 +53,10 @@
 	coraza_waf {
 		load_owasp_crs
 		directives `
-			Include @coraza.conf-recommended
-			Include @crs-setup.conf.example
-			Include @owasp_crs/*.conf
-			SecRuleEngine On
+		Include @coraza.conf-recommended
+		Include @crs-setup.conf.example
+		Include @owasp_crs/*.conf
+		SecRuleEngine On
 		`
 	}
 
