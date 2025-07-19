@@ -182,4 +182,7 @@ return [
     'core-js/library/fn/promise' => [
         'version' => '2.5.0',
     ],
+    'idb-keyval' => [
+        'version' => '6.2.2',
+    ],
 ];
