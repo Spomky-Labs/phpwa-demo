@@ -10,4 +10,4 @@ when@prod:
             missing_import_mode: warn
             precompress:
                 # possible values: 'brotli', 'zstandard', 'gzip'
-                format: 'brotli'
+                format: 'zstandard'
