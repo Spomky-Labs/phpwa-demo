@@ -72,8 +72,8 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 
 	echo "🔐 Setting permissions on var/"
 	setfacl -dR -m u:www-data:rwX -m u:"$(whoami)":rwX var
-	setfacl -R -m u:www-data:rwX -m u:"$(whoami)":rwX var
 fi
 
 echo "🚚 Executing docker-php-entrypoint with: $*"
 exec docker-php-entrypoint "$@"
+
