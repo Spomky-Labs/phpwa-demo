@@ -3,16 +3,50 @@
 {% block title %}Vibration{% endblock %}
 
 {% block body %}
-<turbo-frame id="content">
-    <section class="bg-white dark:bg-gray-900">
-        <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-                Vibration
-            </h2>
-            <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
-                TO BE COMPLETED
-            </p>
-        </div>
-    </section>
-</turbo-frame>
+    <turbo-frame id="content">
+        <section class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                    Vibration
+                </h2>
+                <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
+                    The Vibration API is a powerful tool that allows web developers to enhance user experience on mobile devices by enabling vibration functionality. This API provides a means for web applications to programmatically trigger vibrations, thereby making web interactions more tactile and engaging.
+                </p>
+                {% set button = '<button
+    data-controller="pwa--vibration"
+    data-action="pwa--vibration#vibrate"
+    data-pwa--vibration-pattern-param="[300,300,300,300,300,900,900,300,900,300,900,900,300,300,300,300,300]"
+>
+SOS
+</button>' %}
+
+                <pre><code class="language-twig" data-controller="code">{{ button|escape('html')|raw }}</code></pre>
+            </div>
+        </section>
+        <section {{ stimulus_controller('@pwa/vibration') }} class="bg-white dark:bg-gray-900">
+            <div class="px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
+                <button
+                    class="text-white btn bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    {{ stimulus_action('@pwa/vibration', 'vibrate', parameters={pattern: [300, 300, 300, 300, 300, 900, 900, 300, 900, 300, 900, 900, 300, 300, 300, 300, 300]}) }}
+                >
+                    <twig:ux:icon name="material-symbols:mobile-vibrate-outline-sharp" class="w-3.5 h-3.5 me-2" fill="currentColor" />
+                    SOS
+                </button>
+                <button
+                    class="text-white btn bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800"
+                    {{ stimulus_action('@pwa/vibration', 'persistent', parameters={pattern: [300, 150, 300, 150, 600, 150, 300, 150], interval: 10000}) }}
+                >
+                    <twig:ux:icon name="simple-icons:persistent" class="w-3.5 h-3.5 me-2" fill="currentColor" />
+                    Persistent
+                </button>
+                <button
+                    class="text-white btn bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+                    {{ stimulus_action('@pwa/vibration', 'stop') }}
+                >
+                    <twig:ux:icon name="material-symbols:stop-circle-outline" class="w-3.5 h-3.5 me-2" fill="currentColor" />
+                    Stop
+                </button>
+            </div>
+        </section>
+    </turbo-frame>
 {% endblock %}
