@@ -237,7 +237,7 @@ function stop(): void
 function start(): void
 {
     run(['docker', 'compose', 'up', '-d']);
-    frontend();
+    frontend(true);
 }
 
 #[AsTask(description: 'Build the images.')]
@@ -253,18 +253,13 @@ function frontend(bool $watch = false): void
     $commandsToRun = [
         'assets:install' => [],
         'importmap:install' => [],
-        'tailwind:build' => $watch ?['--watch'] : [],
-        'asset-map:compile' => [],
+        'tailwind:build' => ['--watch'],
     ];
 
     foreach ($commandsToRun as $command => $arguments) {
         if (str_contains($consoleOutput->getOutput(), $command)) {
             php(['bin/console', $command, ...$arguments]);
         }
-    }
-    if (file_exists('yarn.lock')) {
-        run(['yarn', 'install']);
-        run(['yarn', $watch ? 'watch' : 'build']);
     }
 }
 
