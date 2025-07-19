@@ -73,10 +73,6 @@
                 "enabled": true,
                 "fetch": "eager"
             },
-            "share": {
-                "enabled": true,
-                "fetch": "eager"
-            },
             "capture": {
                 "enabled": true,
                 "fetch": "eager"
@@ -100,6 +96,10 @@
             "web-push": {
                 "enabled": true,
                 "fetch": "eager"
+            },
+            "web-share": {
+              "enabled": true,
+              "fetch": "eager"
             }
         },
         "@symfony/ux-leaflet-map": {

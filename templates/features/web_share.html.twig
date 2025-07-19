@@ -11,39 +11,15 @@
                 </h2>
                 <p
                     class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl"
-                    data-controller="pwa--share"
                 >
                     The Web Share API invokes the native share mechanism of the device and allows users to share text, URLs or files.<br>
                     This app is itself also a share target which means content can also be shared to it. <br>
                     When sharing content, this app will be listed as an app to share to.
-                    <br>
-                    <button
-                        type="button"
-                        class="mt-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        data-action="click->pwa--share#share"
-                        data-pwa--share-data-param="{{ link|json_encode }}"
-                    >
-                        Share link
-                    </button>
-                    <br>
-                    <button
-                        type="button"
-                        class="mt-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                        data-action="click->pwa--share#share"
-                        data-pwa--share-data-param="{{ text|json_encode }}"
-                    >
-                        Share text
-                    </button>
-                    <br>
-                    <button
-                        type="button"
-                        disabled
-                        class="mt-1 text-white bg-blue-400 dark:bg-blue-500 cursor-not-allowed font-medium rounded-lg text-sm px-5 py-2.5 text-center"
-                    >
-                        Share file (to be implemented)
-                    </button>
                 </p>
             </div>
+        </section>
+        <section class="bg-white dark:bg-gray-900">
+            <twig:WebShare />
         </section>
     </turbo-frame>
 {% endblock %}

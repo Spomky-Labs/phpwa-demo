@@ -1,0 +1,43 @@
+<div {{ stimulus_controller('@pwa/web-share')|stimulus_controller('live') }} {{ attributes }} class="card bg-base-100 shadow-md p-6 space-y-4 w-full max-w-md mx-auto">
+    {% set link = {
+        title: "What PWA Bundle Can Do Today",
+        url: url('app_homepage')
+    } %}
+    {% set text = {
+        title: "What PWA Bundle Can Do Today",
+        text: "Spread the word about PWA Bundle! It is a powerful tool for building Progressive Web Apps with Symfony."
+    } %}
+    {% set file = {
+        title: "What PWA Bundle Can Do Today",
+        files: [
+            asset('share/pexels-chokniti-khongchum-1197604-2280549.jpg'),
+            asset('share/pexels-cottonbro-7505566.jpg')
+        ]
+    } %}
+    <button
+        type="button"
+        class="btn mt-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        {{ stimulus_action('@pwa/web-share', 'share', 'click', {data: link}) }}
+    >
+        Share a link
+    </button>
+    <button
+        type="button"
+        class="btn mt-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        {{ stimulus_action('@pwa/web-share', 'share', 'click', {data: text}) }}
+    >
+        Share a text
+    </button>
+    <button
+        type="button"
+        class="btn mt-1 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        {{ stimulus_action('@pwa/web-share', 'share', 'click', {data: file}) }}
+    >
+        Share files
+    </button>
+    <ul class="mt-4 text-sm text-gray-500 dark:text-gray-400 list-disc list-inside">
+        <li>Photo by Chokniti Khongchum: https://www.pexels.com/photo/laboratory-test-tubes-2280549/</li>
+        <li>Photo by cottonbro studio: https://www.pexels.com/photo/woman-looking-at-wood-samples-on-a-shelf-7505566/</li>
+    </ul>
+
+</div>
