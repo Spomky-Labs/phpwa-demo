@@ -2,6 +2,7 @@
 
 namespace App\Twig\Component;
 
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
 use Symfony\UX\LiveComponent\Attribute\LiveAction;
@@ -74,8 +75,8 @@ class WebPush
             ->unmute()
             ->auto()
             ->withData(json_encode([
-                'action1' => $this->router->generate('app_feature_battery'),
-                'action2' => $this->router->generate('app_feature_barcode_detection'),
+                'action1' => $this->router->generate('app_feature_battery', referenceType: UrlGeneratorInterface::ABSOLUTE_URL),
+                'action2' => $this->router->generate('app_feature_barcode_detection', referenceType: UrlGeneratorInterface::ABSOLUTE_URL),
                 'default' => 'https://github.com',
             ]))
             ->withTimestamp(time()*1000)
