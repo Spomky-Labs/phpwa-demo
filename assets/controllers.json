@@ -98,8 +98,8 @@
                 "fetch": "eager"
             },
             "web-share": {
-              "enabled": true,
-              "fetch": "eager"
+                "enabled": true,
+                "fetch": "eager"
             }
         },
         "@symfony/ux-leaflet-map": {
