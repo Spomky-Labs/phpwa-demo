@@ -1,0 +1,37 @@
+<div {{ stimulus_controller('@pwa/wake-lock')|stimulus_controller('live') }} {{ attributes }} class="card bg-base-100 shadow-md p-6 space-y-4 w-full max-w-md mx-auto">
+    {% if this.status != 'locked' %}
+    <button
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        {{ stimulus_action('@pwa/wake-lock', 'lock') }}
+    >
+        <twig:ux:icon name="material-symbols:lock-outline" class="w-3.5 h-3.5 me-2" fill="currentColor" />
+        Lock
+    </button>
+    {% else %}
+    <button
+        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
+        {{ stimulus_action('@pwa/wake-lock', 'release') }}
+    >
+        <twig:ux:icon name="material-symbols:lock-open-outline" class="w-3.5 h-3.5 me-2" fill="currentColor" />
+        Release
+    </button>
+    {% endif %}
+    <button
+        class="text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800"
+        {{ stimulus_action('@pwa/wake-lock', 'toggle') }}
+    >
+        <twig:ux:icon name="lsicon:switch-filled" class="w-3.5 h-3.5 me-2" fill="currentColor" />
+        Toggle
+    </button>
+    <div
+        class="flex items-center p-4 mt-4 text-sm border rounded-lg"
+        role="alert"
+    >
+        <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+        </svg>
+        <div>
+            <span class="font-medium">Status</span>: {{ this.status }}</span>
+        </div>
+    </div>
+</div>
