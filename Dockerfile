@@ -125,12 +125,12 @@ RUN set -eux; \
 COPY --link . ./
 RUN rm -Rf frankenphp/
 
-RUN set -eux; \
-	mkdir -p var/cache var/log; \
-	composer dump-autoload --classmap-authoritative --no-dev; \
-	composer dump-env prod; \
-	composer run-script --no-dev post-install-cmd; \
-	chmod +x bin/console; sync; \
-    bin/console importmap:install --no-interaction; \
-    bin/console tailwind:build; \
-    bin/console asset-map:compile;
+RUN set -eux;
+RUN mkdir -p var/cache var/log;
+RUN composer dump-autoload --classmap-authoritative --no-dev;
+RUN composer dump-env prod;
+RUN composer run-script --no-dev post-install-cmd;
+RUN chmod +x bin/console; sync;
+RUN bin/console importmap:install --no-interaction;
+RUN bin/console tailwind:build;
+RUN bin/console asset-map:compile;
