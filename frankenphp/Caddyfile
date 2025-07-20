@@ -8,14 +8,14 @@
 	}
 }
 
-{$CADDY_EXTRA_CONFIG} 
+{$CADDY_EXTRA_CONFIG}
 
 {$SERVER_NAME:localhost} {
-	#	tls /etc/caddy/certs/tls.pem /etc/caddy/certs/tls.key {
-	#		protocols tls1.3
-	#		ca_root /etc/caddy/certs/ca.pem
-	#		#key_type rsa4096
-	#	}
+		tls /etc/caddy/certs/tls.pem /etc/caddy/certs/tls.key {
+			protocols tls1.3
+			ca_root /etc/caddy/certs/ca.pem
+			#key_type rsa4096
+		}
 	log {
 		# Redact the authorization query parameter that can be set by Mercure
 		format filter {
@@ -41,7 +41,7 @@
 		{$MERCURE_EXTRA_DIRECTIVES}
 	}
 
-	vulcain 
+	vulcain
 
 	{$CADDY_SERVER_EXTRA_DIRECTIVES}
 

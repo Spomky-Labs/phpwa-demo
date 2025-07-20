@@ -3,7 +3,6 @@
 namespace App\Twig\Component;
 
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
-use Symfony\Component\Routing\RouterInterface;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
 use Symfony\UX\LiveComponent\Attribute\LiveAction;
 use Symfony\UX\LiveComponent\Attribute\LiveArg;
@@ -23,7 +22,7 @@ class WebPush
     use ComponentToolsTrait;
 
     public function __construct(
-        private readonly RouterInterface $router,
+        private readonly UrlGeneratorInterface $urlGenerator,
         private readonly \WebPush\WebPush $webpushService
     ) {
     }
@@ -66,7 +65,7 @@ class WebPush
         }
         $subscription = Subscription::createFromString($this->subscription);
         $message = Message::create('My super Application.', 'Hello World! Clic on the body to go to GitHub')
-            ->vibrate(200, 300, 200, 300)
+            ->vibrate(100, 150, 100, 150, 50, 100, 250)
             ->withImage('https://picsum.photos/1024/512')
             ->withIcon('https://picsum.photos/512/512')
             ->withBadge('https://picsum.photos/256/256')
@@ -75,8 +74,8 @@ class WebPush
             ->unmute()
             ->auto()
             ->withData(json_encode([
-                'action1' => $this->router->generate('app_feature_battery', referenceType: UrlGeneratorInterface::ABSOLUTE_URL),
-                'action2' => $this->router->generate('app_feature_barcode_detection', referenceType: UrlGeneratorInterface::ABSOLUTE_URL),
+                'action1' => $this->urlGenerator->generate('app_feature_battery', referenceType: UrlGeneratorInterface::ABSOLUTE_URL),
+                'action2' => $this->urlGenerator->generate('app_feature_barcode_detection', referenceType: UrlGeneratorInterface::ABSOLUTE_URL),
                 'default' => 'https://github.com',
             ]))
             ->withTimestamp(time()*1000)
