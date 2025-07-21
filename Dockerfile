@@ -64,8 +64,19 @@ RUN set -eux; \
 		opcache \
 		zip \
 		pdo_pgsql \
+    	gmp \
 		gd \
 		imagick \
+		amqp \
+    	fileinfo \
+    	iconv \
+    	exif \
+    	gettext \
+    	sodium \
+    	redis \
+    	uuid \
+		xsl \
+		xml \
 		zip \
     	brotli \
     	zstd \
