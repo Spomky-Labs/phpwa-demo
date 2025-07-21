@@ -22,7 +22,7 @@ RUN CGO_ENABLED=1 \
         # Add extra Caddy modules here
         --with github.com/corazawaf/coraza-caddy/v2
 
-FROM dunglas/frankenphp:1.7 AS frankenphp_runner
+FROM dunglas/frankenphp:1.9 AS frankenphp_runner
 LABEL builder=true
 
 # Replace the official binary by the one contained your custom modules
