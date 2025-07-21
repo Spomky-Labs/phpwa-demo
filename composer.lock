@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fbaf7451af2e52bf43af254dea81044e",
+    "content-hash": "ea4934245a6ee63f2f21567fccc7dda6",
     "packages": [
         {
             "name": "brick/math",
@@ -10655,21 +10655,21 @@
         },
         {
             "name": "shipmonk/dead-code-detector",
-            "version": "0.12.4",
+            "version": "0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shipmonk-rnd/dead-code-detector.git",
-                "reference": "295d04aef9db30dd18411a43c3d5f5aaa300acb2"
+                "reference": "d7cf34827e29aeb977260c01ce8f12a7d17fa7e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/295d04aef9db30dd18411a43c3d5f5aaa300acb2",
-                "reference": "295d04aef9db30dd18411a43c3d5f5aaa300acb2",
+                "url": "https://api.github.com/repos/shipmonk-rnd/dead-code-detector/zipball/d7cf34827e29aeb977260c01ce8f12a7d17fa7e6",
+                "reference": "d7cf34827e29aeb977260c01ce8f12a7d17fa7e6",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpstan": "^2.1.9"
+                "phpstan/phpstan": "^2.1.12"
             },
             "require-dev": {
                 "composer-runtime-api": "^2.0",
@@ -10724,9 +10724,9 @@
             ],
             "support": {
                 "issues": "https://github.com/shipmonk-rnd/dead-code-detector/issues",
-                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/0.12.4"
+                "source": "https://github.com/shipmonk-rnd/dead-code-detector/tree/0.13.0"
             },
-            "time": "2025-06-26T11:00:18+00:00"
+            "time": "2025-07-21T15:01:43+00:00"
         },
         {
             "name": "staabm/phpstan-todo-by",
