@@ -42,6 +42,15 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 		composer install --prefer-dist --no-progress --no-interaction
 	fi
 
+	if [ "$APP_ENV" = "prod" ]; then
+		echo "🔍 Production environment detected"
+
+		if [ -d vendor/spomky-labs/pwa-bundle ]; then
+			echo "🗺️ Running pwa:compile..."
+			php bin/console pwa:compile
+		fi
+	fi
+
 	if grep -q ^DATABASE_URL= .env; then
 		echo "⏳ Waiting for database to be ready..."
 		ATTEMPTS_LEFT_TO_REACH_DATABASE=60
