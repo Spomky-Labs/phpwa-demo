@@ -4,7 +4,7 @@
 
 {% block body %}
 <turbo-frame id="content">
-    <section id="section" data-controller="pwa--fullscreen" class="bg-white dark:bg-gray-900">
+    <section id="section" {{ stimulus_controller('@pwa/fullscreen') }} class="bg-white dark:bg-gray-900">
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 Fullscreen
@@ -14,19 +14,19 @@
             </p>
             <img id="image1" src="https://picsum.photos/400/600" alt="Sample Image" class="h-auto max-w-full">
             <button
-                {{ stimulus_action('pwa--fullscreen', 'request', 'click') }}
+                {{ stimulus_action('@pwa/fullscreen', 'request', 'click') }}
                 class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
             >
                 The page
             </button>
             <button
-                {{ stimulus_action('pwa--fullscreen', 'request', 'click', {target: '#section'}) }}
+                {{ stimulus_action('@pwa/fullscreen', 'request', 'click', {target: '#section'}) }}
                 class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
             >
                 The section
             </button>
             <button
-                {{ stimulus_action('pwa--fullscreen', 'request', 'click', {target: '#image1'}) }}
+                {{ stimulus_action('@pwa/fullscreen', 'request', 'click', {target: '#image1'}) }}
                 class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
             >
                 The image

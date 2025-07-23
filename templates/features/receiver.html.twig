@@ -6,13 +6,10 @@
     {% block importmap %}{{ importmap('receiver') }}{% endblock %}
 </head>
 <body
-    data-controller="reveal"
-    data-action="pwa--receiver:message->reveal#message"
+    {{ stimulus_controller('reveal')|stimulus_controller('@pwa/receiver') }}
+    {{ stimulus_action('reveal', 'message', '@pwa/receiver:message') }}
 >
-<div
-    class="reveal"
-    data-controller="pwa--receiver"
->
+<div class="reveal">
     <div
         class="slides"
     >

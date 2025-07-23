@@ -1,8 +1,7 @@
 <div{{ attributes }} class="p-6">
     <div
-        data-controller="pwa--device-orientation orientation"
-        data-pwa--device-orientation-throttle-value="25"
-    {{ stimulus_action('orientation', 'update', 'pwa--device-orientation:updated') }}
+        {{ stimulus_controller('@pwa/device-orientation', {throttle: 25})|stimulus_controller('orientation') }}
+        {{ stimulus_action('orientation', 'update', '@pwa/device-orientation:updated') }}
     >
     <dl>
         <dt id="alpha" class="font-medium text-gray-500 dark:text-gray-400">Alpha</dt>

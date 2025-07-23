@@ -1,4 +1,4 @@
-<div data-controller="pwa--battery live"{{ attributes }}>
+<div {{ stimulus_controller('@pwa/battery')|stimulus_controller('live') }}{{ attributes }}>
     <dl class="divide-y divide-gray-100">
         <div  class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt class="text-sm/6 font-medium text-gray-900">Charging</dt>

@@ -48,7 +48,7 @@
 {% endblock %}
 {% block body %}
 <turbo-frame id="content">
-    <section class="bg-white dark:bg-gray-900" data-controller="pwa--background-fetch">
+    <section class="bg-white dark:bg-gray-900" {{ stimulus_controller('@pwa/background-fetch') }}>
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                 Background Fetch API
@@ -104,12 +104,8 @@
             {% endfor %}
             <button
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                data-capture-target="startButton"
-                data-action="click->pwa--background-fetch#download"
-                data-pwa--background-fetch-id-param="videos"
-                data-pwa--background-fetch-url-param="{{ urls|json_encode }}"
-                data-pwa--background-fetch-title-param="Set of videos"
-                data-pwa--background-fetch-download-total-param="{{ totalSize }}"
+                {{ stimulus_target('capture', 'startButton') }}
+                {{ stimulus_action('@pwa/background-fetch', 'download', 'click', {id: 'videos', url: urls, title: 'Set of videos', downloadTotal: totalSize}) }}
             >
                 <twig:ux:icon name="ix:video-camera-record-filled" class="w-3.5 h-3.5 me-2" fill="currentColor" />
                 Download all
@@ -141,8 +137,7 @@
                         <a
                             class="btn btn-square btn-ghost"
                             href="{{ video.url }}"
-                            data-action="click->pwa--background-fetch#get"
-                            data-pwa--background-fetch-url-param="{{ video.url }}"
+                            {{ stimulus_action('@pwa/background-fetch', 'get', 'click', {url: video.url}) }}
                         >
                             <svg class="size-[1.2em]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"><path d="M6 3L20 12 6 21 6 3z"></path></g></svg>
                         </a>

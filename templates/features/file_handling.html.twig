@@ -7,7 +7,7 @@
     <section
         class="bg-white dark:bg-gray-900"
         data-controller="image"
-        {{ stimulus_action('image', 'addToList', 'pwa--file-handling:selected') }}
+        {{ stimulus_action('image', 'addToList', '@pwa/file-handling:selected') }}
     >
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -15,7 +15,7 @@
             </h2>
             <p
                 class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl"
-                data-controller="pwa--file-handling"
+                {{ stimulus_controller('@pwa/file-handling') }}
             >
                 The File Handling API enables web apps to register their ability to handle file types with the operating system. <br>
                 This enables the file manager of the OS or other operating system flows to use the web app to open the file, just like with a native app.  <br>
@@ -27,7 +27,7 @@
             <h2 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">Received files:</h2>
             <ul
                 class="space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400"
-                data-image-target="list"
+                {{ stimulus_target('image', 'list')}}
             >
             </ul>
         </div>
