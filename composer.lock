@@ -1205,12 +1205,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spomky-Labs/pwa-bundle.git",
-                "reference": "c7d85ca4b3de122d463f25c6397a696e6eebb404"
+                "reference": "af7b23fb4b59aefdee1f81c33ce818b723f53a35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spomky-Labs/pwa-bundle/zipball/c7d85ca4b3de122d463f25c6397a696e6eebb404",
-                "reference": "c7d85ca4b3de122d463f25c6397a696e6eebb404",
+                "url": "https://api.github.com/repos/Spomky-Labs/pwa-bundle/zipball/af7b23fb4b59aefdee1f81c33ce818b723f53a35",
+                "reference": "af7b23fb4b59aefdee1f81c33ce818b723f53a35",
                 "shasum": ""
             },
             "require": {
@@ -1230,35 +1230,18 @@
                 "twig/twig": "^3.8"
             },
             "require-dev": {
-                "dbrekelmans/bdi": "^1.1",
-                "ekino/phpstan-banned-code": "^1.0|^2.0|^3.0",
                 "ergebnis/phpunit-slow-test-detector": "^2.14",
-                "ext-sockets": "*",
-                "infection/infection": "^0.28|^0.29",
                 "matthiasnoback/symfony-config-test": "^5.1|^6.0",
                 "nelmio/security-bundle": "^3.0",
-                "php-parallel-lint/php-parallel-lint": "^1.4",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpdoc-parser": "^1.28|^2.0",
-                "phpstan/phpstan": "^1.0|^2.0",
-                "phpstan/phpstan-beberlei-assert": "^1.0|^2.0",
-                "phpstan/phpstan-deprecation-rules": "^1.0|^2.0",
-                "phpstan/phpstan-phpunit": "^1.4|^2.0",
-                "phpstan/phpstan-strict-rules": "^1.0|^2.0",
-                "phpstan/phpstan-symfony": "^1.4|^2.0",
-                "phpunit/phpunit": "^11.0|^12.0",
-                "rector/rector": "^1.0|^2.0-rc2",
-                "shipmonk/dead-code-detector": "^0.5.1|^0.6|^0.9|^0.10|^0.11|^0.12",
-                "staabm/phpstan-todo-by": "^0.1|^0.2",
-                "struggle-for-php/sfp-phpstan-psr-log": "^0.20|^0.21|^0.22|^0.23|^0.24",
+                "roave/security-advisories": "dev-latest",
+                "symfony/console": "^7.2",
                 "symfony/filesystem": "^6.4|^7.0",
                 "symfony/framework-bundle": "^6.4|^7.0",
                 "symfony/mime": "^6.4|^7.0",
                 "symfony/monolog-bundle": "^3.10",
                 "symfony/panther": "^2.1",
                 "symfony/translation": "^7.0",
-                "symfony/yaml": "^6.4|^7.0",
-                "symplify/easy-coding-standard": "^12.0"
+                "symfony/yaml": "^6.4|^7.0"
             },
             "suggest": {
                 "ext-gd": "Required to generate icons (or Imagick).",
@@ -1320,7 +1303,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2025-07-20T09:20:55+00:00"
+            "time": "2025-07-22T21:59:14+00:00"
         },
         {
             "name": "spomky-labs/web-push-bundle",
@@ -8284,16 +8267,16 @@
         },
         {
             "name": "phpstan/phpstan-symfony",
-            "version": "2.0.6",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-symfony.git",
-                "reference": "5005288e07583546ea00b52de4a9ac412eb869d7"
+                "reference": "392f7ab8f52a0a776977be4e62535358c28e1b15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-symfony/zipball/5005288e07583546ea00b52de4a9ac412eb869d7",
-                "reference": "5005288e07583546ea00b52de4a9ac412eb869d7",
+                "url": "https://api.github.com/repos/phpstan/phpstan-symfony/zipball/392f7ab8f52a0a776977be4e62535358c28e1b15",
+                "reference": "392f7ab8f52a0a776977be4e62535358c28e1b15",
                 "shasum": ""
             },
             "require": {
@@ -8349,9 +8332,9 @@
             "description": "Symfony Framework extensions and rules for PHPStan",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-symfony/issues",
-                "source": "https://github.com/phpstan/phpstan-symfony/tree/2.0.6"
+                "source": "https://github.com/phpstan/phpstan-symfony/tree/2.0.7"
             },
-            "time": "2025-05-14T07:00:05+00:00"
+            "time": "2025-07-22T09:40:57+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -8798,12 +8781,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "a83495adb19da6267c04116a55450ee786cf917d"
+                "reference": "0b1f127d644a2ff8af1c8bd2955dbe3c11812017"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a83495adb19da6267c04116a55450ee786cf917d",
-                "reference": "a83495adb19da6267c04116a55450ee786cf917d",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/0b1f127d644a2ff8af1c8bd2955dbe3c11812017",
+                "reference": "0b1f127d644a2ff8af1c8bd2955dbe3c11812017",
                 "shasum": ""
             },
             "conflict": {
@@ -9000,7 +8983,7 @@
                 "elefant/cms": "<2.0.7",
                 "elgg/elgg": "<3.3.24|>=4,<4.0.5",
                 "elijaa/phpmemcacheadmin": "<=1.3",
-                "elmsln/haxcms": "<11",
+                "elmsln/haxcms": "<11.0.8",
                 "encore/laravel-admin": "<=1.8.19",
                 "endroid/qr-code-bundle": "<3.4.2",
                 "enhavo/enhavo-app": "<=0.13.1",
@@ -9128,10 +9111,10 @@
                 "imdbphp/imdbphp": "<=5.1.1",
                 "impresscms/impresscms": "<=1.4.5",
                 "impresspages/impresspages": "<1.0.13",
-                "in2code/femanager": "<5.5.5|>=6,<6.4.1|>=7,<7.4.2|>=8,<8.2.2",
+                "in2code/femanager": "<6.4.2|>=7,<7.5.3|>=8,<8.3.1",
                 "in2code/ipandlanguageredirect": "<5.1.2",
                 "in2code/lux": "<17.6.1|>=18,<24.0.2",
-                "in2code/powermail": "<7.5.1|>=8,<8.5.1|>=9,<10.9.1|>=11,<12.4.1",
+                "in2code/powermail": "<7.5.1|>=8,<8.5.1|>=9,<10.9.1|>=11,<12.5.3|==13",
                 "innologi/typo3-appointments": "<2.0.6",
                 "intelliants/subrion": "<4.2.2",
                 "inter-mediator/inter-mediator": "==5.5",
@@ -9221,6 +9204,7 @@
                 "magneto/core": "<1.9.4.4-dev",
                 "maikuolan/phpmussel": ">=1,<1.6",
                 "mainwp/mainwp": "<=4.4.3.3",
+                "manogi/nova-tiptap": "<=3.2.6",
                 "mantisbt/mantisbt": "<=2.26.3",
                 "marcwillmann/turn": "<0.3.3",
                 "marshmallow/nova-tiptap": "<5.7",
@@ -9749,7 +9733,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-07-21T20:06:32+00:00"
+            "time": "2025-07-22T16:07:09+00:00"
         },
         {
             "name": "sebastian/cli-parser",

@@ -1,4 +1,5 @@
 pwa:
+    asset_compiler: false
     image_processor: 'pwa.image_processor.imagick'
     #image_processor: 'pwa.image_processor.gd'
     #logger: 'App\Service\PwaLogger'
