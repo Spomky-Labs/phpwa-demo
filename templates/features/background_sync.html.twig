@@ -28,7 +28,7 @@
                   max_retention_time: 7_200 # 5 days in minutes
                   force_sync_fallback: true #Optional
                   broadcast_channel: \'form-list\'' %}
-                <pre><code class="language-yaml" data-controller="code">{{ yaml|raw }}</code></pre>
+                <pre><code class="language-yaml" {{ stimulus_controller('code') }}>{{ yaml|raw }}</code></pre>
                 <p class="my-4 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
                     Then in your templates, you can use the Stimulus Controller <code>@pwa/backgroundsync-form</code> that will manage the request for you.
                 </p>
@@ -38,7 +38,7 @@
         Send!
     </button>
 </form>' %}
-                <pre><code class="language-html" data-controller="code">{{ html|escape('html')|raw }}</code></pre>
+                <pre><code class="language-html" {{ stimulus_controller('code') }}>{{ html|escape('html')|raw }}</code></pre>
                 <p class="my-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
                     When the broadcast channel is set, the number of requests in the queue can be known: an event is sent. <br>
                     Also, the queue can be replayed on-demand. <br>
@@ -47,8 +47,7 @@
                 <section class="mt-8 bg-white dark:bg-gray-900">
                     <div
                         class="px-4 mx-auto max-w-screen-xl text-center px-4"
-                        data-controller="bgs-queue"
-                        data-bgs-queue-channel-value="form-list"
+                        {{ stimulus_controller('bgs-queue', {channel: "form-list"}) }}
                     >
                         <div
                             class="flex items-center p-4 mb-4 text-sm border rounded-lg"
@@ -58,7 +57,7 @@
                                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
                             </svg>
                             <div>
-                                <span class="font-medium">Number of requests in the queue</span>: <span data-bgs-queue-target="output">--</span>
+                                <span class="font-medium">Number of requests in the queue</span>: <span {{ stimulus_target('bgs-queue', 'output')}}>--</span>
                             </div>
                             <button
                                 {{ stimulus_action('bgs-queue', 'replay') }}
@@ -77,7 +76,7 @@
                     It will be sent when you come back online.
                 </p>
                 <form
-                    data-controller="pwa--backgroundsync-form"
+                    {{ stimulus_controller('@pwa/backgroundsync-form') }}
                     action="{{ path('app_feature_background_sync_post') }}"
                     method="post"
                     class="max-w-sm mx-auto"
@@ -105,7 +104,7 @@
                     ></textarea>
 
                     <button
-                        data-action="pwa--backgroundsync-form#send"
+                        {{ stimulus_action('@pwa/backgroundsync-form', 'send') }}
                         type="submit"
                         class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800"
                     >

@@ -5,7 +5,7 @@
 {% block body %}
 <turbo-frame id="content">
     <section
-        data-controller="capture pwa--capture"
+        {{ stimulus_controller('capture')|stimulus_controller('@pwa/capture') }}
         class="bg-white dark:bg-gray-900"
     >
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
@@ -26,11 +26,8 @@
             <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
                 <button
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                    data-action="click->pwa--capture#capture"
-                    data-capture-target="startButton"
-                    data-pwa--capture-video-constraints-param="{&quot;width&quot;:{&quot;ideal&quot;:3440,&quot;max&quot;:3440},&quot;height&quot;:{&quot;ideal&quot;:1440},&quot;frameRate&quot;:{&quot;max&quot;:60}}"
-                    data-pwa--capture-audio-constraints-param="true"
-                    data-pwa--capture-prefer-current-tab-param="true"
+                    {{ stimulus_target('capture', 'startButton') }}
+                    {{ stimulus_action('@pwa/capture', 'capture', 'click', {videoConstraints: {width:{ideal:3440,max:3440},height:{ideal:1440},frameRate:{max:60}}, audioConstraints: true, preferCurrentTab: true}) }}
                 >
                     <twig:ux:icon name="ix:video-camera-record-filled" class="w-3.5 h-3.5 me-2" fill="currentColor" />
                     Capture now!
@@ -38,8 +35,8 @@
                 <button
                     hidden
                     class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800"
-                    data-capture-target="stopButton"
-                    data-action="click->pwa--capture#stop"
+                    {{ stimulus_target('capture', 'stopButton') }}
+                    {{ stimulus_action('@pwa/capture', 'stop') }}
                 >
                     <twig:ux:icon name="material-symbols:stop-circle-outline-rounded" class="w-3.5 h-3.5 me-2" fill="currentColor" />
                     Stop!
@@ -48,7 +45,7 @@
             <a
                 hidden="hidden"
                 class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-                data-capture-target="downloadButton"
+                {{ stimulus_target('capture', 'downloadButton')}}
                 href="#" download="capture.mp4"
             >
                 <twig:ux:icon name="fa6-solid:download" class="w-3.5 h-3.5 me-2" fill="currentColor" />
@@ -56,11 +53,11 @@
             </a>
             <video
                 hidden="hidden"
-                data-capture-target="destination"
+                {{ stimulus_target('capture', 'destination') }}
                 autoplay playsinline
             >
             </video>
-            <section class="capture" data-pwa--capture-target="region">
+            <section class="capture" {{ stimulus_target('@pwa/capture', 'region')}}>
                 <label for="element-capture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Captured area</label>
                 <textarea
                     id="element-capture"
@@ -73,12 +70,11 @@
                 Code example
             </h2>
             {% set button = '<button
-    data-action="click->pwa--capture#capture"
-    data-pwa--capture-prefer-current-tab-param="true"
+    {{ stimulus_action("@pwa/capture", "capture", "click", {preferCurrentTab: true}) }}
 >
     Start the capture
 </button>
-<section data-pwa--capture-target="region">
+<section {{ stimulus_target("@pwa/capture", "region") }}>
     <label for="element-capture" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Captured area</label>
     <textarea
         id="element-capture"
@@ -87,7 +83,7 @@
         rows="15"
     ></textarea>
 </section>' %}
-            <pre><code class="language-twig" data-controller="code">{{ button|escape('html')|raw }}</code></pre>
+            <pre><code class="language-twig" {{ stimulus_controller('code') }}>{{ button|escape('html')|raw }}</code></pre>
             <p class="mt-3 mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
                 On compatible browsers, when the button is clicked the user will be asked to select the screen to capture. <br>
                 It can be a browser tab, a specific application or an entire screen.

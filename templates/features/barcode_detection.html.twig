@@ -4,7 +4,7 @@
 
 {% block body %}
     <turbo-frame id="content">
-        <section class="bg-white dark:bg-gray-900" data-controller="barcode pwa--barcode-detection">
+        <section class="bg-white dark:bg-gray-900" {{ stimulus_controller('barcode')|stimulus_controller('@pwa/barcode-detection') }}>
             <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
                     Barcode detection
@@ -13,25 +13,25 @@
                     The Barcode Detection API is a modern browser API that allows web applications to detect barcodes, including QR codes, directly from images or video streams.
                 </p>
                 <button
-                    data-barcode-target="startButton"
-                    data-action="click->barcode#start"
+                    {{ stimulus_target('barcode', 'startButton') }}
+                    {{ stimulus_action('barcode', 'start', 'click') }}
                     class="btn btn-primary"
                 >Start detection
                 </button>
                 <button
-                    data-barcode-target="stopButton"
-                    data-action="click->barcode#stop"
+                    {{ stimulus_target('barcode', 'stopButton') }}
+                    {{ stimulus_action('barcode', 'stop', 'click') }}
                     class="btn btn-error"
                 >Stop
                 </button>
-                <div data-barcode-target="alert" hidden>
+                <div {{ stimulus_target('barcode', 'alert') }} hidden>
                     <div class="alert alert-error shadow-lg mb-4">
                         <span>Your browser does not support the Barcode Detection API.</span>
                     </div>
                 </div>
-                <video data-barcode-target="video" class="w-full" autoplay hidden></video>
-                <canvas data-barcode-target="canvas" hidden></canvas>
-                <img alt="Detection image" hidden data-barcode-target="snapshot" />
+                <video {{ stimulus_target('barcode', 'video') }} class="w-full" autoplay hidden></video>
+                <canvas {{ stimulus_target('barcode', 'canvas') }} hidden></canvas>
+                <img alt="Detection image" hidden {{ stimulus_target('barcode', 'snapshot') }} />
             </div>
         </section>
     </turbo-frame>

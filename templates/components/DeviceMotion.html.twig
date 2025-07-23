@@ -1,8 +1,8 @@
 <div{{ attributes }} class="p-6">
     <div
-        data-controller="motion pwa--device-motion"
-        {{ stimulus_action('motion', 'update', 'pwa--device-motion:updated') }}
-        {{ stimulus_action('motion', 'disable', 'pwa--device-motion:unavailable') }}
+        {{ stimulus_controller('motion')|stimulus_controller('@pwa/device-motion') }}
+        {{ stimulus_action('motion', 'update', '@pwa/device-motion:updated') }}
+        {{ stimulus_action('motion', 'disable', '@pwa/device-motion:unavailable') }}
     >
         <div class="rounded-md bg-yellow-50 p-4 hidden" {{ stimulus_target('motion', 'message')}}>
             <div class="flex">

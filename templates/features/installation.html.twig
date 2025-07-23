@@ -20,12 +20,12 @@
             </h2>
 {% set button = '<button
     hidden
-    data-controller="pwa--install"
-    data-action="click->pwa--install#install"
+    {{ stimulus_controller("@pwa/install") }}
+    {{ stimulus_action("@pwa/install", "install") }}
 >
     Install this app
 </button>' %}
-            <pre><code class="language-twig" data-controller="code">{{ button|escape('html')|raw }}</code></pre>
+            <pre><code class="language-twig" {{ stimulus_controller('code') }}>{{ button|escape('html')|raw }}</code></pre>
             <p class="mt-3 mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
                 On compatible browsers, a button will be displayed and trigger the installation of the web app.
                 If the application is already installed, or the browser does not support the feature, the button will be hidden.

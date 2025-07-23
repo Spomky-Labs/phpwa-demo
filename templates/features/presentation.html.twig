@@ -5,8 +5,7 @@
 {% block body %}
 <turbo-frame id="content">
     <section class="bg-white dark:bg-gray-900"
-             data-controller="pwa--presentation spotlight"
-             data-pwa--presentation-urls-value="{{ [url('app_feature_receiver')]|json_encode }}"
+        {{ stimulus_controller('@pwa/presentation', {urls: [url('app_feature_receiver')]})|stimulus_controller('spotlight') }}
     >
         <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
@@ -19,31 +18,29 @@
             </p>
             <button
                 class="px-4 py-2 text-white bg-blue-500 rounded hover:bg-blue-600"
-                data-action="click->pwa--presentation#start"
+                {{ stimulus_action('@pwa/presentation', 'start') }}
             >
                 Start
             </button>
             <button
                 class="px-4 py-2 text-white bg-red-500 rounded hover:bg-red-600"
-                data-action="click->pwa--presentation#terminate"
+                {{ stimulus_action('@pwa/presentation', 'terminate') }}
             >
                 Stop
             </button>
             <button
                 id="next"
                 class="px-4 py-2 text-white bg-green-500 rounded hover:bg-green-600"
-                data-action="click->pwa--presentation#send"
-                data-pwa--presentation-message-param="next"
-                data-spotlight-target="next"
+                {{ stimulus_action('@pwa/presentation', 'send', 'click', {message: 'next'}) }}
+                {{ stimulus_target('spotlight', 'next') }}
             >
                 Next
             </button>
             <button
                 id="previous"
                 class="px-4 py-2 text-white bg-yellow-500 rounded hover:bg-yellow-600"
-                data-action="click->pwa--presentation#send"
-                data-pwa--presentation-message-param="previous"
-                data-spotlight-target="previous"
+                {{ stimulus_action('@pwa/presentation', 'send', 'click', {message: 'previous'}) }}
+                {{ stimulus_target('spotlight', 'previous') }}
             >
                 Previous
             </button>

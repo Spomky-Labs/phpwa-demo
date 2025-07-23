@@ -1,20 +1,20 @@
 <div {{ attributes }}>
-    <div data-controller="lightbox">
-        <div class="hidden" data-lightbox-target="light">
-            <a class="boxclose" data-lightbox-action="close"></a>
-            <video data-lightbox-target="video" width="600" controls autoplay>
+    <div {{ stimulus_controller('lightbox') }}>
+        <div class="hidden" {{ stimulus_target('lightbox', 'light')}}>
+            <a class="boxclose" {{ stimulus_action('lightbox', 'close')}}></a>
+            <video {{ stimulus_target('lightbox', 'video')}} width="600" controls autoplay>
                 <source src="{{ src }}">
             </video>
         </div>
-        <div class="hidden" data-lightbox-target="fade" data-lightbox-action="close"></div>
+        <div class="hidden" {{ stimulus_target('lightbox', 'fade')}} {{ stimulus_action('lightbox', 'close')}}></div>
         <div>
             <button
                 type="button"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                data-action="click->lightbox#watch"
+                {{ stimulus_target('lightbox', 'watch')}}
             >
                 Play
-                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
             </button>

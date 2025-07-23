@@ -14,24 +14,24 @@
                 It is not limited to videos; you can use it for any DOM element.
             </p>
             <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
-                To use it, you need to add the <code>data-pwa--picture-in-picture-target="container"</code> attribute to the container element.
+                To use it, you need to add the <code>{{ stimulus_target("@pwa/picture-in-picture", "container") }}</code> attribute to the container element.
                 <br>
-                If the container element has a child with the <code>data-pwa--picture-in-picture-target="floating"</code> attribute,
+                If the container element has a child with the <code>{{ stimulus_target("@pwa/picture-in-picture", "floating") }}</code> attribute,
                 it will be displayed in the floating window. Otherwise, the first child will be used.
             </p>
             <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
                 If possible when the PIP window is closed, the floating element will be placed back in the container at the original position.
             </p>
-            {% set button = '<div data-controller="pwa--picture-in-picture">
+            {% set button = '<div {{ stimulus_controller("@pwa/picture-in-picture") }}>
     <button
         type="button"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-        data-action="click->pwa--picture-in-picture#toggle"
+        {{ stimulus_action("@pwa/picture-in-picture", "toggle") }}
     >
         Toggle Picture-in-Picture
     </button>
-    <div data-pwa--picture-in-picture-target="container">
-        <video class="w-full h-auto max-w-full" controls data-pwa--picture-in-picture-target="floating">
+    <div {{ stimulus_target("@pwa/picture-in-picture", "container") }}>
+        <video class="w-full h-auto max-w-full" controls {{ stimulus_target("@pwa/picture-in-picture", "floating") }}>
             <source src="..." type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -39,13 +39,13 @@
 </div>' %}
             <pre><code class="language-twig" data-controller="code">{{ button|escape('html')|raw }}</code></pre>
             <div
-                data-controller="pwa--picture-in-picture pip"
-                {{ stimulus_action('pip', 'disabled', 'pwa--picture-in-picture:unsupported') }}
+                {{ stimulus_controller('@pwa/picture-in-picture')|stimulus_controller('pip') }}
+                {{ stimulus_action('pip', 'disabled', '@pwa/picture-in-picture:unsupported') }}
             >
                 <button
                     type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                    data-action="click->pwa--picture-in-picture#toggle"
+                    {{ stimulus_action('@pwa/picture-in-picture', 'toggle') }}
                 >
                     Toggle Picture-in-Picture
                 </button>
@@ -64,8 +64,8 @@
                         </div>
                     </div>
                 </div>
-                <div data-pwa--picture-in-picture-target="container">
-                    <video class="w-full h-auto max-w-full" controls data-pwa--picture-in-picture-target="floating">
+                <div {{ stimulus_target('@pwa/picture-in-picture', 'container')}}>
+                    <video class="w-full h-auto max-w-full" controls {{ stimulus_target('@pwa/picture-in-picture', 'floating')}}>
                         <source src="{{ asset('videos/BigBuckBunny.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>

@@ -13,9 +13,8 @@
                     The Vibration API is a powerful tool that allows web developers to enhance user experience on mobile devices by enabling vibration functionality. This API provides a means for web applications to programmatically trigger vibrations, thereby making web interactions more tactile and engaging.
                 </p>
                 {% set button = '<button
-    data-controller="pwa--vibration"
-    data-action="pwa--vibration#vibrate"
-    data-pwa--vibration-pattern-param="[300,300,300,300,300,900,900,300,900,300,900,900,300,300,300,300,300]"
+    {{ stimulus_controller("@pwa/vibration") }}
+    {{ stimulus_action("@pwa/vibration", "vibrate", parameters={pattern: [300, 300, 300, 300, 300, 900, 900, 300, 900, 300, 900, 900, 300, 300, 300, 300, 300]}) }}
 >
 SOS
 </button>' %}

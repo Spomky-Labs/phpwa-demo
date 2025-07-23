@@ -30,7 +30,7 @@
                                 Downlink
                             </th>
                             <td class="px-6 py-4">
-                                <span data-network-information-target="downlink downlinkContent">...</span>&nbsp;Mbps
+                                <span {{ stimulus_target('network-information', 'downlink')stimulus_target('network-information', 'downlinkContent') }}>...</span>&nbsp;Mbps
                             </td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-800">
@@ -38,7 +38,7 @@
                                 Downlink max
                             </th>
                             <td class="px-6 py-4">
-                                <span data-network-information-target="downlinkMax downlinkMaxContent">...</span>&nbsp;Mbps
+                                <span {{ stimulus_target('network-information', 'downlinkMax')stimulus_target('network-information', 'downlinkMaxContent') }}>...</span>&nbsp;Mbps
                             </td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-800">
@@ -46,7 +46,7 @@
                                 Effective connection type
                             </th>
                             <td class="px-6 py-4">
-                                <span data-network-information-target="effectiveType effectiveTypeContent">...</span>
+                                <span {{ stimulus_target('network-information', 'effectiveType')stimulus_target('network-information', 'effectiveTypeContent') }}>...</span>
                             </td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-800">
@@ -54,7 +54,7 @@
                                 RTT
                             </th>
                             <td class="px-6 py-4">
-                                <span data-network-information-target="rtt rttContent">...</span>
+                                <span {{ stimulus_target('network-information', 'rtt')stimulus_target('network-information', 'rttContent') }}>...</span>
                             </td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-800">
@@ -62,7 +62,7 @@
                                 Save data
                             </th>
                             <td class="px-6 py-4">
-                                <span data-network-information-target="saveData saveDataContent">...</span>
+                                <span {{ stimulus_target('network-information', 'saveData')stimulus_target('network-information', 'saveDataContent') }}>...</span>
                             </td>
                         </tr>
                         <tr class="bg-white dark:bg-gray-800">
@@ -70,7 +70,7 @@
                                 Type
                             </th>
                             <td class="px-6 py-4">
-                                <span data-network-information-target="type typeContent">...</span>
+                                <span {{ stimulus_target('network-information', 'type')stimulus_target('network-information', 'typeContent') }}>...</span>
                             </td>
                         </tr>
                         </tbody>
