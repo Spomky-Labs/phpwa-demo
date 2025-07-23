@@ -77,6 +77,10 @@
                 "enabled": true,
                 "fetch": "eager"
             },
+            "service-worker": {
+                "enabled": true,
+                "fetch": "eager"
+            },
             "speech-synthesis": {
                 "enabled": true,
                 "fetch": "eager"

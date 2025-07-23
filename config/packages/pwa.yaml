@@ -85,7 +85,7 @@ pwa:
     serviceworker:
         enabled: true
         src: "sw.js"
-        skip_waiting: true
+        skip_waiting: false
         workbox:
             enabled: true
             offline_fallback:
