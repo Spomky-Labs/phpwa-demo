@@ -40,3 +40,4 @@ phpstan.neon
 ###< phpstan/phpstan ###
 
 /.castor.stub.php
+/bolt.db
