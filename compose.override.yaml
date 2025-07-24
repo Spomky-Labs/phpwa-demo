@@ -9,7 +9,7 @@ services:
       - ./frankenphp/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./frankenphp/conf.d/20-app.dev.ini:/usr/local/etc/php/app.conf.d/20-app.dev.ini:ro
       #- ./../phpwa:/app/vendor/spomky-labs/pwa-bundle:ro
-      #- ./frankenphp/certs:/etc/caddy/certs:ro
+      - ./frankenphp/certs:/etc/caddy/certs:ro
       # If you develop on Mac or Windows, you can remove the vendor/ directory
       #  from the bind-mount for better performance by enabling the next line:
       #- /app/vendor
@@ -20,6 +20,11 @@ services:
       XDEBUG_MODE: "${XDEBUG_MODE:-off}"
       CADDY_GLOBAL_OPTIONS: "debug"
       MAILER_DSN: smtp://mailer:1025
+      CADDY_SERVER_EXTRA_DIRECTIVES: |
+        tls /etc/caddy/certs/tls.pem /etc/caddy/certs/tls.key {
+          protocols tls1.3
+          ca_root /etc/caddy/certs/ca.pem
+        }
     extra_hosts:
       # Ensure that host.docker.internal is correctly defined on Linux
       - host.docker.internal:host-gateway
