@@ -21,6 +21,7 @@ composer.lock text eol=lf merge=ours
 /tests export-ignore
 /.env.dev export-ignore
 /.env.test export-ignore
+/.dockerignore export-ignore
 /.editorconfig export-ignore
 /.gitattributes export-ignore
 /.gitignore export-ignore

@@ -8,18 +8,9 @@ deptrac:
                 value: 'src/.*'
         - name: 'vendors'
           collectors:
-              - { type: classLike, value: '^Aws\\' }
-              - { type: classLike, value: '^League\\' }
-              - { type: classLike, value: '^Knp\\' }
-              - { type: classLike, value: '^Jose\\' }
-              - { type: classLike, value: '^KnpU\\' }
-              - { type: classLike, value: '^Stevenmaguire\\' }
-              - { type: classLike, value: '^Doctrine\\' }
-              - { type: classLike, value: '^Yceruto\\' }
+              - { type: classLike, value: '^SpomkyLabs\\' }
               - { type: classLike, value: '^Symfony\\' }
-              - { type: classLike, value: '^Twig\\' }
-              - { type: classLike, value: '^Psr\\' }
-              - { type: classLike, value: '^Zenstruck\\' }
+              - { type: classLike, value: '^WebPush\\' }
     ruleset:
         application:
             - 'vendors'
