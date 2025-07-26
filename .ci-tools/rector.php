@@ -33,9 +33,7 @@ $builder->withPaths(
         __DIR__ . '/rector.php',
     ]
 );
-$builder->withSkip([
-    PreferPHPUnitThisCallRector::class,
-]);
+$builder->withSkip([PreferPHPUnitThisCallRector::class]);
 $builder->withParallel();
 $builder->withImportNames();
 
