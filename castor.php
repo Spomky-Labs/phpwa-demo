@@ -5,114 +5,12 @@ declare(strict_types=1);
 use Castor\Attribute\AsRawTokens;
 use Castor\Attribute\AsTask;
 use function Castor\context;
+use function Castor\guard_min_version;
 use function Castor\io;
 use function Castor\notify;
 use function Castor\run;
-use function Castor\guard_min_version;
 
 guard_min_version('v0.23.0');
-
-#[AsTask(description: 'Run mutation testing.')]
-function infect(int $minMsi = 0, int $minCoveredMsi = 0, bool $ci = false): void
-{
-    io()->title('Running infection');
-    $nproc = run('nproc', context: context()->withQuiet());
-    if (! $nproc->isSuccessful()) {
-        io()->warning('Cannot determine the number of processors. Setting 1 thread.');
-        $threads = '1';
-    } else {
-        $threads = (int) $nproc->getOutput();
-    }
-    $command = [
-        'php',
-        'vendor/bin/infection',
-        sprintf('--min-msi=%s', $minMsi),
-        sprintf('--min-covered-msi=%s', $minCoveredMsi),
-        sprintf('--threads=%s', $threads),
-    ];
-    if ($ci) {
-        $command[] = '--logger-github';
-        $command[] = '-s';
-    }
-    $context = context();
-    $context->withEnvironment([
-        'XDEBUG_MODE' => 'coverage',
-    ]);
-    run($command, context: $context);
-}
-
-#[AsTask(description: 'Run PHPUnit tests.')]
-function test(bool $coverageHtml = false, bool $coverageText = false, null|string $group = null): void
-{
-    io()->title('Running tests');
-    $command = ['php', 'vendor/bin/phpunit', '--color'];
-    $context = context();
-    $context->withEnvironment([
-        'XDEBUG_MODE' => 'off',
-    ]);
-    if ($coverageHtml) {
-        $command[] = '--coverage-html=build/coverage';
-        $context->withEnvironment([
-            'XDEBUG_MODE' => 'coverage',
-        ]);
-    }
-    if ($coverageText) {
-        $command[] = '--coverage-text';
-        $context->withEnvironment([
-            'XDEBUG_MODE' => 'coverage',
-        ]);
-    }
-    if ($group !== null) {
-        $command[] = sprintf('--group=%s', $group);
-    }
-    run($command, context: $context);
-}
-
-#[AsTask(description: 'Coding standards check.')]
-function cs(bool $fix = false): void
-{
-    io()->title('Running coding standards check');
-    $command = ['php', 'vendor/bin/ecs', 'check'];
-    $context = context();
-    $context->withEnvironment([
-        'XDEBUG_MODE' => 'off',
-    ]);
-    if ($fix) {
-        $command[] = '--fix';
-    }
-    run($command, context: $context);
-}
-
-#[AsTask(description: 'Running PHPStan.')]
-function stan(bool $baseline = false): void
-{
-    io()->title('Running PHPStan');
-    $options = ['analyse'];
-    if ($baseline) {
-        $options[] = '--generate-baseline';
-    }
-    $command = ['php', 'vendor/bin/phpstan', ...$options];
-    $context = context();
-    $context->withEnvironment([
-        'XDEBUG_MODE' => 'off',
-    ]);
-    run($command, context: $context);
-}
-
-#[AsTask(description: 'Validate Composer configuration.')]
-function validate(): void
-{
-    io()->title('Validating Composer configuration');
-    $command = ['composer', 'validate', '--strict'];
-    $context = context();
-    $context->withEnvironment([
-        'XDEBUG_MODE' => 'off',
-    ]);
-    run($command, context: $context);
-
-    $command = ['composer', 'dump-autoload', '--optimize', '--strict-psr'];
-    run($command, context: $context);
-}
 
 /**
  * @param array<string> $allowedLicenses
@@ -134,7 +32,7 @@ function checkLicenses(
         io()->error('Cannot determine licenses');
         exit(1);
     }
-    $licenses = json_decode($result->getOutput(), true);
+    $licenses = json_decode((string) $result->getOutput(), true);
     $disallowed = array_filter(
         $licenses['dependencies'],
         static fn (array $info, $name) => ! in_array($name, $allowedExceptions, true)
@@ -174,33 +72,6 @@ function checkLicenses(
         ->success('All licenses are allowed');
 }
 
-#[AsTask(description: 'Run Rector to upgrade code.')]
-function rector(bool $fix = false): void
-{
-    io()->title('Running Rector');
-    $command = ['php', 'vendor/bin/rector', 'process', '--ansi'];
-    if (! $fix) {
-        $command[] = '--dry-run';
-    }
-    $context = context();
-    $context->withEnvironment([
-        'XDEBUG_MODE' => 'off',
-    ]);
-    run($command, context: $context);
-}
-
-#[AsTask(description: 'Run Deptrac to analyze dependencies.')]
-function deptrac(): void
-{
-    io()->title('Running Rector');
-    $command = ['php', 'vendor/bin/deptrac', 'analyse', '--fail-on-uncovered', '--no-cache'];
-    $context = context();
-    $context->withEnvironment([
-        'XDEBUG_MODE' => 'off',
-    ]);
-    run($command, context: $context);
-}
-
 #[AsTask(description: 'Restart the containers.')]
 function restart(): void
 {
@@ -237,7 +108,7 @@ function stop(): void
 function start(): void
 {
     run(['docker', 'compose', 'up', '-d']);
-    frontend(true);
+    frontend();
 }
 
 #[AsTask(description: 'Build the images.')]
@@ -247,17 +118,17 @@ function build(): void
 }
 
 #[AsTask(description: 'Compile the frontend.')]
-function frontend(bool $watch = false): void
+function frontend(): void
 {
     $consoleOutput = run(['bin/console'], context: context()->withQuiet());
     $commandsToRun = [
         'assets:install' => [],
         'importmap:install' => [],
-        'tailwind:build' => ['--watch'],
+        //'tailwind:build' => ['--watch'],
     ];
 
     foreach ($commandsToRun as $command => $arguments) {
-        if (str_contains($consoleOutput->getOutput(), $command)) {
+        if (str_contains((string) $consoleOutput->getOutput(), $command)) {
             php(['bin/console', $command, ...$arguments]);
         }
     }
@@ -278,7 +149,7 @@ function update(): void
     ];
 
     foreach ($commandsToRun as $command => $arguments) {
-        if (str_contains($consoleOutput->getOutput(), $command)) {
+        if (str_contains((string) $consoleOutput->getOutput(), $command)) {
             php(['bin/console', $command, ...$arguments]);
         }
     }
@@ -300,4 +171,123 @@ function console(#[AsRawTokens] array $args = []): void
 function php(#[AsRawTokens] array $args = []): void
 {
     run(['docker', 'compose', 'exec', '-T', 'php', ...$args]);
+}
+
+function phpqa(array $command, array $dockerOptions = []): void
+{
+    $inContainer = file_exists('/.dockerenv');
+    $hasDocker = trim((string) shell_exec('command -v docker')) !== '';
+
+    if (! $hasDocker || $inContainer) {
+        run($command);
+        return;
+    }
+
+    $defaultDockerOptions = [
+        '--rm',
+        '--init',
+        '-it',
+        '--user', sprintf('%s:%s', getmyuid(), getmygid()),
+        '--pull', 'always',
+        '-v', getcwd() . ':/project',
+        '-v', getcwd() . '/tmp-phpqa:/tmp',
+        '-w', '/project',
+        '-e', 'XDEBUG_MODE=off',
+    ];
+
+    run([
+        'docker', 'run',
+        ...$defaultDockerOptions,
+        ...$dockerOptions,
+        'ghcr.io/spomky-labs/phpqa:8.4',
+        ...$command,
+    ]);
+}
+
+#[AsTask(description: 'Run PHPUnit tests with coverage')]
+function phpunit(): void
+{
+    phpqa(
+        [
+            'phpunit',
+            '--coverage-xml', '.ci-tools/coverage',
+            '--log-junit=.ci-tools/coverage/junit.xml',
+            '--configuration', '.ci-tools/phpunit.xml.dist',
+        ],
+        ['-e', 'XDEBUG_MODE=coverage'] // Docker options supplémentaires
+    );
+}
+
+#[AsTask(description: 'Run Easy Coding Standard')]
+function ecs(): void
+{
+    phpqa(['ecs', 'check', '--config', '.ci-tools/ecs.php']);
+}
+
+#[AsTask(description: 'Fix coding style with Easy Coding Standard')]
+function ecs_fix(): void
+{
+    phpqa(['ecs', 'check', '--config', '.ci-tools/ecs.php', '--fix']);
+}
+
+#[AsTask(description: 'Run Rector dry-run')]
+function rector(): void
+{
+    phpqa(['rector', 'process', '--dry-run', '--config', '.ci-tools/rector.php']);
+}
+
+#[AsTask(description: 'Run Rector with fix')]
+function rector_fix(): void
+{
+    phpqa(['rector', 'process', '--config', '.ci-tools/rector.php']);
+}
+
+#[AsTask(description: 'Run PHPStan')]
+function phpstan(): void
+{
+    phpqa(['phpstan', 'analyse', '--error-format=github', '--configuration=.ci-tools/phpstan.neon']);
+}
+
+#[AsTask(description: 'Generate PHPStan baseline')]
+function phpstan_baseline(): void
+{
+    phpqa([
+        'phpstan', 'analyse',
+        '--configuration=.ci-tools/phpstan.neon',
+        '--generate-baseline=.ci-tools/phpstan-baseline.neon',
+    ]);
+}
+
+#[AsTask(description: 'Run Deptrac')]
+function deptrac(): void
+{
+    phpqa([
+        'deptrac',
+        '--config-file', '.ci-tools/deptrac.yaml',
+        '--report-uncovered',
+        '--report-skipped',
+        '--fail-on-uncovered',
+    ]);
+}
+
+#[AsTask(description: 'Run PHP parallel linter')]
+function lint(): void
+{
+    phpqa(['composer', 'exec', '--', 'parallel-lint', 'src', 'tests']);
+}
+
+#[AsTask(description: 'Run Infection for mutation testing')]
+function infect($minMsi = 0, $minCoveredMsi = 0): void
+{
+    phpqa([
+        'infection',
+        '--coverage=coverage',
+        sprintf('--min-msi=%d', $minMsi),
+        sprintf('--min-covered-msi=%d', $minCoveredMsi),
+        '--threads=max',
+        '--logger-github',
+        '-s',
+        '--filter=src/',
+        '--configuration=.ci-tools/infection.json.dist',
+    ], ['-e', 'XDEBUG_MODE=coverage']);
 }

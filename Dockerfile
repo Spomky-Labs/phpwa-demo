@@ -7,20 +7,20 @@ COPY --from=caddy:builder /usr/bin/xcaddy /usr/bin/xcaddy
 
 # CGO must be enabled to build FrankenPHP
 RUN CGO_ENABLED=1 \
-    XCADDY_SETCAP=1 \
-    XCADDY_GO_BUILD_FLAGS="-ldflags='-w -s' -tags=nobadger,nomysql,nopgx" \
-    CGO_CFLAGS=$(php-config --includes) \
-    CGO_LDFLAGS="$(php-config --ldflags) $(php-config --libs)" \
-    xcaddy build \
-        --output /usr/local/bin/frankenphp \
-        --with github.com/dunglas/frankenphp=./ \
-        --with github.com/dunglas/frankenphp/caddy=./caddy/ \
-        --with github.com/dunglas/caddy-cbrotli \
-        # Mercure and Vulcain are included in the official build, but feel free to remove them
-        --with github.com/dunglas/mercure/caddy \
-        --with github.com/dunglas/vulcain/caddy \
-        # Add extra Caddy modules here
-        --with github.com/corazawaf/coraza-caddy/v2
+	XCADDY_SETCAP=1 \
+	XCADDY_GO_BUILD_FLAGS="-ldflags='-w -s' -tags=nobadger,nomysql,nopgx" \
+	CGO_CFLAGS=$(php-config --includes) \
+	CGO_LDFLAGS="$(php-config --ldflags) $(php-config --libs)" \
+	xcaddy build \
+		--output /usr/local/bin/frankenphp \
+		--with github.com/dunglas/frankenphp=./ \
+		--with github.com/dunglas/frankenphp/caddy=./caddy/ \
+		--with github.com/dunglas/caddy-cbrotli \
+		# Mercure and Vulcain are included in the official build, but feel free to remove them
+		--with github.com/dunglas/mercure/caddy \
+		--with github.com/dunglas/vulcain/caddy \
+		# Add extra Caddy modules here
+		--with github.com/corazawaf/coraza-caddy/v2
 
 FROM dunglas/frankenphp:1 AS frankenphp_runner
 LABEL builder=true
@@ -49,38 +49,38 @@ VOLUME /app/var/
 # persistent / runtime deps
 # hadolint ignore=DL3008
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    acl \
-    file \
-    gettext \
-    git \
-    potrace \
-    && rm -rf /var/lib/apt/lists/*
+	acl \
+	file \
+	gettext \
+	git \
+	potrace \
+	&& rm -rf /var/lib/apt/lists/*
 
 RUN set -eux; \
-    install-php-extensions \
-        @composer \
-        apcu \
-        intl \
-        opcache \
-        zip \
-        pdo_pgsql \
-        gmp \
-        gd \
-        imagick \
-        amqp \
-        fileinfo \
-        iconv \
-        exif \
-        gettext \
-        sodium \
-        redis \
-        uuid \
-        xsl \
-        xml \
-        zip \
-        brotli \
-        zstd \
-    ;
+	install-php-extensions \
+		@composer \
+		apcu \
+		intl \
+		opcache \
+		zip \
+		pdo_pgsql \
+		gmp \
+		gd \
+		imagick \
+		amqp \
+		fileinfo \
+		iconv \
+		exif \
+		gettext \
+		sodium \
+		redis \
+		uuid \
+		xsl \
+		xml \
+		zip \
+		brotli \
+		zstd \
+	;
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
@@ -111,9 +111,9 @@ ENV APP_ENV=dev XDEBUG_MODE=off
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
 RUN set -eux; \
-    install-php-extensions \
-        xdebug \
-    ;
+	install-php-extensions \
+		xdebug \
+	;
 
 COPY --link frankenphp/conf.d/20-app.dev.ini $PHP_INI_DIR/app.conf.d/
 
@@ -134,19 +134,19 @@ COPY --link frankenphp/worker.Caddyfile /etc/caddy/worker.Caddyfile
 # prevent the reinstallation of vendors at every changes in the source code
 COPY --link composer.* symfony.* ./
 RUN set -eux; \
-    composer install --no-cache --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress
+	composer install --no-cache --prefer-dist --no-dev --no-autoloader --no-scripts --no-progress
 
 # copy sources
 COPY --link . ./
 RUN rm -Rf frankenphp/
 
 RUN set -eux; \
-    mkdir -p var/cache var/log; \
-    composer dump-autoload --classmap-authoritative --no-dev; \
-    composer dump-env prod; \
-    composer run-script --no-dev post-install-cmd; \
-    npm install && npm run build; \
-    chmod +x bin/console; sync; \
-    bin/console importmap:install --no-interaction; \
-    bin/console tailwind:build; \
-    bin/console asset-map:compile;
+	mkdir -p var/cache var/log; \
+	composer dump-autoload --classmap-authoritative --no-dev; \
+	composer dump-env prod; \
+	composer run-script --no-dev post-install-cmd; \
+	npm install && npm run build; \
+	chmod +x bin/console; sync; \
+	bin/console importmap:install --no-interaction; \
+	bin/console tailwind:build; \
+	bin/console asset-map:compile;

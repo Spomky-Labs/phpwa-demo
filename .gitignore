@@ -1,4 +1,3 @@
-
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -8,12 +7,6 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
-
-###> phpunit/phpunit ###
-/phpunit.xml
-/.phpunit.cache/
-###< phpunit/phpunit ###
-
 ###> symfony/phpunit-bridge ###
 .phpunit.result.cache
 /phpunit.xml
@@ -24,20 +17,17 @@
 /assets/vendor/
 ###< symfony/asset-mapper ###
 
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###
+
+/.castor.stub.php
+/bolt.db
 /public/idb
 /public/workbox
 /public/pwa
 /public/favicon.ico
 /public/sw.js.*
 /public/sw.js
-
-###> liip/imagine-bundle ###
-/public/media/cache/
-###< liip/imagine-bundle ###
-
-###> phpstan/phpstan ###
-phpstan.neon
-###< phpstan/phpstan ###
-
-/.castor.stub.php
-/bolt.db
+/.ci-tools/coverage
+/.ci-tools/.phpunit.cache

@@ -13,7 +13,6 @@ use Symfony\Component\Routing\Attribute\Route;
 final class RootController extends AbstractController
 {
     /**
-     * @param string $defaultLocale
      * @param array{string} $supportedLocales
      */
     public function __construct(
@@ -34,7 +33,6 @@ final class RootController extends AbstractController
             $request->getPreferredLanguage($this->supportedLocales) ??
             $this->defaultLocale
         ;
-
 
         return $this->redirectToRoute('app_homepage', [
             '_locale' => $locale,

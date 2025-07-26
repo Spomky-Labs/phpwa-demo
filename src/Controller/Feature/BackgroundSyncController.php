@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller\Feature;
 
 use SpomkyLabs\PwaBundle\Attribute\PreloadUrl;
@@ -10,9 +12,15 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class BackgroundSyncController extends AbstractController
 {
-    #[PreloadUrl('pages', ['_locale' => 'en_US'])]
-    #[PreloadUrl('pages', ['_locale' => 'fr_FR'])]
-    #[Route('/{_locale<%app.supported_locales_regex%>}/background-sync', name: 'app_feature_background_sync', methods: [Request::METHOD_GET])]
+    #[PreloadUrl('pages', [
+        '_locale' => 'en_US',
+    ])]
+    #[PreloadUrl('pages', [
+        '_locale' => 'fr_FR',
+    ])]
+    #[Route('/{_locale<%app.supported_locales_regex%>}/background-sync', name: 'app_feature_background_sync', methods: [
+        Request::METHOD_GET,
+    ])]
     public function __invoke(): Response
     {
         return $this->render('features/background_sync.html.twig');

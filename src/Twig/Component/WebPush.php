@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Twig\Component;
 
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
@@ -8,8 +10,8 @@ use Symfony\UX\LiveComponent\Attribute\LiveAction;
 use Symfony\UX\LiveComponent\Attribute\LiveArg;
 use Symfony\UX\LiveComponent\Attribute\LiveListener;
 use Symfony\UX\LiveComponent\Attribute\LiveProp;
-use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\LiveComponent\ComponentToolsTrait;
+use Symfony\UX\LiveComponent\DefaultActionTrait;
 use WebPush\Action;
 use WebPush\Message;
 use WebPush\Notification;
@@ -21,17 +23,17 @@ class WebPush
     use DefaultActionTrait;
     use ComponentToolsTrait;
 
-    public function __construct(
-        private readonly UrlGeneratorInterface $urlGenerator,
-        private readonly \WebPush\WebPush $webpushService
-    ) {
-    }
-
     #[LiveProp]
     public string $status = 'unknown';
 
     #[LiveProp]
     public ?string $subscription = null;
+
+    public function __construct(
+        private readonly UrlGeneratorInterface $urlGenerator,
+        private readonly \WebPush\WebPush $webpushService
+    ) {
+    }
 
     /**
      * @param array{auth: string, p256dh: string} $keys
@@ -39,9 +41,12 @@ class WebPush
      */
     #[LiveListener('subscribed')]
     public function onSubscription(
-        #[LiveArg] string $endpoint,
-        #[LiveArg] array $keys,
-        #[LiveArg] array $supportedContentEncodings
+        #[LiveArg]
+        string $endpoint,
+        #[LiveArg]
+        array $keys,
+        #[LiveArg]
+        array $supportedContentEncodings
     ): void {
         $this->status = 'subscribed';
         $this->subscription = json_encode([
@@ -52,14 +57,14 @@ class WebPush
     }
 
     #[LiveListener('unsubscribed')]
-    public function onUnsubscription(
-    ): void {
+    public function onUnsubscription(): void
+    {
         $this->status = 'unsubscribed';
     }
 
     #[LiveAction]
-    public function notify(
-    ): void {
+    public function notify(): void
+    {
         if ($this->subscription === null) {
             return;
         }
@@ -74,18 +79,24 @@ class WebPush
             ->unmute()
             ->auto()
             ->withData(json_encode([
-                'action1' => $this->urlGenerator->generate('app_feature_battery', referenceType: UrlGeneratorInterface::ABSOLUTE_URL),
-                'action2' => $this->urlGenerator->generate('app_feature_barcode_detection', referenceType: UrlGeneratorInterface::ABSOLUTE_URL),
+                'action1' => $this->urlGenerator->generate(
+                    'app_feature_battery',
+                    referenceType: UrlGeneratorInterface::ABSOLUTE_URL
+                ),
+                'action2' => $this->urlGenerator->generate(
+                    'app_feature_barcode_detection',
+                    referenceType: UrlGeneratorInterface::ABSOLUTE_URL
+                ),
                 'default' => 'https://github.com',
             ]))
-            ->withTimestamp(time()*1000)
+            ->withTimestamp(time() * 1000)
             ->addAction(Action::create('action1', 'Battery'))
             ->addAction(Action::create('action2', 'Barcode'));
-        ;
+
         $notification = Notification::create()
             ->withPayload($message->toString());
 
-        $statusReport = $this->webpushService->send($notification, $subscription);
+        $this->webpushService->send($notification, $subscription);
         // Check the status of the notification
     }
 }

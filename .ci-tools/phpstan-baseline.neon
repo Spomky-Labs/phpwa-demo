@@ -1,0 +1,1453 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Anonymous function should return string but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Bluegen/Client.php
+
+		-
+			message: '#^Cannot access offset ''exp'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: ../src/Bluegen/Client.php
+
+		-
+			message: '#^Cannot cast mixed to int\.$#'
+			identifier: cast.int
+			count: 1
+			path: ../src/Bluegen/Client.php
+
+		-
+			message: '#^Method App\\Bluegen\\Client\:\:chat\(\) should return array\{ai_response\: string\} but returns array\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Bluegen/Client.php
+
+		-
+			message: '#^Method App\\Bluegen\\Client\:\:generatePresignedUrl\(\) should return array\{presigned_url\: list\<string\>, folder\: string\} but returns array\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Bluegen/Client.php
+
+		-
+			message: '#^Parameter \#1 \$input of method Jose\\Component\\Signature\\Serializer\\CompactSerializer\:\:unserialize\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../src/Bluegen/Client.php
+
+		-
+			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../src/Bluegen/Client.php
+
+		-
+			message: '#^Method App\\Command\\Init\\CreateLocaux\:\:__invoke\(\) has parameter \$filename with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Command/Init/CreateLocaux.php
+
+		-
+			message: '#^Method App\\Command\\Init\\CreateLocaux\:\:__invoke\(\) has parameter \$filename with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Command/Init/CreateLocaux.php
+
+		-
+			message: '#^Binary operation "\." between ''Erreur de…'' and mixed results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 1
+			path: ../src/Command/Init/ImportGammeItems.php
+
+		-
+			message: '#^Call to an undefined method App\\DTO\\GammeItem\:\:getLibelle\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: ../src/Command/Init/ImportGammeItems.php
+
+		-
+			message: '#^Method App\\Command\\Init\\ImportGammeItems\:\:__invoke\(\) has parameter \$filename with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Command/Init/ImportGammeItems.php
+
+		-
+			message: '#^Method App\\Command\\Init\\ImportGammeItems\:\:__invoke\(\) has parameter \$filename with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Command/Init/ImportGammeItems.php
+
+		-
+			message: '#^Parameter \#1 \$message of method Symfony\\Component\\Console\\Style\\SymfonyStyle\:\:error\(\) expects array\|string, string\|Stringable given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../src/Command/Init/ImportGammeItems.php
+
+		-
+			message: '#^Method App\\Command\\Init\\ImportGammes\:\:__invoke\(\) has parameter \$filename with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Command/Init/ImportGammes.php
+
+		-
+			message: '#^Method App\\Command\\Init\\ImportGammes\:\:__invoke\(\) has parameter \$filename with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Command/Init/ImportGammes.php
+
+		-
+			message: '#^Class "App\\Controller\\Api\\SearchElementController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/Api/SearchElementController.php
+
+		-
+			message: '#^Class App\\Controller\\Api\\SearchElementController is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Controller/Api/SearchElementController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of function array_map expects \(callable\(mixed\)\: mixed\)\|null, Closure\(App\\Entity\\Element\)\: array\{id\: string, local\: string, code\: string\} given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../src/Controller/Api/SearchElementController.php
+
+		-
+			message: '#^Parameter \#2 \$array of function array_map expects array, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../src/Controller/Api/SearchElementController.php
+
+		-
+			message: '#^Should not use function "dump", please change the code\.$#'
+			identifier: ekinoBannedCode.function
+			count: 1
+			path: ../src/Controller/Api/SearchElementController.php
+
+		-
+			message: '#^Class "App\\Controller\\DashboardController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/DashboardController.php
+
+		-
+			message: '#^Class "App\\Controller\\HomepageController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/HomepageController.php
+
+		-
+			message: '#^Class "App\\Controller\\Intervention\\PreparationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/Intervention/PreparationController.php
+
+		-
+			message: '#^Match expression does not handle remaining value\: true$#'
+			identifier: match.unhandled
+			count: 1
+			path: ../src/Controller/Intervention/PreparationController.php
+
+		-
+			message: '#^Method App\\Controller\\Intervention\\PreparationController\:\:render\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../src/Controller/Intervention/PreparationController.php
+
+		-
+			message: '#^Method App\\Controller\\Intervention\\PreparationController\:\:render\(\) has parameter \$response with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Controller/Intervention/PreparationController.php
+
+		-
+			message: '#^Method App\\Controller\\Intervention\\PreparationController\:\:render\(\) has parameter \$response with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Controller/Intervention/PreparationController.php
+
+		-
+			message: '#^Should not use function "dd", please change the code\.$#'
+			identifier: ekinoBannedCode.function
+			count: 1
+			path: ../src/Controller/Intervention/PreparationController.php
+
+		-
+			message: '#^Class "App\\Controller\\Intervention\\RealisationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/Intervention/RealisationController.php
+
+		-
+			message: '#^Match expression does not handle remaining value\: true$#'
+			identifier: match.unhandled
+			count: 1
+			path: ../src/Controller/Intervention/RealisationController.php
+
+		-
+			message: '#^Method App\\Controller\\Intervention\\RealisationController\:\:render\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: ../src/Controller/Intervention/RealisationController.php
+
+		-
+			message: '#^Method App\\Controller\\Intervention\\RealisationController\:\:render\(\) has parameter \$response with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Controller/Intervention/RealisationController.php
+
+		-
+			message: '#^Method App\\Controller\\Intervention\\RealisationController\:\:render\(\) has parameter \$response with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Controller/Intervention/RealisationController.php
+
+		-
+			message: '#^Property App\\Controller\\Intervention\\RealisationController\:\:\$interventionFormHandler is never read, only written\.$#'
+			identifier: property.onlyWritten
+			count: 1
+			path: ../src/Controller/Intervention/RealisationController.php
+
+		-
+			message: '#^Class "App\\Controller\\Patrimoine\\SiteController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/Patrimoine/SiteController.php
+
+		-
+			message: '#^Class "App\\Controller\\RootController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/RootController.php
+
+		-
+			message: '#^Class "App\\Controller\\Security\\SecurityController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/Security/SecurityController.php
+
+		-
+			message: '#^Class App\\Controller\\Security\\SecurityController is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Controller/Security/SecurityController.php
+
+		-
+			message: '#^Class "App\\Controller\\ToBeDoneController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/ToBeDoneController.php
+
+		-
+			message: '#^Class "App\\Controller\\UseCasesController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/UseCasesController.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Local\:\:__construct\(\) has parameter \$dsdfIndisponibilite with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Local.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Local\:\:__construct\(\) has parameter \$niveauLocal with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Local.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Local\:\:__construct\(\) has parameter \$surface with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Local.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$chargeEauPRB with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$chargeEauPRH with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$chargeEauPV with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$chargeEauPVDdoce with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$cloisonParasismique with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$configurationEquipement with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$confinementDynamique with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$enContactAvecEnvironnement with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$epaisseur with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$exRepere with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteProtectionEnvironnement with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteSectorisationIncendieIndisponibilite with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteSectorisationIncendieSecurite with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteSectorisationInondationExterne with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteSectorisationRadiologique with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteSectorisationSecuriteVoieAB with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteSectorisationVapeur with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteSectorisationVentilation with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteSectorisationZoneRecueil with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$limiteZC with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$niveauInondationInterne with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$pao with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$pnm with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$requisCoupeFeuDirectivesIncendie with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$requisEtancheAuxFumeesFroides with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$requisEtancheiteEau with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$requisPareFlammeDirectivesIncendie with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$requisProjectiles with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$requisRadiologiquePalier with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$requisSismique with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Paroi\:\:__construct\(\) has parameter \$tenueStructurelle with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Paroi.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Traversee\:\:__construct\(\) has parameter \$chargeEau with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Traversee.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Traversee\:\:__construct\(\) has parameter \$diametre with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Traversee.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Traversee\:\:__construct\(\) has parameter \$hauteurLocal1 with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Traversee.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Traversee\:\:__construct\(\) has parameter \$hauteurLocal2 with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Traversee.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Traversee\:\:__construct\(\) has parameter \$largeur with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Traversee.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Traversee\:\:__construct\(\) has parameter \$longueur with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Traversee.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Traversee\:\:__construct\(\) has parameter \$requisCoupeFeu with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Traversee.php
+
+		-
+			message: '#^Method App\\DTO\\SMART\\Traversee\:\:__construct\(\) has parameter \$requisPareFlamme with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/SMART/Traversee.php
+
+		-
+			message: '#^Method App\\DTO\\Tranche\:\:__construct\(\) has parameter \$parent with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/DTO/Tranche.php
+
+		-
+			message: '#^Class "App\\DataFixtures\\AppFixtures" is not allowed to extend "Doctrine\\Bundle\\FixturesBundle\\Fixture"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/DataFixtures/AppFixtures.php
+
+		-
+			message: '#^Class App\\DataFixtures\\AppFixtures is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/DataFixtures/AppFixtures.php
+
+		-
+			message: '#^Method App\\Entity\\Element\:\:__construct\(\) has parameter \$equipementComplement with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Element.php
+
+		-
+			message: '#^Method App\\Entity\\Element\:\:__construct\(\) has parameter \$equipementComplementNumero with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Element.php
+
+		-
+			message: '#^Method App\\Entity\\Element\:\:generateCode\(\) has parameter \$complement with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Element.php
+
+		-
+			message: '#^Method App\\Entity\\Element\:\:generateCode\(\) has parameter \$complement with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Entity/Element.php
+
+		-
+			message: '#^Method App\\Entity\\Element\:\:generateCode\(\) has parameter \$complementNumero with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Element.php
+
+		-
+			message: '#^Method App\\Entity\\Element\:\:generateCode\(\) has parameter \$complementNumero with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Entity/Element.php
+
+		-
+			message: '#^Method App\\Entity\\GammeItem\:\:__construct\(\) has parameter \$elementCommentaire with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/GammeItem.php
+
+		-
+			message: '#^Method App\\Entity\\GammeItem\:\:__construct\(\) has parameter \$folioChapitre with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/GammeItem.php
+
+		-
+			message: '#^Method App\\Entity\\GammeItem\:\:__construct\(\) has parameter \$folioCommentaires with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/GammeItem.php
+
+		-
+			message: '#^Method App\\Entity\\GammeItem\:\:__construct\(\) has parameter \$folioTitre with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/GammeItem.php
+
+		-
+			message: '#^Method App\\Entity\\InspectedElement\:\:__construct\(\) has parameter \$elementCommentaire with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/InspectedElement.php
+
+		-
+			message: '#^Method App\\Entity\\InspectedElement\:\:__construct\(\) has parameter \$folioChapitre with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/InspectedElement.php
+
+		-
+			message: '#^Method App\\Entity\\InspectedElement\:\:__construct\(\) has parameter \$folioCommentaires with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/InspectedElement.php
+
+		-
+			message: '#^Method App\\Entity\\InspectedElement\:\:__construct\(\) has parameter \$folioTitre with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/InspectedElement.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$atex with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$dsdf with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$exRepere with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$hauteur with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$ilotSurvie with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$sprinkler with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$surface with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$zc with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$zfa with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$zoneRecueil with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Method App\\Entity\\Local\:\:__construct\(\) has parameter \$zoneVapeur with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/Local.php
+
+		-
+			message: '#^Constructor in App\\Entity\\User has parameter \$refreshToken with default value\.$#'
+			identifier: ergebnis.noConstructorParameterWithDefaultValue
+			count: 1
+			path: ../src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:__construct\(\) has parameter \$phoneNumber with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:__construct\(\) has parameter \$refreshToken with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:__construct\(\) has parameter \$refreshToken with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:fromResourceOwner\(\) has parameter \$refreshToken with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/User.php
+
+		-
+			message: '#^Method App\\Entity\\User\:\:updateFromResourceOwner\(\) has parameter \$refreshToken with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Entity/User.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\InterventionData is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/InterventionData.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\InterventionFormHandler is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/InterventionFormHandler.php
+
+		-
+			message: '#^Method App\\Form\\Intervention\\InterventionFormHandler\:\:createForm\(\) has parameter \$data with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Form/Intervention/InterventionFormHandler.php
+
+		-
+			message: '#^Method App\\Form\\Intervention\\InterventionFormHandler\:\:createForm\(\) has parameter \$data with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Form/Intervention/InterventionFormHandler.php
+
+		-
+			message: '#^Method App\\Form\\Intervention\\InterventionFormHandler\:\:createForm\(\) return type with generic interface Symfony\\Component\\Form\\FormInterface does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/InterventionFormHandler.php
+
+		-
+			message: '#^Method App\\Form\\Intervention\\InterventionFormHandler\:\:handleRequest\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Form/Intervention/InterventionFormHandler.php
+
+		-
+			message: '#^Method App\\Form\\Intervention\\InterventionFormHandler\:\:handleRequest\(\) has parameter \$form with generic interface Symfony\\Component\\Form\\FormInterface but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/InterventionFormHandler.php
+
+		-
+			message: '#^Method App\\Form\\Intervention\\InterventionFormHandler\:\:handleRequest\(\) should return App\\Form\\Intervention\\InterventionData\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Form/Intervention/InterventionFormHandler.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\InterventionNavigatorType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/InterventionNavigatorType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\InterventionNavigatorType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/InterventionNavigatorType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\InterventionNavigatorType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/InterventionNavigatorType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\InterventionType" is not allowed to extend "Yceruto\\FormFlowBundle\\Form\\Flow\\AbstractFlowType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/InterventionType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\InterventionType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/InterventionType.php
+
+		-
+			message: '#^Method Yceruto\\FormFlowBundle\\Form\\Flow\\FormFlowBuilderInterface\:\:addStep\(\) is invoked with named argument for parameter \$skip\.$#'
+			identifier: ergebnis.noNamedArgument
+			count: 1
+			path: ../src/Form/Intervention/InterventionType.php
+
+		-
+			message: '#^Parameter \#1 \$builder \(Yceruto\\FormFlowBundle\\Form\\Flow\\FormFlowBuilderInterface\) of method App\\Form\\Intervention\\InterventionType\:\:buildForm\(\) should be contravariant with parameter \$builder \(Symfony\\Component\\Form\\FormBuilderInterface\<mixed\>\) of method Symfony\\Component\\Form\\AbstractType\<mixed\>\:\:buildForm\(\)$#'
+			identifier: method.childParameterType
+			count: 1
+			path: ../src/Form/Intervention/InterventionType.php
+
+		-
+			message: '#^Parameter \#1 \$builder \(Yceruto\\FormFlowBundle\\Form\\Flow\\FormFlowBuilderInterface\) of method App\\Form\\Intervention\\InterventionType\:\:buildForm\(\) should be contravariant with parameter \$builder \(Symfony\\Component\\Form\\FormBuilderInterface\<mixed\>\) of method Symfony\\Component\\Form\\FormTypeInterface\<mixed\>\:\:buildForm\(\)$#'
+			identifier: method.childParameterType
+			count: 2
+			path: ../src/Form/Intervention/InterventionType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\Steps\\DetailType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/Steps/DetailType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\DetailType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/Steps/DetailType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\DetailType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/Steps/DetailType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\Steps\\GammeType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/Steps/GammeType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\GammeType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/Steps/GammeType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\GammeType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/Steps/GammeType.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>id" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: ../src/Form/Intervention/Steps/GammeType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\Steps\\ImportType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/Steps/ImportType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\ImportType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/Steps/ImportType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\ImportType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/Steps/ImportType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\Steps\\InspectorType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/Steps/InspectorType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\InspectorType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/Steps/InspectorType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\InspectorType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/Steps/InspectorType.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>id" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: ../src/Form/Intervention/Steps/InspectorType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\Steps\\PatrimoineType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/Steps/PatrimoineType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\PatrimoineType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/Steps/PatrimoineType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\PatrimoineType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/Steps/PatrimoineType.php
+
+		-
+			message: '#^Construct empty\(\) is not allowed\. Use more strict comparison\.$#'
+			identifier: empty.notAllowed
+			count: 1
+			path: ../src/Form/Intervention/Steps/PatrimoineType.php
+
+		-
+			message: '#^Parameter \#1 \$id of method App\\Repository\\ElementRepository\:\:findWithLocal\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../src/Form/Intervention/Steps/PatrimoineType.php
+
+		-
+			message: '#^Short ternary operator is not allowed\. Use null coalesce operator if applicable or consider using long ternary\.$#'
+			identifier: ternary.shortNotAllowed
+			count: 2
+			path: ../src/Form/Intervention/Steps/PatrimoineType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\Steps\\ReviewType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/Steps/ReviewType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\ReviewType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/Steps/ReviewType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\ReviewType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/Steps/ReviewType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\Steps\\SiteType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/Steps/SiteType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\SiteType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/Steps/SiteType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\SiteType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/Steps/SiteType.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>id" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: ../src/Form/Intervention/Steps/SiteType.php
+
+		-
+			message: '#^Class "App\\Form\\Intervention\\Steps\\TrancheType" is not allowed to extend "Symfony\\Component\\Form\\AbstractType"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Form/Intervention/Steps/TrancheType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\TrancheType extends generic class Symfony\\Component\\Form\\AbstractType but does not specify its types\: TData$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Form/Intervention/Steps/TrancheType.php
+
+		-
+			message: '#^Class App\\Form\\Intervention\\Steps\\TrancheType is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Form/Intervention/Steps/TrancheType.php
+
+		-
+			message: '#^Using nullsafe property access "\?\-\>id" on left side of \?\? is unnecessary\. Use \-\> instead\.$#'
+			identifier: nullsafe.neverNull
+			count: 1
+			path: ../src/Form/Intervention/Steps/TrancheType.php
+
+		-
+			message: '#^Class "App\\Kernel" is not allowed to extend "Symfony\\Component\\HttpKernel\\Kernel"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Kernel.php
+
+		-
+			message: '#^Class App\\Kernel is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Kernel.php
+
+		-
+			message: '#^Parameter \#1 \$locale of method Symfony\\Component\\HttpFoundation\\Request\:\:setLocale\(\) expects string, mixed given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../src/Listener/StickyLocale.php
+
+		-
+			message: '#^Parameter \#1 \$child of method Knp\\Menu\\ItemInterface\:\:addChild\(\) expects Knp\\Menu\\ItemInterface\|string, Symfony\\Component\\Translation\\TranslatableMessage given\.$#'
+			identifier: argument.type
+			count: 6
+			path: ../src/Menu/MenuBuilder.php
+
+		-
+			message: '#^Class App\\Message\\Command\\Site\\CreateSite is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Message/Command/Site/CreateSite.php
+
+		-
+			message: '#^Class App\\Message\\Command\\Site\\UpdateSiteCode is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Message/Command/Site/UpdateSiteCode.php
+
+		-
+			message: '#^Class App\\Message\\Command\\Site\\UpdateSiteName is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Message/Command/Site/UpdateSiteName.php
+
+		-
+			message: '#^Class App\\Message\\Command\\Tranche\\CreateTranche is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Message/Command/Tranche/CreateTranche.php
+
+		-
+			message: '#^Anonymous function should return App\\Entity\\ExigenceFonctionnelle but returns App\\Entity\\ExigenceFonctionnelle\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/MessageHandler/Command/Gamme/CreateGammeItemHandler.php
+
+		-
+			message: '#^Anonymous function should return App\\Entity\\Fmgc but returns App\\Entity\\Fmgc\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/MessageHandler/Command/Gamme/CreateGammeItemHandler.php
+
+		-
+			message: '#^Method App\\MessageHandler\\Command\\Gamme\\CreateGammeItemHandler\:\:findExigencesFonctionnelles\(\) should return list\<App\\Entity\\ExigenceFonctionnelle\> but returns array\<int\<0, max\>, App\\Entity\\ExigenceFonctionnelle\>\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/MessageHandler/Command/Gamme/CreateGammeItemHandler.php
+
+		-
+			message: '#^Method App\\MessageHandler\\Command\\Gamme\\CreateGammeItemHandler\:\:findFmgcs\(\) should return list\<App\\Entity\\Fmgc\> but returns array\<int\<0, max\>, App\\Entity\\Fmgc\>\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/MessageHandler/Command/Gamme/CreateGammeItemHandler.php
+
+		-
+			message: '#^Only booleans are allowed in a ternary operator condition, int\|false given\.$#'
+			identifier: ternary.condNotBoolean
+			count: 1
+			path: ../src/MessageHandler/Command/Gamme/CreateGammeItemHandler.php
+
+		-
+			message: '#^Method App\\MessageHandler\\Command\\Paroi\\CreateParoiHandler\:\:findLocal\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/MessageHandler/Command/Paroi/CreateParoiHandler.php
+
+		-
+			message: '#^Method App\\MessageHandler\\Command\\Traversees\\CreateTraverseeHandler\:\:findLocal\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/MessageHandler/Command/Traversees/CreateTraverseeHandler.php
+
+		-
+			message: '#^Parameter \#2 \$local of method App\\MessageHandler\\Command\\Traversees\\CreateTraverseeHandler\:\:processTraversee\(\) expects App\\Entity\\Local, App\\Entity\\Local\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: ../src/MessageHandler/Command/Traversees/CreateTraverseeHandler.php
+
+		-
+			message: '#^Class "App\\Repository\\ElementRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/ElementRepository.php
+
+		-
+			message: '#^Class App\\Repository\\ElementRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/ElementRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ElementRepository\:\:findPaginated\(\) should return Doctrine\\ORM\\Tools\\Pagination\\Paginator\<App\\Entity\\Element\> but returns Doctrine\\ORM\\Tools\\Pagination\\Paginator\<mixed\>\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Repository/ElementRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ElementRepository\:\:findWithLocal\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/ElementRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ElementRepository\:\:findWithLocal\(\) should return App\\Entity\\Element\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Repository/ElementRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ElementRepository\:\:searchElements\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: ../src/Repository/ElementRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\ExigenceFonctionnelleRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/ExigenceFonctionnelleRepository.php
+
+		-
+			message: '#^Class App\\Repository\\ExigenceFonctionnelleRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/ExigenceFonctionnelleRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ExigenceFonctionnelleRepository\:\:findOneByReference\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/ExigenceFonctionnelleRepository.php
+
+		-
+			message: '#^Method App\\Repository\\ExigenceFonctionnelleRepository\:\:findOneByReference\(\) should return App\\Entity\\ExigenceFonctionnelle\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Repository/ExigenceFonctionnelleRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\FmgcRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/FmgcRepository.php
+
+		-
+			message: '#^Class App\\Repository\\FmgcRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/FmgcRepository.php
+
+		-
+			message: '#^Method App\\Repository\\FmgcRepository\:\:findOneByReference\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/FmgcRepository.php
+
+		-
+			message: '#^Method App\\Repository\\FmgcRepository\:\:findOneByReference\(\) should return App\\Entity\\Fmgc\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Repository/FmgcRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\GammeItemRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/GammeItemRepository.php
+
+		-
+			message: '#^Class App\\Repository\\GammeItemRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/GammeItemRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\GammeRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/GammeRepository.php
+
+		-
+			message: '#^Class App\\Repository\\GammeRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/GammeRepository.php
+
+		-
+			message: '#^Method App\\Repository\\GammeRepository\:\:findOneByRduAndIndice\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/GammeRepository.php
+
+		-
+			message: '#^Method App\\Repository\\GammeRepository\:\:findOneByRduAndIndice\(\) should return App\\Entity\\Gamme\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Repository/GammeRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\InspectedElementRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/InspectedElementRepository.php
+
+		-
+			message: '#^Class App\\Repository\\InspectedElementRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/InspectedElementRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\InterventionRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/InterventionRepository.php
+
+		-
+			message: '#^Class App\\Repository\\InterventionRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/InterventionRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\LocalRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/LocalRepository.php
+
+		-
+			message: '#^Class App\\Repository\\LocalRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/LocalRepository.php
+
+		-
+			message: '#^Method App\\Repository\\LocalRepository\:\:findOneByCode\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/LocalRepository.php
+
+		-
+			message: '#^Method App\\Repository\\LocalRepository\:\:findOneByCode\(\) should return App\\Entity\\Local\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Repository/LocalRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\SiteRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/SiteRepository.php
+
+		-
+			message: '#^Class App\\Repository\\SiteRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/SiteRepository.php
+
+		-
+			message: '#^Method App\\Repository\\SiteRepository\:\:findAllOrdered\(\) should return array\<App\\Entity\\Site\> but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Repository/SiteRepository.php
+
+		-
+			message: '#^Method App\\Repository\\SiteRepository\:\:findOneByCode\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/SiteRepository.php
+
+		-
+			message: '#^Method App\\Repository\\SiteRepository\:\:findOneById\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/SiteRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\TrancheRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/TrancheRepository.php
+
+		-
+			message: '#^Class App\\Repository\\TrancheRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/TrancheRepository.php
+
+		-
+			message: '#^Method App\\Repository\\TrancheRepository\:\:findOneByCode\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/TrancheRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\UserRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/UserRepository.php
+
+		-
+			message: '#^Class App\\Repository\\UserRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/UserRepository.php
+
+		-
+			message: '#^Method App\\Repository\\UserRepository\:\:findOneById\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/UserRepository.php
+
+		-
+			message: '#^Method App\\Repository\\UserRepository\:\:findOneByUsername\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/UserRepository.php
+
+		-
+			message: '#^Class "App\\Repository\\VolumeRepository" is not allowed to extend "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Repository/VolumeRepository.php
+
+		-
+			message: '#^Class App\\Repository\\VolumeRepository is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Repository/VolumeRepository.php
+
+		-
+			message: '#^Method App\\Repository\\VolumeRepository\:\:findOneByCode\(\) has a nullable return type declaration\.$#'
+			identifier: ergebnis.noNullableReturnTypeDeclaration
+			count: 1
+			path: ../src/Repository/VolumeRepository.php
+
+		-
+			message: '#^Method App\\Repository\\VolumeRepository\:\:findOneByCode\(\) should return App\\Entity\\Volume\|null but returns mixed\.$#'
+			identifier: return.type
+			count: 1
+			path: ../src/Repository/VolumeRepository.php
+
+		-
+			message: '#^Class App\\Schedule is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Schedule.php
+
+		-
+			message: '#^Class "App\\Security\\KeycloakAuthenticator" is not allowed to extend "KnpU\\OAuth2ClientBundle\\Security\\Authenticator\\OAuth2Authenticator"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Security/KeycloakAuthenticator.php
+
+		-
+			message: '#^Method App\\Security\\KeycloakAuthenticator\:\:start\(\) has parameter \$authException with a nullable type declaration\.$#'
+			identifier: ergebnis.noParameterWithNullableTypeDeclaration
+			count: 1
+			path: ../src/Security/KeycloakAuthenticator.php
+
+		-
+			message: '#^Method App\\Security\\KeycloakAuthenticator\:\:start\(\) has parameter \$authException with null as default value\.$#'
+			identifier: ergebnis.noParameterWithNullDefaultValue
+			count: 1
+			path: ../src/Security/KeycloakAuthenticator.php
+
+		-
+			message: '#^Only booleans are allowed in a negated boolean, App\\Entity\\User\|null given\.$#'
+			identifier: booleanNot.exprNotBoolean
+			count: 1
+			path: ../src/Security/KeycloakAuthenticator.php
+
+		-
+			message: '#^Class "App\\Story\\AppStory" is not allowed to extend "Zenstruck\\Foundry\\Story"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Story/AppStory.php
+
+		-
+			message: '#^Class App\\Twig\\Components\\ElementOverview uses generic trait App\\Twig\\Components\\LivePaginationTrait but does not specify its types\: T$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Twig/Components/ElementOverview.php
+
+		-
+			message: '#^Method App\\Twig\\Components\\ElementOverview\:\:getPaginated\(\) return type with generic class Doctrine\\ORM\\Tools\\Pagination\\Paginator does not specify its types\: T$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Twig/Components/ElementOverview.php
+
+		-
+			message: '#^Property App\\Twig\\Components\\ElementOverview\:\:\$paginator \(Doctrine\\ORM\\Tools\\Pagination\\Paginator\<object\>\|list\<object\>\|null\) does not accept Doctrine\\ORM\\Tools\\Pagination\\Paginator\<App\\Entity\\Element\>\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: ../src/Twig/Components/ElementOverview.php
+
+		-
+			message: '#^Return type \(Doctrine\\ORM\\Tools\\Pagination\\Paginator\) of method App\\Twig\\Components\\ElementOverview\:\:getPaginated\(\) should be covariant with return type \(Doctrine\\ORM\\Tools\\Pagination\\Paginator\<object\>\|list\<object\>\) of method App\\Twig\\Components\\LivePaginationTrait\:\:getPaginated\(\)$#'
+			identifier: method.childReturnType
+			count: 1
+			path: ../src/Twig/Components/ElementOverview.php
+
+		-
+			message: '#^Class App\\Twig\\Components\\FormWidget has an uninitialized property \$form\. Give it default value or assign it in the constructor\.$#'
+			identifier: property.uninitialized
+			count: 1
+			path: ../src/Twig/Components/FormWidget.php
+
+		-
+			message: '#^Class App\\Twig\\Components\\FormWidgetCheckbox has an uninitialized property \$form\. Give it default value or assign it in the constructor\.$#'
+			identifier: property.uninitialized
+			count: 1
+			path: ../src/Twig/Components/FormWidgetCheckbox.php
+
+		-
+			message: '#^Class App\\Twig\\Components\\FormWidgetSelect has an uninitialized property \$form\. Give it default value or assign it in the constructor\.$#'
+			identifier: property.uninitialized
+			count: 1
+			path: ../src/Twig/Components/FormWidgetSelect.php
+
+		-
+			message: '#^Short ternary operator is not allowed\. Use null coalesce operator if applicable or consider using long ternary\.$#'
+			identifier: ternary.shortNotAllowed
+			count: 1
+			path: ../src/Twig/Components/InterventionWizard.php
+
+		-
+			message: '#^Class App\\Twig\\Components\\LiveCollectionRow has an uninitialized property \$row\. Give it default value or assign it in the constructor\.$#'
+			identifier: property.uninitialized
+			count: 1
+			path: ../src/Twig/Components/LiveCollectionRow.php
+
+		-
+			message: '#^Class App\\Twig\\Components\\Pagination has an uninitialized property \$paginator\. Give it default value or assign it in the constructor\.$#'
+			identifier: property.uninitialized
+			count: 1
+			path: ../src/Twig/Components/Pagination.php
+
+		-
+			message: '#^Method App\\Twig\\Components\\Pagination\:\:getPagination\(\) return type with generic class Doctrine\\ORM\\Tools\\Pagination\\Paginator does not specify its types\: T$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Twig/Components/Pagination.php
+
+		-
+			message: '#^Property App\\Twig\\Components\\Pagination\:\:\$paginator with generic class Doctrine\\ORM\\Tools\\Pagination\\Paginator does not specify its types\: T$#'
+			identifier: missingType.generics
+			count: 1
+			path: ../src/Twig/Components/Pagination.php

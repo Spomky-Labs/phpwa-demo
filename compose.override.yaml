@@ -8,7 +8,7 @@ services:
       - ./:/app
       - ./frankenphp/Caddyfile:/etc/caddy/Caddyfile:ro
       - ./frankenphp/conf.d/20-app.dev.ini:/usr/local/etc/php/app.conf.d/20-app.dev.ini:ro
-      #- ./../phpwa:/app/vendor/spomky-labs/pwa-bundle:ro
+      - ./../phpwa:/app/vendor/spomky-labs/pwa-bundle:ro
       - ./frankenphp/certs:/etc/caddy/certs:ro
       # If you develop on Mac or Windows, you can remove the vendor/ directory
       #  from the bind-mount for better performance by enabling the next line:
@@ -29,6 +29,6 @@ services:
       # Ensure that host.docker.internal is correctly defined on Linux
       - host.docker.internal:host-gateway
     tty: true
-    
+
 ###> symfony/mercure-bundle ###
 ###< symfony/mercure-bundle ###

@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace App\Tests;
 
+use Ergebnis\PHPUnit\SlowTestDetector\Attribute\MaximumDuration;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class HomepageTest extends WebTestCase
 {
     #[Test]
+    #[MaximumDuration(2000)]
     public function theRootControllerRedirectsToTheUserLocale(): void
     {
         //Given
@@ -32,6 +34,6 @@ class HomepageTest extends WebTestCase
         $crawler = $client->request('GET', '/en_US');
 
         //Then
-        self::assertGreaterThan(0, $crawler->filter('html:contains("app.name")')->count());
+        static::assertGreaterThan(0, $crawler->filter('html:contains("app.name")')->count());
     }
 }

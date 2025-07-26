@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Tests;
 
 use Symfony\Component\Translation\MessageCatalogueInterface;
@@ -19,7 +21,7 @@ final readonly class NoTranslator implements TranslatorInterface, TranslatorBagI
 
     public function trans(string $id, array $parameters = [], ?string $domain = null, ?string $locale = null): string
     {
-        if ($domain === 'routes'){
+        if ($domain === 'routes') {
             return $this->translator->trans($id, $parameters, $domain, $locale);
         }
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\PreloadGenerator;
 
 use SpomkyLabs\PwaBundle\CachingStrategy\PreloadUrlsGeneratorInterface;
@@ -19,7 +21,8 @@ final class StaticPagesUrlPreloadGenerator implements PreloadUrlsGeneratorInterf
     public function __construct(
         #[Autowire('%kernel.enabled_locales%')]
         private readonly array $locales,
-    ){}
+    ) {
+    }
 
     public function getAlias(): string
     {
@@ -31,14 +34,11 @@ final class StaticPagesUrlPreloadGenerator implements PreloadUrlsGeneratorInterf
      */
     public function generateUrls(): iterable
     {
-        if (null === $this->urls) {
+        if ($this->urls === null) {
             foreach ($this->locales as $locale) {
-                $this->urls[] = Url::create(
-                    'app_homepage',
-                    [
-                        '_locale' => $locale,
-                    ]
-                );
+                $this->urls[] = Url::create('app_homepage', [
+                    '_locale' => $locale,
+                ]);
             }
         }
 

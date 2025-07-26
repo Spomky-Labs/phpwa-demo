@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,8 +16,12 @@ class ProtocolHandlerController extends AbstractController
     public function __invoke(Request $request): Response
     {
         return match (true) {
-            str_starts_with($request->query->get('type'), 'web+pwabundle://geolocation') => $this->redirectToRoute('app_feature_geolocation'),
-            str_starts_with($request->query->get('type'), 'web+pwabundle://screen-capturing') => $this->redirectToRoute('app_feature_screen_capture'),
+            str_starts_with($request->query->get('type'), 'web+pwabundle://geolocation') => $this->redirectToRoute(
+                'app_feature_geolocation'
+            ),
+            str_starts_with($request->query->get('type'), 'web+pwabundle://screen-capturing') => $this->redirectToRoute(
+                'app_feature_screen_capture'
+            ),
             default => throw $this->createNotFoundException(),
         };
     }

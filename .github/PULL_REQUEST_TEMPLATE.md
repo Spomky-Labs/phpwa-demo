@@ -1,18 +1,19 @@
-Target branch: 
-Resolves issue # <!-- #-prefixed issue number(s), if any -->
+Branche cible :
+Résout le ticket # <!-- numéro(s) de ticket préfixé(s) par # -->
 
-<!-- replace space with "x" in square brackets: [x] -->
-- [ ] It is a Bug fix
-- [ ] It is a New feature
+<!-- remplacer l'espace par "x" entre les crochets : [x] -->
+- [ ] C'est une correction de bug
+- [ ] C'est une nouvelle fonctionnalité
 
-- [ ] Breaks BC
-- [ ] Includes Deprecations
+Accessoirement
+- [ ] Cause une rupture de compatibilité
+- [ ] Inclut des dépréciations
 
 <!--
-Fill in this template according to the PR you're about to submit.
-Replace this comment with a description of what your PR is solving.
+Remplissez ce modèle selon la PR que vous êtes sur le point de soumettre.
+Remplacez ce commentaire par une description de ce que votre PR résout.
 
-Please consider the following requirement:
-* Modification of existing tests should be avoided unless deemed necessary.
-* You MUST never open a PR related to a security issue. Contact Spomky in private at https://gitter.im/Spomky/
+Veuillez prendre en compte l'exigence suivante :
+* La modification des tests existants doit être évitée sauf si jugée nécessaire.
+* Vous ne devez JAMAIS ouvrir une PR liée à un problème de sécurité !
 -->

@@ -1,17 +1,17 @@
-name: 🚀 Feature Request
-description: RFC and ideas for new features and improvements
+name: 🚀 Demande de fonctionnalité
+description: RFC et idées pour de nouvelles fonctionnalités et améliorations
 body:
-  - type: textarea
-    id: description
-    attributes:
-      label: Description
-      description: A clear and concise description of the new feature
-    validations:
-      required: true
-  - type: textarea
-    id: example
-    attributes:
-      label: Example
-      description: |
-        A simple example of the new feature in action (include PHP code, YAML config, etc.)
-        If the new feature changes an existing feature, include a simple before/after comparison.
+    - type: textarea
+      id: description
+      attributes:
+          label: Description
+          description: Une description claire et concise de la nouvelle fonctionnalité
+      validations:
+          required: true
+    - type: textarea
+      id: example
+      attributes:
+          label: Exemple
+          description: |
+              Un exemple simple de la nouvelle fonctionnalité en action (inclure du code PHP, une configuration YAML, etc.)
+              Si la nouvelle fonctionnalité modifie une fonctionnalité existante, inclure une comparaison simple avant/après.

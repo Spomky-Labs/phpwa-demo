@@ -86,7 +86,16 @@ export default class extends Controller {
   }
 
   populateSources = async () => {
+    const cameraStatus = await navigator.permissions.query({ name: 'camera' });
+    const micStatus = await navigator.permissions.query({ name: 'microphone' });
+
+    console.error('Camera:', cameraStatus.state);
+    console.error('Microphone:', micStatus.state);
+
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+    stream.getTracks().forEach(track => track.stop());
     const devices = await navigator.mediaDevices.enumerateDevices();
+    console.error(devices);
 
     this.populateAudioSources(devices);
     this.populateVideoSources(devices);
