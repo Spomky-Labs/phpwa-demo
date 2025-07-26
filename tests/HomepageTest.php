@@ -7,6 +7,7 @@ namespace App\Tests;
 use Ergebnis\PHPUnit\SlowTestDetector\Attribute\MaximumDuration;
 use PHPUnit\Framework\Attributes\Test;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\HttpFoundation\Request;
 
 class HomepageTest extends WebTestCase
 {
@@ -18,7 +19,7 @@ class HomepageTest extends WebTestCase
         $client = static::createClient();
 
         //When
-        $crawler = $client->request('GET', '/');
+        $client->request(Request::METHOD_GET, '/');
 
         //Then
         self::assertResponseRedirects('/en_US');
@@ -31,7 +32,7 @@ class HomepageTest extends WebTestCase
         $client = static::createClient();
 
         //When
-        $crawler = $client->request('GET', '/en_US');
+        $crawler = $client->request(Request::METHOD_GET, '/en_US');
 
         //Then
         static::assertGreaterThan(0, $crawler->filter('html:contains("app.name")')->count());

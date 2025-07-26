@@ -6,6 +6,7 @@ use Rector\Config\RectorConfig;
 use Rector\DeadCode\Rector\ClassMethod\RemoveEmptyClassMethodRector;
 use Rector\Doctrine\Set\DoctrineSetList;
 use Rector\Php84\Rector\Param\ExplicitNullableParamTypeRector;
+use Rector\PHPUnit\CodeQuality\Rector\Class_\PreferPHPUnitThisCallRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
@@ -13,6 +14,9 @@ use Rector\Symfony\Set\SymfonySetList;
 use Rector\ValueObject\PhpVersion;
 
 return static function (RectorConfig $config): void {
+    if (file_exists('/tools/.composer/vendor-bin/phpunit/vendor/autoload.php')) {
+        $config->autoloadPaths(['/tools/.composer/vendor-bin/phpunit/vendor/autoload.php']);
+    }
     $config->sets([
         SetList::DEAD_CODE,
         LevelSetList::UP_TO_PHP_82,
@@ -37,6 +41,7 @@ return static function (RectorConfig $config): void {
     $config->rule(ExplicitNullableParamTypeRector::class);
     $config->skip([
         RemoveEmptyClassMethodRector::class => [__DIR__ . '/tests/Controller/'],
+        PreferPHPUnitThisCallRector::class,
     ]);
     $config->parallel();
     $config->importNames();
