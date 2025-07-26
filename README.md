@@ -1,36 +1,59 @@
-
 # Symfony + PWA = 💕
 
 ## Introduction
 
-This application is a PWA (Progressive Web Application) built with Symfony and PHPWA.
+This application is a PWA (Progressive Web Application) built with Symfony and [PHPWA](https://github.com/Spomky-Labs/phpwa-bundle).
 
 ## Getting Started
 
-### With Docker
+This project uses [Castor](https://github.com/jolicode/castor) to simplify development tasks. All commands below assume you have `castor` installed globally (via Composer or PHAR).
 
-1. If not already done, [install Docker Compose](https://docs.docker.com/compose/install/) (v2.10+)
-2. Run `castor build` to build fresh images
-3. Run `castor start` to start the project
-4. Open `https://localhost` in your favorite web browser and [accept the auto-generated TLS certificate](https://stackoverflow.com/a/15076602/1352334)
-5. Run `castor stop` to stop the Docker containers.
+### Prerequisites
 
-### With Symfony CLI
+- Docker
+- Docker Compose v2.10+
+- [Castor](https://github.com/jolicode/castor#installation)
 
-If not already done, [install Symfony CLI](https://symfony.com/download).
+### Launch the Project
 
-You can also install the TLS certificates to have HTTPS working out of the box: `symfony server:ca:install`
+```bash
+castor build     # Build the Docker images
+castor start     # Start the application and its services
+```
 
-1. Run `git clone git@github.com:Spomky-Labs/phpwa-demo.git && cd phpwa-demo` to clone the demo and move to the created folder
-2. Run `composer install` to install the dependencies
-3. Run `symfony console assets:install` to install the assets
-4. Run `symfony console importmap:install` to install frontend dependencies
-5.Run `symfony console tailwind:build` to build the frontend assets
-6. Run `symfony console asset-map:compile` to compile the assets
-7. Run `symfony server:start` to start the project
-8. Run `symfony open:local` to open the app in your default web browser. Alternatively, you can go the http://localhost:8000
-9. Run `symfony server:stop` to stop the server
+Then open [https://localhost](https://localhost) in your browser and accept the self-signed TLS certificate if prompted.
+
+To stop the project:
+
+```bash
+castor stop
+```
+
+To rebuild everything from scratch:
+
+```bash
+castor destroy --force
+castor build
+castor start
+```
+
+## Useful Commands
+
+| Command                  | Description                                      |
+|--------------------------|--------------------------------------------------|
+| `castor frontend`        | Compile frontend assets (Importmap, Tailwind…)   |
+| `castor update`          | Update PHP deps, run migrations, etc.            |
+| `castor phpunit`         | Run PHPUnit tests with coverage                  |
+| `castor ecs`             | Run Easy Coding Standard checks                  |
+| `castor ecs-fix`         | Fix code style issues                            |
+| `castor rector`          | Run Rector in dry-run mode                       |
+| `castor rector-fix`      | Apply Rector changes                             |
+| `castor phpstan`         | Run static analysis with PHPStan                 |
+| `castor infect`          | Run mutation testing with Infection              |
+| `castor deptrac`         | Check architectural boundaries                   |
+| `castor lint`            | Run syntax checks                                |
+| `castor check-licenses`  | Check that all dependencies use allowed licenses |
 
 ## License
 
-It is available under the MIT License.
+This project is licensed under the MIT License.
