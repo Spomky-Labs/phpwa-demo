@@ -1205,12 +1205,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Spomky-Labs/pwa-bundle.git",
-                "reference": "3687646382eda704c6fa44c9846196a65c793312"
+                "reference": "17d3c41f065b33b438e6919318e26196754ba527"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Spomky-Labs/pwa-bundle/zipball/3687646382eda704c6fa44c9846196a65c793312",
-                "reference": "3687646382eda704c6fa44c9846196a65c793312",
+                "url": "https://api.github.com/repos/Spomky-Labs/pwa-bundle/zipball/17d3c41f065b33b438e6919318e26196754ba527",
+                "reference": "17d3c41f065b33b438e6919318e26196754ba527",
                 "shasum": ""
             },
             "require": {
@@ -1303,7 +1303,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2025-07-24T09:16:44+00:00"
+            "time": "2025-08-11T13:26:21+00:00"
         },
         {
             "name": "spomky-labs/web-push-bundle",
