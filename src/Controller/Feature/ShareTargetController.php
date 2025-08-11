@@ -22,15 +22,13 @@ class ShareTargetController extends AbstractController
     #[Route('/share-target', name: 'app_feature_share_target', methods: [Request::METHOD_GET, Request::METHOD_POST])]
     public function __invoke(Request $request): Response
     {
-        $data = [];
-        if ($request->isMethod(Request::METHOD_POST)) {
-            $data['url'] = $request->request->get('url', 'No URL provided');
-            $data['title'] = $request->request->get('title', 'No title provided');
-            $data['text'] = $request->request->get('text', 'No text provided');
-            $data['files'] = $request->files->all();
-        }
         return $this->render('features/share_target.html.twig', [
-            'data' => $data,
+            'data' => [
+                'url' => $request->request->get('url', 'No URL provided'),
+                'title' => $request->request->get('title', 'No title provided'),
+                'text' => $request->request->get('text', 'No text provided'),
+                'files' => $request->files->all(),
+            ],
         ]);
     }
 }

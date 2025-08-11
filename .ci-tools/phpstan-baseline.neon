@@ -385,6 +385,18 @@ parameters:
 			path: ../src/Controller/Feature/ScreenCaptureController.php
 
 		-
+			message: '#^Class "App\\Controller\\Feature\\ShareTargetController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/Feature/ShareTargetController.php
+
+		-
+			message: '#^Class App\\Controller\\Feature\\ShareTargetController is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Controller/Feature/ShareTargetController.php
+
+		-
 			message: '#^Class "App\\Controller\\Feature\\ShortcutsController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
 			identifier: ergebnis.noExtends
 			count: 1
