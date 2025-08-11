@@ -66,6 +66,8 @@ pwa:
                   - src: "icons/location.svg"
                     sizes: [48, 96, 128, 144, 192, 256, 384, 512]
                     format: 'png'
+        launch_handler:
+            client_mode: ['focus-existing', 'auto']
         edge_side_panel:
             preferred_width: 280
         widgets: []
