@@ -320,8 +320,8 @@ jobs:
           tags: |
             ${{ needs.prepare.outputs.image_name }}:amd64
             ${{ needs.prepare.outputs.image_name }}:${{ needs.prepare.outputs.short_sha }}-amd64
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=registry,ref=${{ needs.prepare.outputs.image_name }}:buildcache
+          cache-to: type=registry,ref=${{ needs.prepare.outputs.image_name }}:buildcache,mode=max
   
   build-arm64:
     name: "🐳 Build Docker (ARM64)"
@@ -345,8 +345,8 @@ jobs:
           tags: |
             ${{ needs.prepare.outputs.image_name }}:arm64
             ${{ needs.prepare.outputs.image_name }}:${{ needs.prepare.outputs.short_sha }}-arm64
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: type=registry,ref=${{ needs.prepare.outputs.image_name }}:buildcache
+          cache-to: type=registry,ref=${{ needs.prepare.outputs.image_name }}:buildcache,mode=max
   
   manifest:
     name: "📦 Docker Manifest"
