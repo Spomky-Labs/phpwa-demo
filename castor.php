@@ -183,6 +183,12 @@ function phpqa(array $command, array $dockerOptions = []): void
         return;
     }
 
+    if (!is_dir('tmp-phpqa')) {
+        mkdir('tmp-phpqa', 0777, true);
+        chown('tmp-phpqa', 1000);
+        chgrp('tmp-phpqa', 1000);
+    }
+
     $defaultDockerOptions = [
         '--rm',
         '--init',
