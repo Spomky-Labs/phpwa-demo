@@ -132,6 +132,15 @@
 
             <twig:Feature
                 available="true"
+                link="{{ path('app_feature_share_target') }}"
+                title="Share Target"
+                description="The Share Target API allows web apps to register as a target for sharing content from other apps."
+            >
+                <twig:ux:icon name="mingcute:target-line" class="mx-auto h-full text-feature" alt="Share Target" />
+            </twig:Feature>
+
+            <twig:Feature
+                available="true"
                 link="{{ path('app_feature_barcode_detection') }}"
                 title="Barcode detection"
                 description="The Barcode Detection API detects barcodes and QR codes in images."

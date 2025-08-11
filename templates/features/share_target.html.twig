@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Share Target{% endblock %}
+
+{% block body %}
+    <turbo-frame id="content">
+        <section class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                    Share Target
+                </h2>
+                <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
+                    This page demonstrates how to implement a share target in a web application.
+                    A share target allows users to share content from other applications directly into your app.
+                </p>
+                <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
+                    Text, urls, and files can be shared to this target using the Web Share Target API.
+                    They are sent to the server as a POST request with the content type set to `application/x-www-form-urlencoded`
+                    or `multipart/form-data` depending on the configuration.
+                </p>
+                <h3 class="mb-4 text-3xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                    Received Data
+                </h3>
+                <dl class="mb-8 space-y-4">
+                    {% if data|length > 0 %}
+                        {% for key, value in data %}
+                            <dt class="font-medium text-gray-500 dark:text-gray-400">{{ key }}</dt>
+                            <dd class="font-light text-gray-900 dark:text-white">{{ value }}</dd>
+                        {% endfor %}
+                    {% else %}
+                        <dt class="font-medium text-gray-500 dark:text-gray-400">
+                            No Data Received
+                        </dt>
+                        <dd class="font-light text-gray-900 dark:text-white">
+                            No data has been shared to this target yet.
+                        </dd>
+                    {% endif %}
+                </dl>
+            </div>
+        </section>
+    </turbo-frame>
+{% endblock %}
