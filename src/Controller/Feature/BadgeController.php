@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class BadgeController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/badge', name: 'app_feature_badge', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

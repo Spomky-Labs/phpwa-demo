@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class PictureInPictureController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/picture-in-picture', name: 'app_feature_picture_in_picture', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

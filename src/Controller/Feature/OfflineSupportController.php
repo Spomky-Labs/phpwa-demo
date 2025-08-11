@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class OfflineSupportController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/offline-support', name: 'app_feature_offline_support', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

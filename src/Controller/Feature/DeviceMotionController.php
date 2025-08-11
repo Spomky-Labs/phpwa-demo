@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class DeviceMotionController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/device-motion', name: 'app_feature_device_motion', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

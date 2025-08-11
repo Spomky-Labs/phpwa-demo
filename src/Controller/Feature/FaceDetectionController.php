@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class FaceDetectionController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/face-detection', name: 'app_feature_face_detection', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

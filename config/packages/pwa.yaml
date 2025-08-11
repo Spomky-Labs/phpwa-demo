@@ -95,7 +95,7 @@ pwa:
                 page:
                     path: 'app_homepage'
                     params:
-                        _locale: 'en_US'
+                        _locale: 'en'
             resource_caches:
                 - match_callback: 'startsWith: /videos/'
                   cache_name: 'videos'

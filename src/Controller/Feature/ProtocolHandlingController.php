@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class ProtocolHandlingController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/protocol-handling', name: 'app_feature_protocol_handling', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

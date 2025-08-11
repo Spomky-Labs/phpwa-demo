@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class SpeechSynthesisController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/speech-synthesis', name: 'app_feature_speech_synthesis', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

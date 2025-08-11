@@ -74,7 +74,7 @@ class WebPush
             ->withImage('https://picsum.photos/1024/512')
             ->withIcon('https://picsum.photos/512/512')
             ->withBadge('https://picsum.photos/256/256')
-            ->withLang('fr_FR')
+            ->withLang('fr')
             ->mute()
             ->unmute()
             ->auto()

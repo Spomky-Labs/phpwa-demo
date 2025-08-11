@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class AudioRecordingController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/audio-recording', name: 'app_feature_audio_recording', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

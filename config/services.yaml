@@ -4,10 +4,10 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
-    locale: 'en-US'
-    app.default_locale: 'en-US'
-    app.supported_locales: ['en_US', 'fr_FR']
-    app.supported_locales_regex: 'en_US|fr_FR'
+    locale: 'en'
+    app.default_locale: 'en'
+    app.supported_locales: ['en', 'fr']
+    app.supported_locales_regex: 'en|fr'
 
 services:
     # default configuration for services in *this* file

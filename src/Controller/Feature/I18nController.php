@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class I18nController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/i18n', name: 'app_feature_i18n', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

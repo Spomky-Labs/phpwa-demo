@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class OrientationController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/orientation', name: 'app_feature_orientation', methods: [Request::METHOD_GET])]
     public function __invoke(): Response

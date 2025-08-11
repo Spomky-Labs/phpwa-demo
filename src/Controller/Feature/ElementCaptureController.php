@@ -14,10 +14,10 @@ use Symfony\Component\Routing\Attribute\Route;
 class ElementCaptureController extends AbstractController
 {
     #[PreloadUrl('pages', [
-        '_locale' => 'en_US',
+        '_locale' => 'en',
     ])]
     #[PreloadUrl('pages', [
-        '_locale' => 'fr_FR',
+        '_locale' => 'fr',
     ])]
     #[Route('/element-capture', name: 'app_feature_element_capture', methods: [Request::METHOD_GET])]
     public function __invoke(): Response
