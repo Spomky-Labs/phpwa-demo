@@ -22,7 +22,7 @@ class HomepageTest extends WebTestCase
         $client->request(Request::METHOD_GET, '/');
 
         //Then
-        self::assertResponseRedirects('/en_US');
+        self::assertResponseRedirects('/en');
     }
 
     #[Test]
@@ -32,7 +32,7 @@ class HomepageTest extends WebTestCase
         $client = static::createClient();
 
         //When
-        $crawler = $client->request(Request::METHOD_GET, '/en_US');
+        $crawler = $client->request(Request::METHOD_GET, '/en');
 
         //Then
         static::assertGreaterThan(0, $crawler->filter('html:contains("app.name")')->count());
