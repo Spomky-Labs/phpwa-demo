@@ -108,7 +108,7 @@ function stop(): void
 function start(): void
 {
     run(['docker', 'compose', 'up', '-d']);
-    frontend();
+    frontend(true);
 }
 
 #[AsTask(description: 'Build the images.')]
@@ -118,14 +118,18 @@ function build(): void
 }
 
 #[AsTask(description: 'Compile the frontend.')]
-function frontend(): void
+function frontend(bool $watch = false): void
 {
     $consoleOutput = run(['bin/console'], context: context()->withQuiet());
     $commandsToRun = [
         'assets:install' => [],
         'importmap:install' => [],
-        //'tailwind:build' => ['--watch'],
     ];
+    if ($watch) {
+        $commandsToRun['tailwind:build'] = ['--watch'];
+    } else {
+        $commandsToRun['tailwind:build'] = [];
+    }
 
     foreach ($commandsToRun as $command => $arguments) {
         if (str_contains((string) $consoleOutput->getOutput(), $command)) {
@@ -170,23 +174,25 @@ function console(#[AsRawTokens] array $args = []): void
 #[AsTask(description: 'Runs a PHP command from the Docket Container.', ignoreValidationErrors: true)]
 function php(#[AsRawTokens] array $args = []): void
 {
+    $inContainer = file_exists('/.dockerenv');
+    $hasDocker = trim(shell_exec('command -v docker') ?? '') !== '';
+
+    if (! $hasDocker || $inContainer) {
+        run($args);
+        return;
+    }
+
     run(['docker', 'compose', 'exec', '-T', 'php', ...$args]);
 }
 
 function phpqa(array $command, array $dockerOptions = []): void
 {
     $inContainer = file_exists('/.dockerenv');
-    $hasDocker = trim((string) shell_exec('command -v docker')) !== '';
+    $hasDocker = trim(shell_exec('command -v docker') ?? '') !== '';
 
     if (! $hasDocker || $inContainer) {
         run($command);
         return;
-    }
-
-    if (!is_dir('tmp-phpqa')) {
-        mkdir('tmp-phpqa', 0777, true);
-        chown('tmp-phpqa', 1000);
-        chgrp('tmp-phpqa', 1000);
     }
 
     $defaultDockerOptions = [
@@ -282,6 +288,12 @@ function lint(): void
     phpqa(['composer', 'exec', '--', 'parallel-lint', 'src', 'tests']);
 }
 
+#[AsTask]
+function ls(): void
+{
+    phpqa(['ls', '-la', '/tools/.composer/vendor-bin/phpunit/vendor/bin/phpunit']);
+}
+
 #[AsTask(description: 'Run Infection for mutation testing')]
 function infect($minMsi = 0, $minCoveredMsi = 0): void
 {
@@ -296,4 +308,37 @@ function infect($minMsi = 0, $minCoveredMsi = 0): void
         '--filter=src/',
         '--configuration=.ci-tools/infection.json.dist',
     ], ['-e', 'XDEBUG_MODE=coverage']);
+}
+
+#[AsTask(description: 'Fix code style and apply Rector rules, then run static analysis.')]
+function prepare_pr(): void
+{
+    io()->title('Preparing code for pull request…');
+
+    ecs_fix();
+    rector_fix();
+
+    io()
+        ->section('Running static analysis…');
+    phpstan();
+    deptrac();
+    lint();
+
+    io()
+        ->success('Code is ready. You may now commit and push your changes.');
+}
+
+#[AsTask(description: 'Initialize the project.')]
+function init(): void
+{
+    io()->title('Initializing the project…');
+    console(['app:sites:create-from-smart']);
+    console(['app:plants:create-from-smart']);
+    console(['app:rooms:create-from-smart']);
+    console(['app:surfaces:create-from-smart']);
+    console(['app:penetrations:create-from-smart']);
+
+    console(['app:functional-requirements:import']);
+    console(['app:maintenance-programs:import']);
+    console(['app:maintenance-sheet:import']);
 }
