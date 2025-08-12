@@ -89,7 +89,16 @@ pwa:
                 url: 'link'
                 files:
                     - name: 'file'
-                      accept: ["image/png", "image/jpeg"]
+                      accept: [
+                          "image/*",
+                          "image/jpeg",
+                          "image/png",
+                          "image/webp",
+                          ".jpg",
+                          ".jpeg",
+                          ".png",
+                          ".webp"
+                      ]
         handle_links: "preferred"
         protocol_handlers:
             - protocol: "web+pwabundle"
