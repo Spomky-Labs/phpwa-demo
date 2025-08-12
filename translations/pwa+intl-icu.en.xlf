@@ -19,7 +19,7 @@
       </trans-unit>
       <trans-unit id="EsH78Fy" resname="app.start_url">
         <source>app.start_url</source>
-        <target>/en_US/?pwa</target>
+        <target>/en/?pwa</target>
       </trans-unit>
       <trans-unit id="rylLObw" resname="app.features.geolocation.name">
         <source>app.features.geolocation.name</source>
