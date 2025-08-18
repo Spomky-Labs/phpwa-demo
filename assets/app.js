@@ -9,3 +9,6 @@ import './styles/app.css';
 import 'flowbite';
 import 'flowbite/dist/flowbite.min.css';
 import "@hotwired/hotwire-native-bridge"
+import {registerPeriodicSync} from '@spomky-labs/pwa/helpers';
+
+await registerPeriodicSync('ping', 5000);

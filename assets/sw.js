@@ -6,3 +6,11 @@ registerNotificationAction('*', async (event) => {
   const action = event.action || 'default';
   await clients.openWindow(data[action]);
 });
+
+registerPeriodicSyncTask('ping', async () => {
+  const cache = await openCache('ping-cache');
+  const res = await fetch('/ping');
+  await cache.put('/ping', res.clone());
+
+  notifyPeriodicSyncClients('ping', { updated: true });
+});

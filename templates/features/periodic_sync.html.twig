@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Periodic Sync API{% endblock %}
+
+{% block body %}
+    <turbo-frame id="content">
+        <section class="bg-white dark:bg-gray-900">
+            <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6 ">
+                <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+                    Periodic Sync API
+                </h2>
+                <p class="mb-3 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
+                    The Periodic Sync API allows web applications to periodically synchronize data with the server, even when the application is not in use.
+                    This is particularly useful for applications that need to keep their data up-to-date without requiring user interaction.
+                </p>
+                <div id="last-ping"></div>
+            </div>
+
+            <script type="module">
+                import {onPeriodicSync} from '@spomky-labs/pwa/helpers';
+                async function getLastPingUpdate() {
+                    const cache = await caches.open('ping-cache');
+                    const res = await cache.match('/ping');
+                    if (!res) return null;
+                    return await res.json();
+                }
+
+                async function updatePingStatus(elementId) {
+                    const data = await getLastPingUpdate();
+                    const el = document.getElementById(elementId);
+                    if (!el) return;
+
+                    if (!data) {
+                        el.innerHTML = `
+        <div class="alert alert-warning shadow-lg">
+          <span>No priodic sync data available.</span>
+        </div>
+      `;
+                    } else {
+                        el.innerHTML = `
+        <div class="alert alert-success shadow-lg">
+          <span>Data: <b>${data.updated_at}</b></span>
+        </div>
+      `;
+                    }
+                }
+
+                updatePingStatus('last-ping');
+                onPeriodicSync('refresh-ping', ({ updated }) => {
+                    if (updated) {
+                        updatePingStatus('last-ping');
+                    }
+                });
+            </script>
+        </section>
+    </turbo-frame>
+{% endblock %}

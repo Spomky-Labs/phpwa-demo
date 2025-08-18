@@ -218,6 +218,15 @@
 
             <twig:Feature
                 available="true"
+                link="{{ path('app_feature_periodic_sync') }}"
+                title="Periodic Sync API"
+                description="The Periodic Sync API allows web apps to run tasks periodically, even when the app is not running."
+            >
+                <twig:ux:icon name="gis:timer" class="mx-auto h-full text-feature" alt="Periodic Sync API" />
+            </twig:Feature>
+
+            <twig:Feature
+                available="true"
                 link="{{ path('app_feature_background_fetch') }}"
                 title="Background Fetch API"
                 description="The Background Fetch API enables web apps to download large files in the background even when the app is not running."

@@ -337,6 +337,18 @@ parameters:
 			path: ../src/Controller/Feature/PaymentController.php
 
 		-
+			message: '#^Class "App\\Controller\\Feature\\PeriodicSyncController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			identifier: ergebnis.noExtends
+			count: 1
+			path: ../src/Controller/Feature/PeriodicSyncController.php
+
+		-
+			message: '#^Class App\\Controller\\Feature\\PeriodicSyncController is neither abstract nor final\.$#'
+			identifier: ergebnis.final
+			count: 1
+			path: ../src/Controller/Feature/PeriodicSyncController.php
+
+		-
 			message: '#^Class "App\\Controller\\Feature\\PictureInPictureController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
 			identifier: ergebnis.noExtends
 			count: 1

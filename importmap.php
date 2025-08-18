@@ -29,6 +29,9 @@ return [
     '@symfony/ux-leaflet-map' => [
         'path' => './vendor/symfony/ux-leaflet-map/assets/dist/map_controller.js',
     ],
+    '@spomky-labs/pwa/helpers' => [
+        'path' => './vendor/spomky-labs/pwa-bundle/assets/src/helpers.js',
+    ],
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
@@ -39,28 +42,28 @@ return [
         'version' => '4.1.0',
     ],
     '@babel/runtime/helpers/esm/typeof' => [
-        'version' => '7.27.6',
+        'version' => '7.28.3',
     ],
     '@babel/runtime/helpers/esm/createForOfIteratorHelper' => [
-        'version' => '7.27.6',
+        'version' => '7.28.3',
     ],
     '@babel/runtime/helpers/esm/assertThisInitialized' => [
-        'version' => '7.27.6',
+        'version' => '7.28.3',
     ],
     '@babel/runtime/helpers/esm/inherits' => [
-        'version' => '7.27.6',
+        'version' => '7.28.3',
     ],
     '@babel/runtime/helpers/esm/createSuper' => [
-        'version' => '7.27.6',
+        'version' => '7.28.3',
     ],
     '@babel/runtime/helpers/esm/classCallCheck' => [
-        'version' => '7.27.6',
+        'version' => '7.28.3',
     ],
     '@babel/runtime/helpers/esm/createClass' => [
-        'version' => '7.27.6',
+        'version' => '7.28.3',
     ],
     '@babel/runtime/helpers/esm/defineProperty' => [
-        'version' => '7.27.6',
+        'version' => '7.28.3',
     ],
     'mustache' => [
         'version' => '4.2.0',
@@ -99,7 +102,7 @@ return [
         'version' => '0.77.1',
     ],
     'three' => [
-        'version' => '0.177.0',
+        'version' => '0.179.1',
     ],
     'reveal.js' => [
         'version' => '5.2.1',
@@ -141,16 +144,16 @@ return [
         'version' => '1.3.2',
     ],
     'core-js' => [
-        'version' => '3.43.0',
+        'version' => '3.45.0',
     ],
     '@hotwired/hotwire-native-bridge' => [
         'version' => '1.2.1',
     ],
     'tailwindcss' => [
-        'version' => '4.1.10',
+        'version' => '4.1.12',
     ],
     'tailwindcss/index.min.css' => [
-        'version' => '4.1.10',
+        'version' => '4.1.12',
         'type' => 'css',
     ],
     '@fontsource/roboto' => [
@@ -167,22 +170,22 @@ return [
         'type' => 'css',
     ],
     'daisyui' => [
-        'version' => '5.0.43',
+        'version' => '5.0.50',
     ],
     'daisyui/daisyui.min.css' => [
-        'version' => '5.0.43',
+        'version' => '5.0.50',
         'type' => 'css',
     ],
     'daisyui/theme' => [
-        'version' => '5.0.43',
+        'version' => '5.0.50',
     ],
     'idb' => [
         'version' => '8.0.3',
     ],
-    'core-js/library/fn/promise' => [
-        'version' => '2.5.0',
-    ],
     'idb-keyval' => [
         'version' => '6.2.2',
+    ],
+    'core-js/library/fn/promise' => [
+        'version' => '2.5.0',
     ],
 ];
