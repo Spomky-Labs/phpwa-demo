@@ -33,7 +33,8 @@ class PeriodicSyncController extends AbstractController
     {
         return new JsonResponse([
             'status' => 'ok',
-            'updated_at' => new DateTimeImmutable()->format('Y-m-d H:i:s'),
+            'updated_at' => new DateTimeImmutable()
+                ->format('Y-m-d H:i:s'),
         ]);
     }
 }
