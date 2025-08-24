@@ -2,6 +2,19 @@
 
 {% block title %}Background Sync API{% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script type="module">
+        const target = document.getElementById('remaining-items');
+        const update = (e) => {
+            if (Number.isInteger(e.detail.remaining)) {
+                target.innerText = e.detail.remaining;
+            }
+        };
+        document.addEventListener('pwa--backgroundsync-queue:status', (e) => update(e));
+    </script>
+{% endblock %}
+
 {% block body %}
     <turbo-frame id="content">
         <section {{ stimulus_controller('jwk-generator')|stimulus_controller('@pwa/backgroundsync-form', {authenticating: true, keyIdIndex: 'messages', bcChannel: 'form-list'}) }} class="bg-white dark:bg-gray-900">
@@ -47,7 +60,7 @@
                 <section class="mt-8 bg-white dark:bg-gray-900">
                     <div
                         class="px-4 mx-auto max-w-screen-xl text-center px-4"
-                        {{ stimulus_controller('bgs-queue', {channel: "form-list"}) }}
+                        {{ stimulus_controller('@pwa/backgroundsync-queue', {channel: "form-list"}) }}
                     >
                         <div
                             class="flex items-center p-4 mb-4 text-sm border rounded-lg"
@@ -57,10 +70,10 @@
                                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
                             </svg>
                             <div>
-                                <span class="font-medium">Number of requests in the queue</span>: <span {{ stimulus_target('bgs-queue', 'output')}}>--</span>
+                                <span class="font-medium">Number of requests in the queue</span>: <span id="remaining-items">--</span>
                             </div>
                             <button
-                                {{ stimulus_action('bgs-queue', 'replay') }}
+                                {{ stimulus_action('@pwa/backgroundsync-queue', 'replay') }}
                                 title="Try to replay the queued requests. Useful when the application is online to force immediate sending of the requests."
                                 class="ml-4  text-xs text-white bg-[#FF9119] hover:bg-[#FF9119]/80 focus:ring-4 focus:outline-none focus:ring-[#FF9119]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#FF9119]/80 dark:focus:ring-[#FF9119]/40 me-2 mb-2"
                             >

@@ -9,6 +9,10 @@
                 "enabled": true,
                 "fetch": "eager"
             },
+            "backgroundsync-queue": {
+                "enabled": true,
+                "fetch": "eager"
+            },
             "badge": {
                 "enabled": true,
                 "fetch": "eager"

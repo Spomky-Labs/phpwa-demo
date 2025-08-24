@@ -11,7 +11,7 @@ services:
       # If you develop on Mac or Windows, you can remove the vendor/ directory
       #  from the bind-mount for better performance by enabling the next line:
       #- /app/vendor
-      #- ./../pwa-bundle:/app/vendor/spomky-labs/pwa-bundle:ro
+      - ./../pwa-bundle:/app/vendor/spomky-labs/pwa-bundle:ro
       - ./frankenphp/certs:/etc/caddy/certs:ro
     environment:
       SERVER_NAME: ${SERVER_NAME:-*}, php:443
