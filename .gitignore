@@ -31,3 +31,4 @@
 /public/sw.js
 /.ci-tools/coverage
 /.ci-tools/.phpunit.cache
+/.deptrac.cache

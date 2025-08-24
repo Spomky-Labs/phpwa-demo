@@ -64,9 +64,10 @@ pwa:
               description: "app.features.geolocation.description"
               url: 'app_feature_geolocation'
               icons:
-                  - src: "icons/location.svg"
+                  - src: "mdi:location"
                     sizes: [48, 96, 128, 144, 192, 256, 384, 512]
                     format: 'png'
+                    svg_color: 'blue'
         launch_handler:
             client_mode: ['focus-existing', 'auto']
         edge_side_panel:
