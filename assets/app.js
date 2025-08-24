@@ -11,4 +11,8 @@ import 'flowbite/dist/flowbite.min.css';
 import "@hotwired/hotwire-native-bridge"
 import {registerPeriodicSync} from '@spomky-labs/pwa/helpers';
 
-await registerPeriodicSync('ping', 5000);
+const initApp = async () => {
+  await registerPeriodicSync('ping', 6 * 60 * 60 * 1000);
+}
+
+initApp();

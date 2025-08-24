@@ -36,7 +36,10 @@ pwa:
         display_override: ['fullscreen', 'minimal-ui', 'window-controls-overlay']
         dir: 'ltr'
         id: "pwa-bundle-today"
-        start_url: "app.start_url"
+        start_url:
+            path: 'app_homepage'
+            params:
+                pwa: 1
         icons:
             - src: "images/pwabundlelogo.svg"
               format: 'png'
