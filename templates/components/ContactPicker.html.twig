@@ -1,0 +1,63 @@
+<div {{ stimulus_controller('@pwa/contact')|stimulus_controller('live') }}{{ attributes }}>
+    {% if this.available %}
+        <button
+            {{ stimulus_action('@pwa/contact', 'select', 'click') }}
+            class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
+        >
+            Select a contact
+        </button>
+        <div class="p-6 bg-gray-50">
+            <div class="max-w-4xl mx-auto space-y-4">
+                {% if this.contacts|length > 0 %}
+                    {% for contact in this.contacts %}
+                        <div class="bg-white rounded-2xl shadow p-6 hover:shadow-lg transition space-y-4">
+                            <div>
+                                {% if contact.name|length == 0 %}
+                                    <p class="text-sm text-gray-400 italic">No names</p>
+                                {% else %}
+                                    {% for name in contact.name %}
+                                        <p class="flex items-center text-sm text-gray-600">
+                                            <span class="mr-2">👤</span>{{ name }}
+                                        </p>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+
+                            <div class="space-y-1 pt-2">
+                                {% if contact.email|length == 0 %}
+                                    <p class="text-sm text-gray-400 italic">No email addresses</p>
+                                {% else %}
+                                    {% for email in contact.email %}
+                                        <p class="flex items-center text-sm text-gray-600">
+                                            <span class="mr-2">✉️</span>
+                                            <a href="mailto:{{ email }}" class="hover:underline">{{ email }}</a>
+                                        </p>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+
+                            <div class="pt-3 border-t border-gray-200 space-y-1">
+                                {% if contact.tel|length == 0 %}
+                                    <p class="text-sm text-gray-400 italic">No phone numbers</p>
+                                {% else %}
+                                    {% for tel in contact.tel %}
+                                        <p class="flex items-center text-sm text-gray-600">
+                                            <span class="mr-2">✉️</span>
+                                            <a href="tel:{{ tel }}" class="hover:underline">{{ tel }}</a>
+                                        </p>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="text-sm text-gray-400 italic">No contact selected</p>
+                {% endif %}
+            </div>
+        </div>
+    {% else %}
+        <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+            <span class="font-medium">Not supported!</span> The contact picker is not supported on this platform.
+        </div>
+    {% endif %}
+</div>
