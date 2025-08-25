@@ -4,6 +4,8 @@
 
 This application is a PWA (Progressive Web Application) built with Symfony and [PHPWA](https://github.com/Spomky-Labs/phpwa-bundle).
 
+A live demo is available here: https://pwa.spomky-labs.net/
+
 ## Getting Started
 
 This project uses [Castor](https://github.com/jolicode/castor) to simplify development tasks. All commands below assume you have `castor` installed globally (via Composer or PHAR).
