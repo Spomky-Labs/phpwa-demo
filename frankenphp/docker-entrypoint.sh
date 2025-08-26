@@ -51,6 +51,10 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 		fi
 	fi
 
+	# Display information about the current project
+	# Or about an error in project initialization
+	php bin/console -V
+
 	if grep -q ^DATABASE_URL= .env; then
 		echo "⏳ Waiting for database to be ready..."
 		ATTEMPTS_LEFT_TO_REACH_DATABASE=60
@@ -80,9 +84,11 @@ if [ "$1" = 'frankenphp' ] || [ "$1" = 'php' ] || [ "$1" = 'bin/console' ]; then
 	fi
 
 	echo "🔐 Setting permissions on var/"
+	setfacl -R -m u:www-data:rwX -m u:"$(whoami)":rwX var
 	setfacl -dR -m u:www-data:rwX -m u:"$(whoami)":rwX var
+
+	echo 'PHP app ready!'
 fi
 
 echo "🚚 Executing docker-php-entrypoint with: $*"
 exec docker-php-entrypoint "$@"
-

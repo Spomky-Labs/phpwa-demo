@@ -5,6 +5,8 @@ LABEL builder=true
 
 COPY --from=caddy:builder /usr/bin/xcaddy /usr/bin/xcaddy
 
+ENV GOTOOLCHAIN=auto
+
 # CGO must be enabled to build FrankenPHP
 RUN CGO_ENABLED=1 \
 	XCADDY_SETCAP=1 \
@@ -22,7 +24,7 @@ RUN CGO_ENABLED=1 \
 		# Add extra Caddy modules here
 		--with github.com/corazawaf/coraza-caddy/v2
 
-FROM dunglas/frankenphp:1 AS frankenphp_runner
+FROM dunglas/frankenphp:1-php8.4 AS frankenphp_runner
 LABEL builder=true
 
 # Replace the official binary by the one contained your custom modules
@@ -63,6 +65,10 @@ RUN set -eux; \
 		intl \
 		opcache \
 		zip \
+	;
+
+RUN set -eux; \
+	install-php-extensions \
 		pdo_pgsql \
 		gmp \
 		gd \
@@ -95,18 +101,20 @@ ENV PHP_INI_SCAN_DIR=":$PHP_INI_DIR/app.conf.d"
 
 COPY --link frankenphp/conf.d/10-app.ini $PHP_INI_DIR/app.conf.d/
 COPY --link --chmod=755 frankenphp/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
-COPY --link frankenphp/Caddyfile /etc/caddy/Caddyfile
+COPY --link frankenphp/Caddyfile /etc/frankenphp/Caddyfile
 
 ENTRYPOINT ["docker-entrypoint"]
 
 HEALTHCHECK --start-period=60s CMD curl -f http://localhost:2019/metrics || exit 1
-CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile" ]
+CMD [ "frankenphp", "run", "--config", "/etc/frankenphp/Caddyfile" ]
 
 # Dev FrankenPHP image
 FROM frankenphp_base AS frankenphp_dev
 LABEL builder=false
 
-ENV APP_ENV=dev XDEBUG_MODE=off
+ENV APP_ENV=dev
+ENV XDEBUG_MODE=off
+ENV FRANKENPHP_WORKER_CONFIG=watch
 
 RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 
@@ -117,19 +125,17 @@ RUN set -eux; \
 
 COPY --link frankenphp/conf.d/20-app.dev.ini $PHP_INI_DIR/app.conf.d/
 
-CMD [ "frankenphp", "run", "--config", "/etc/caddy/Caddyfile", "--watch" ]
+CMD [ "frankenphp", "run", "--config", "/etc/frankenphp/Caddyfile", "--watch" ]
 
 # Prod FrankenPHP image
 FROM frankenphp_base AS frankenphp_prod
 LABEL builder=false
 
 ENV APP_ENV=prod
-ENV FRANKENPHP_CONFIG="import worker.Caddyfile"
 
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
 COPY --link frankenphp/conf.d/20-app.prod.ini $PHP_INI_DIR/app.conf.d/
-COPY --link frankenphp/worker.Caddyfile /etc/caddy/worker.Caddyfile
 
 # prevent the reinstallation of vendors at every changes in the source code
 COPY --link composer.* symfony.* ./
