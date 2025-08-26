@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Castor\Attribute\AsRawTokens;
 use Castor\Attribute\AsTask;
 use function Castor\context;
+use function Castor\fs;
 use function Castor\guard_min_version;
 use function Castor\io;
 use function Castor\notify;
@@ -107,6 +108,7 @@ function stop(): void
 #[AsTask(description: 'Starts the containers.')]
 function start(): void
 {
+    ensureVar();
     run(['docker', 'compose', 'up', '-d']);
     frontend(true);
 }
@@ -120,9 +122,8 @@ function build(): void
 #[AsTask(description: 'Compile the frontend.')]
 function frontend(bool $watch = false): void
 {
-    $consoleOutput = run(['bin/console'], context: context()->withQuiet());
+    $consoleOutput = run(['bin/console']);
     $commandsToRun = [
-        'app:browscap:update' => [],
         'assets:install' => [],
         'importmap:install' => [],
     ];
@@ -139,17 +140,17 @@ function frontend(bool $watch = false): void
     }
 }
 
-#[AsTask(description: 'Install the dependencies.')]
+#[AsTask(description: 'Update the dependencies and other features.')]
 function install(): void
 {
-    php(['composer', 'install']);
+    phpqa(['composer', 'install']);
 }
 
 #[AsTask(description: 'Update the dependencies and other features.')]
 function update(): void
 {
-    php(['composer', 'update']);
-    $consoleOutput = php(['bin/console']);
+    run(['composer', 'update']);
+    $consoleOutput = run(['bin/console'], context: context()->withQuiet());
     $commandsToRun = [
         'doctrine:migrations:migrate' => [],
         'doctrine:schema:validate' => [],
@@ -189,19 +190,21 @@ function php(#[AsRawTokens] array $args = []): void
         return;
     }
 
-    run(['docker', 'compose', 'exec', '-T', 'php', ...$args]);
+    run(['php', ...$args]);
 }
 
 function phpqa(array $command, array $dockerOptions = []): void
 {
     $inContainer = file_exists('/.dockerenv');
     $hasDocker = trim(shell_exec('command -v docker') ?? '') !== '';
+    $phpVersion = getenv('PHP_VERSION') ?: \PHP_MAJOR_VERSION . '.' . \PHP_MINOR_VERSION;
 
     if (! $hasDocker || $inContainer) {
         run($command);
         return;
     }
 
+    ensureTmpPhpqa();
     $defaultDockerOptions = [
         '--rm',
         '--init',
@@ -209,32 +212,41 @@ function phpqa(array $command, array $dockerOptions = []): void
         '--user', sprintf('%s:%s', getmyuid(), getmygid()),
         '--pull', 'always',
         '-v', getcwd() . ':/project',
-        '-v', getcwd() . '/tmp-phpqa:/tmp',
+        '-v', getcwd() . '/tmp-phpqa:/project/tmp-phpqa',
         '-w', '/project',
         '-e', 'XDEBUG_MODE=off',
+        '-e', 'PHP_INI_SCAN_DIR=/usr/local/etc/php/conf.d',
+        '-e', 'PHP_INI_ENTRY=sys_temp_dir=/project/tmp-phpqa',
     ];
 
     run([
         'docker', 'run',
         ...$defaultDockerOptions,
         ...$dockerOptions,
-        'ghcr.io/spomky-labs/phpqa:8.4',
+        'ghcr.io/spomky-labs/phpqa:' . $phpVersion,
         ...$command,
     ]);
 }
 
+#[AsTask(description: 'Update the PHPQA Docker image')]
+function phpqa_update(): void
+{
+    $phpVersion = getenv('PHP_VERSION') ?: (\PHP_MAJOR_VERSION . '.' . \PHP_MINOR_VERSION);
+
+    run(['docker', 'pull', 'ghcr.io/spomky-labs/phpqa:' . $phpVersion]);
+}
+
 #[AsTask(description: 'Run PHPUnit tests with coverage')]
-function phpunit(): void
+function phpunit(?string $php = null): void
 {
     phpqa(
         [
-            'composer', 'exec', '--',
-            'phpunit',
+            'composer', 'exec', '--', 'phpunit-11',
             '--coverage-xml', '.ci-tools/coverage',
             '--log-junit=.ci-tools/coverage/junit.xml',
             '--configuration', '.ci-tools/phpunit.xml.dist',
         ],
-        ['-e', 'XDEBUG_MODE=coverage'] // Docker options supplémentaires
+        ['-e', 'XDEBUG_MODE=coverage']
     );
 }
 
@@ -265,15 +277,17 @@ function rector_fix(): void
 #[AsTask(description: 'Run PHPStan')]
 function phpstan(): void
 {
-    phpqa(['phpstan', 'analyse', '--error-format=github', '--configuration=.ci-tools/phpstan.neon']);
+    phpqa(
+        [
+            'composer', 'exec', '--', 'phpstan', 'analyse', '--error-format=github', '--configuration=.ci-tools/phpstan.neon']
+    );
 }
 
 #[AsTask(description: 'Generate PHPStan baseline')]
 function phpstan_baseline(): void
 {
     phpqa([
-        'composer', 'exec', '--',
-        'phpstan', 'analyse',
+        'composer', 'exec', '--', 'phpstan', 'analyse',
         '--configuration=.ci-tools/phpstan.neon',
         '--generate-baseline=.ci-tools/phpstan-baseline.neon',
     ]);
@@ -283,8 +297,7 @@ function phpstan_baseline(): void
 function deptrac(): void
 {
     phpqa([
-        'composer', 'exec', '--',
-        'deptrac',
+        'composer', 'exec', '--', 'deptrac',
         '--config-file', '.ci-tools/deptrac.yaml',
         '--report-uncovered',
         '--report-skipped',
@@ -308,8 +321,7 @@ function ls(): void
 function infect($minMsi = 0, $minCoveredMsi = 0): void
 {
     phpqa([
-        'composer', 'exec', '--',
-        'infection',
+        'composer', 'exec', '--', 'infection',
         '--coverage=coverage',
         sprintf('--min-msi=%d', $minMsi),
         sprintf('--min-covered-msi=%d', $minCoveredMsi),
@@ -331,7 +343,7 @@ function prepare_pr(): void
 
     io()
         ->section('Running static analysis…');
-    phpstan();
+    phpstan_baseline();
     deptrac();
     lint();
 
@@ -358,4 +370,39 @@ function init(): void
     console(['app:functional-requirements:import']);
     console(['app:maintenance-programs:import']);
     console(['app:maintenance-sheet:import']);
+}
+
+function ensureTmpPhpqa(): void
+{
+    $path = getcwd() . '/tmp-phpqa';
+    ensureFolder($path);
+}
+
+function ensureVar(): void
+{
+    $path = getcwd() . '/var';
+    ensureFolder($path);
+}
+
+function ensureFolder(string $path): void
+{
+    try {
+        if (! fs()->exists($path)) {
+            io()->comment(sprintf('Creating directory %s', $path));
+            fs()
+                ->mkdir($path, 0777);
+        }
+
+        if (! is_writable($path)) {
+            io()->comment(sprintf('Fixing permissions on %s', $path));
+            fs()
+                ->chmod($path, 0777);
+        }
+
+        io()
+            ->success(sprintf('Directory %s exists and is writable', $path));
+    } catch (Throwable $e) {
+        io()->error(sprintf('Could not create or fix %s: %s', $path, $e->getMessage()));
+        exit(1);
+    }
 }

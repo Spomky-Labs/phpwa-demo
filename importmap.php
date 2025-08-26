@@ -144,10 +144,10 @@ return [
         'version' => '1.3.2',
     ],
     'core-js' => [
-        'version' => '3.45.0',
+        'version' => '3.45.1',
     ],
     '@hotwired/hotwire-native-bridge' => [
-        'version' => '1.2.1',
+        'version' => '1.2.2',
     ],
     'tailwindcss' => [
         'version' => '4.1.12',
@@ -170,14 +170,14 @@ return [
         'type' => 'css',
     ],
     'daisyui' => [
-        'version' => '5.0.50',
+        'version' => '5.0.51',
     ],
     'daisyui/daisyui.min.css' => [
-        'version' => '5.0.50',
+        'version' => '5.0.51',
         'type' => 'css',
     ],
     'daisyui/theme' => [
-        'version' => '5.0.50',
+        'version' => '5.0.51',
     ],
     'idb' => [
         'version' => '8.0.3',

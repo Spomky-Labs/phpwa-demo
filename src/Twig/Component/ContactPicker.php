@@ -11,6 +11,7 @@ use Symfony\UX\LiveComponent\Attribute\LiveListener;
 use Symfony\UX\LiveComponent\Attribute\LiveProp;
 use Symfony\UX\LiveComponent\ComponentToolsTrait;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
+use function array_key_exists;
 use function Symfony\Component\String\s;
 
 #[AsLiveComponent('ContactPicker')]
@@ -29,7 +30,7 @@ class ContactPicker
     public function onUpdate(#[LiveArg] array $contacts): void
     {
         foreach ($contacts as $id => $contact) {
-            if (!array_key_exists('tel', $contact)) {
+            if (! array_key_exists('tel', $contact)) {
                 $contact['tel'] = [];
             }
             foreach ($contact['tel'] as $p => $phone) {
