@@ -10,10 +10,12 @@ pwa:
     #    header_name: 'sec-ch-ua'
     favicons:
         enabled: true
-        src: "images/pwabundlelogo.svg"
-        src_dark: "images/pwabundlelogo-dark.svg"
-        background_color: "#FCFCFC"
-        background_color_dark: "#121212"
+        default:
+            src: "images/pwabundlelogo.svg"
+            background_color: "#FCFCFC"
+        dark:
+            src: "images/pwabundlelogo-dark.svg"
+            background_color: "#121212"
         tile_color: "#FCFCFC"
         use_start_image: true
         use_silhouette: true
@@ -70,7 +72,22 @@ pwa:
                   - src: "mdi:location"
                     sizes: [48, 96, 128, 144, 192, 256, 384, 512]
                     format: 'png'
-                    svg_color: 'blue'
+                    svg_attr:
+                        color: '#0F0'
+                        fill: '#0F0'
+                        stroke: '#0F0'
+            - name: "app.features.geolocation.name"
+              short_name: "app.features.geolocation.short_name"
+              description: "app.features.geolocation.description"
+              url: 'app_feature_geolocation'
+              icons:
+                  - src: "logos:pwa"
+                    sizes: [48, 96, 128, 144, 192, 256, 384, 512]
+                    format: 'png'
+                    svg_attr:
+                        color: '#F00'
+                        fill: '#F00'
+                        stroke: '#F00'
         launch_handler:
             client_mode: ['focus-existing', 'auto']
         edge_side_panel:
