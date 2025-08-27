@@ -5,8 +5,6 @@ LABEL builder=true
 
 COPY --from=caddy:builder /usr/bin/xcaddy /usr/bin/xcaddy
 
-ENV GOTOOLCHAIN=auto
-
 # CGO must be enabled to build FrankenPHP
 RUN CGO_ENABLED=1 \
 	XCADDY_SETCAP=1 \
