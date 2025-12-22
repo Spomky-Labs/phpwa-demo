@@ -9,7 +9,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Request;
 
-class HomepageTest extends WebTestCase
+final class HomepageTest extends WebTestCase
 {
     #[Test]
     #[MaximumDuration(2000)]

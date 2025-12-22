@@ -17,11 +17,11 @@ class ProtocolHandlerController extends AbstractController
     #[Route('/handler', name: 'app_protocol_handler')]
     public function __invoke(Request $request): Response
     {
-        if (! str_starts_with($request->query->get('type'), 'web+pwabundle://')) {
+        if (! str_starts_with((string) $request->query->get('type'), 'web+pwabundle://')) {
             throw $this->createNotFoundException();
         }
 
-        $route = substr($request->query->get('type'), strlen('web+pwabundle://'));
+        $route = substr((string) $request->query->get('type'), strlen('web+pwabundle://'));
         try {
             return $this->redirectToRoute($route);
         } catch (Throwable) {
