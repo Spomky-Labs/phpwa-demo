@@ -116,7 +116,7 @@ function start(): void
 #[AsTask(description: 'Build the images.')]
 function build(): void
 {
-    run(['docker', 'compose', 'build', '--no-cache', '--pull']);
+    run(['docker', 'compose', 'build'/*, '--no-cache'*/, '--pull']);
 }
 
 #[AsTask(description: 'Compile the frontend.')]

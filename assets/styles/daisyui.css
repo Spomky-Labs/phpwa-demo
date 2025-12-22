@@ -8,18 +8,13 @@
     default: true;
     prefersdark: false;
 
-    /* == Layout Colors == */
-    --root-bg: #fdfeff;
-    --layout-sidebar-background: #f5f7ff;
-    --layout-topbar-background: #f5f7ff;
-
-    /* == Base Colors == */
+    /* Base Colors */
     --color-base-100: #f6f8ff;
     --color-base-200: #eaecfa;
     --color-base-300: #e0e2f8;
     --color-base-content: #191e28;
 
-    /* == Colors == */
+    /* Colors */
     --color-primary: #167bff;
     --color-primary-content: #ffffff;
     --color-secondary: #9c5de8;
@@ -37,10 +32,10 @@
     --color-error: #f31260;
     --color-error-content: #ffffff;
 
-    /* == Icon Background == */
+    /* Icon Background */
     --icon-background: #e0e2f8;
 
-    /* == Sizes == */
+    /* Sizes */
     --radius-field: 8px;
     --radius-box: 8px;
     --rounded-box: 8px;
@@ -57,21 +52,16 @@
 @plugin "../vendor/daisyui/theme.js" {
     name: "material-dark";
     color-scheme: dark;
-    default: false; /* set as default */
-    prefersdark: true; /* set as default dark mode (prefers-color-scheme:dark) */
+    default: false;
+    prefersdark: true;
 
-    /* == Layout Colors == */
-    --root-bg: #141618;
-    --layout-sidebar-background: #181c20;
-    --layout-topbar-background: #181c22;
-
-    /* == Base Colors == */
+    /* Base Colors */
     --color-base-100: #181e24;
     --color-base-200: #202830;
     --color-base-300: #2c323a;
     --color-base-content: #f0f4f8;
 
-    /* == Colors == */
+    /* Colors */
     --color-primary: #167bff;
     --color-primary-content: #ffffff;
     --color-secondary: #9c5de8;
@@ -89,10 +79,10 @@
     --color-error: #f31260;
     --color-error-content: #ffffff;
 
-    /* == Icon Background == */
+    /* Icon Background */
     --icon-background: #202830;
 
-    /* == Sizes == */
+    /* Sizes */
     --radius-field: 8px;
     --radius-box: 8px;
     --rounded-box: 8px;

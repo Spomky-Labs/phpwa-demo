@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<policymap>
+    <!-- Interdire par défaut -->
+    <policy domain="coder" rights="none" pattern="*" />
+    <policy domain="delegate" rights="none" pattern="*" />
+    <policy domain="filter" rights="none" pattern="*" />
+
+    <!-- Autoriser les formats usuels -->
+    <policy domain="coder" rights="read|write" pattern="{GIF,JPEG,PNG,WEBP}" />
+
+    <!-- Autoriser SVG/SVGZ en lecture (et éventuellement écriture si tu en as besoin) -->
+    <policy domain="coder" rights="read|write" pattern="SVG" />
+    <policy domain="coder" rights="read|write" pattern="SVGZ" />
+
+    <!-- Autoriser UNIQUEMENT le delegate nécessaire au SVG -->
+    <policy domain="delegate" rights="execute" pattern="rsvg-convert" />
+
+    <!-- Garde les restrictions de chemins à risque -->
+    <policy domain="path" rights="none" pattern="@*" />
+    <policy domain="coder" rights="none" pattern="HTTP" />
+    <policy domain="delegate" rights="none" pattern="{URL,HTTPS,HTTP}" />
+</policymap>

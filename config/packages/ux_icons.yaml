@@ -8,8 +8,8 @@ ux_icons:
         fill: currentColor
 
         # Default dimensions
-        height: '1em'
-        width: '1em'
+#        height: '1em'
+#        width: '1em'
 
     # Throw an exception if an icon is not
     ignore_not_found: false

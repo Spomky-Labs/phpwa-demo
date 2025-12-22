@@ -1,6 +1,8 @@
 #syntax=docker/dockerfile:1
 
-FROM dunglas/frankenphp:builder AS frankenphp_builder
+ARG PHP_VERSION=8.4
+
+FROM dunglas/frankenphp:1-builder-php${PHP_VERSION}-bookworm AS frankenphp_builder
 LABEL builder=true
 
 COPY --from=caddy:builder /usr/bin/xcaddy /usr/bin/xcaddy
@@ -24,7 +26,9 @@ RUN CGO_ENABLED=1 \
 		# Add extra Caddy modules here
 		--with github.com/corazawaf/coraza-caddy/v2
 
-FROM dunglas/frankenphp:1-php8.4 AS frankenphp_runner
+ARG PHP_VERSION=8.4
+
+FROM dunglas/frankenphp:1-php${PHP_VERSION}-bookworm AS frankenphp_runner
 LABEL builder=true
 
 # Replace the official binary by the one contained your custom modules
@@ -56,6 +60,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	gettext \
 	git \
 	potrace \
+	librsvg2-bin \
+	imagemagick \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN set -eux; \
@@ -92,7 +98,7 @@ RUN set -eux; \
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Transport to use by Mercure (default to Bolt)
-ENV MERCURE_TRANSPORT_URL=bolt:///data/mercure.db
+#ENV MERCURE_TRANSPORT_URL=bolt:///data/mercure.db
 
 ENV PHP_INI_SCAN_DIR=":$PHP_INI_DIR/app.conf.d"
 
@@ -125,6 +131,8 @@ RUN set -eux; \
 
 COPY --link frankenphp/conf.d/20-app.dev.ini $PHP_INI_DIR/app.conf.d/
 
+COPY --link frankenphp/imagemagick-policy.xml /etc/ImageMagick-7/policy.xml
+
 CMD [ "frankenphp", "run", "--config", "/etc/frankenphp/Caddyfile", "--watch" ]
 
 # Prod FrankenPHP image
@@ -155,4 +163,5 @@ RUN set -eux; \
 	chmod +x bin/console; sync; \
 	bin/console importmap:install --no-interaction; \
 	bin/console tailwind:build; \
-	bin/console asset-map:compile;
+	bin/console asset-map:compile \
+	bin/console pwa:compile;

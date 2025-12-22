@@ -1,5 +1,5 @@
 /*** Tailwind CSS Presets ***/
-@import "tailwindcss";
+@import "../vendor/tailwindcss/index.min.css";
 
 /** Dark Variant with theme & system mode **/
 @variant dark {

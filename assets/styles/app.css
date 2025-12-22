@@ -1,19 +1,74 @@
-/* Root Styling */
+/* Base Styling */
 @import "./typography.css";
 @import "./tailwind.css";
 @import "./daisyui.css";
 
-/* Custom Styling */
-@import "./custom/animation.css";
-@import "./custom/components.css";
-@import "./custom/layout.css";
+/* Component Overrides */
 
-/* Plugin Overriding */
-@import "./custom/plugins.css";
+.btn {
+    @apply font-medium;
+}
 
-/* Pages */
-@import "./custom/landing.css";
+.card {
+    .card-title {
+        @apply text-base font-medium;
+    }
 
-html[data-turbo-visit-direction="forward"]::view-transition-old(sidebar):only-child {
-    animation: slide-to-right 0.5s ease-out;
+    .card-body {
+        @apply gap-0;
+    }
+}
+
+.table {
+    th {
+        @apply font-medium;
+    }
+}
+
+.menu {
+    .menu-title {
+        @apply text-base-content/70 font-medium;
+    }
+}
+
+.timeline:not(.timeline-vertical) > li > hr {
+    height: 2px;
+}
+
+.timeline.timeline-vertical > li > hr {
+    width: 2px;
+}
+
+/* Form Elements */
+
+.checkbox,
+.radio,
+.range,
+.toggle {
+    &:disabled {
+        @apply opacity-35;
+    }
+}
+
+.label {
+    @apply text-base-content/80 cursor-pointer;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-background-clip: text;
+}
+
+/* Theme Specific Overrides */
+
+[data-theme="material"],
+[data-theme="material-dark"] {
+    .card {
+        @apply shadow-none;
+        &.card-border {
+            @apply border-0;
+        }
+    }
 }
