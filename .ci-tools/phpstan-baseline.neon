@@ -1,751 +1,721 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Class "App\\Controller\\Feature\\ArVrController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\ArVrController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/ArVrController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\ArVrController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\ArVrController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/ArVrController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\AudioController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\AudioController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/AudioController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\AudioController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\AudioController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/AudioController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\AudioRecordingController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\AudioRecordingController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/AudioRecordingController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\AudioRecordingController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\AudioRecordingController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/AudioRecordingController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\AudioSessionController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\AudioSessionController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/AudioSessionController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\AudioSessionController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\AudioSessionController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/AudioSessionController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\AuthenticationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\AuthenticationController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/AuthenticationController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\AuthenticationController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\AuthenticationController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/AuthenticationController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\BackgroundFetchController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\BackgroundFetchController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/BackgroundFetchController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\BackgroundFetchController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\BackgroundFetchController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/BackgroundFetchController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\BackgroundSyncController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\BackgroundSyncController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/BackgroundSyncController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\BackgroundSyncController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\BackgroundSyncController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/BackgroundSyncController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\BadgeController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\BadgeController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/BadgeController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\BadgeController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\BadgeController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/BadgeController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\BarcodeDetectionController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\BarcodeDetectionController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/BarcodeDetectionController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\BarcodeDetectionController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\BarcodeDetectionController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/BarcodeDetectionController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\BatteryController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\BatteryController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/BatteryController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\BatteryController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\BatteryController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/BatteryController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\BluetoothController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\BluetoothController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/BluetoothController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\BluetoothController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\BluetoothController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/BluetoothController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\ContactPickerController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\ContactPickerController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/ContactPickerController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\ContactPickerController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\ContactPickerController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/ContactPickerController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\DeviceMotionController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\DeviceMotionController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/DeviceMotionController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\DeviceMotionController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\DeviceMotionController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/DeviceMotionController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\ElementCaptureController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\ElementCaptureController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/ElementCaptureController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\ElementCaptureController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\ElementCaptureController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/ElementCaptureController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\FaceDetectionController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\FaceDetectionController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/FaceDetectionController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\FaceDetectionController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\FaceDetectionController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/FaceDetectionController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\FileHandlingController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\FileHandlingController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/FileHandlingController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\FileHandlingController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\FileHandlingController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/FileHandlingController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\FileSystemController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\FileSystemController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/FileSystemController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\FileSystemController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\FileSystemController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/FileSystemController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\FullscreenController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\FullscreenController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/FullscreenController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\FullscreenController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\FullscreenController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/FullscreenController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\GeolocationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\GeolocationController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/GeolocationController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\GeolocationController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\GeolocationController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/GeolocationController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\I18nController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\I18nController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/I18nController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\I18nController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\I18nController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/I18nController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\InstallationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\InstallationController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/InstallationController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\InstallationController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\InstallationController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/InstallationController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\MediaCaptureController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\MediaCaptureController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/MediaCaptureController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\MediaCaptureController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\MediaCaptureController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/MediaCaptureController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\MultiTouchController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\MultiTouchController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/MultiTouchController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\MultiTouchController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\MultiTouchController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/MultiTouchController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\NetworkInfoController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\NetworkInfoController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/NetworkInfoController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\NetworkInfoController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\NetworkInfoController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/NetworkInfoController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\NfcController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\NfcController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/NfcController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\NfcController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\NfcController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/NfcController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\OfflineSupportController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\OfflineSupportController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/OfflineSupportController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\OfflineSupportController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\OfflineSupportController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/OfflineSupportController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\OrientationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\OrientationController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/OrientationController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\OrientationController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\OrientationController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/OrientationController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\PaymentController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\PaymentController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/PaymentController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\PaymentController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\PaymentController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/PaymentController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\PeriodicSyncController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\PeriodicSyncController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/PeriodicSyncController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\PeriodicSyncController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\PeriodicSyncController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/PeriodicSyncController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\PictureInPictureController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\PictureInPictureController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/PictureInPictureController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\PictureInPictureController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\PictureInPictureController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/PictureInPictureController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\PresentationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\PresentationController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/PresentationController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\PresentationController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\PresentationController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/PresentationController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\ProtocolHandlingController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\ProtocolHandlingController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/ProtocolHandlingController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\ProtocolHandlingController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\ProtocolHandlingController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/ProtocolHandlingController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\ScreenCaptureController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\ScreenCaptureController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/ScreenCaptureController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\ScreenCaptureController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\ScreenCaptureController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/ScreenCaptureController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\ShareTargetController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\ShareTargetController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/ShareTargetController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\ShareTargetController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\ShareTargetController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/ShareTargetController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\ShortcutsController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\ShortcutsController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/ShortcutsController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\ShortcutsController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\ShortcutsController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/ShortcutsController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\SpeechRecognitionController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\SpeechRecognitionController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/SpeechRecognitionController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\SpeechRecognitionController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\SpeechRecognitionController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/SpeechRecognitionController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\SpeechSynthesisController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\SpeechSynthesisController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/SpeechSynthesisController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\SpeechSynthesisController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\SpeechSynthesisController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/SpeechSynthesisController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\StorageController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\StorageController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/StorageController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\StorageController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\StorageController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/StorageController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\VibrationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\VibrationController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/VibrationController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\VibrationController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\VibrationController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/VibrationController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\ViewTransitionController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\ViewTransitionController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/ViewTransitionController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\ViewTransitionController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\ViewTransitionController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/ViewTransitionController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\WakeLockController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\WakeLockController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/WakeLockController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\WakeLockController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\WakeLockController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/WakeLockController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\WebPushController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\WebPushController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/WebPushController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\WebPushController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\WebPushController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/WebPushController.php
 
 		-
-			message: '#^Class "App\\Controller\\Feature\\WebShareController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\Feature\WebShareController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/Feature/WebShareController.php
 
 		-
-			message: '#^Class App\\Controller\\Feature\\WebShareController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\Feature\WebShareController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/Feature/WebShareController.php
 
 		-
-			message: '#^Class "App\\Controller\\HomepageController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\HomepageController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/HomepageController.php
 
 		-
-			message: '#^Class App\\Controller\\HomepageController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\HomepageController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/HomepageController.php
 
 		-
-			message: '#^Class "App\\Controller\\InformationController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\InformationController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/InformationController.php
 
 		-
-			message: '#^Class App\\Controller\\InformationController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\InformationController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/InformationController.php
 
 		-
-			message: '#^Class "App\\Controller\\ProtocolHandlerController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\ProtocolHandlerController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/ProtocolHandlerController.php
 
 		-
-			message: '#^Class App\\Controller\\ProtocolHandlerController is neither abstract nor final\.$#'
+			rawMessage: Class App\Controller\ProtocolHandlerController is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Controller/ProtocolHandlerController.php
 
 		-
-			message: '#^Parameter \#1 \$haystack of function str_starts_with expects string, string\|null given\.$#'
-			identifier: argument.type
-			count: 1
-			path: ../src/Controller/ProtocolHandlerController.php
-
-		-
-			message: '#^Parameter \#1 \$string of function substr expects string, string\|null given\.$#'
-			identifier: argument.type
-			count: 1
-			path: ../src/Controller/ProtocolHandlerController.php
-
-		-
-			message: '#^Class "App\\Controller\\RootController" is not allowed to extend "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"\.$#'
+			rawMessage: Class "App\Controller\RootController" is not allowed to extend "Symfony\Bundle\FrameworkBundle\Controller\AbstractController".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Controller/RootController.php
 
 		-
-			message: '#^Class "App\\Kernel" is not allowed to extend "Symfony\\Component\\HttpKernel\\Kernel"\.$#'
+			rawMessage: Class "App\Kernel" is not allowed to extend "Symfony\Component\HttpKernel\Kernel".
 			identifier: ergebnis.noExtends
 			count: 1
 			path: ../src/Kernel.php
 
 		-
-			message: '#^Class App\\Kernel is neither abstract nor final\.$#'
+			rawMessage: Class App\Kernel is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Kernel.php
 
 		-
-			message: '#^Class App\\Twig\\Component\\Battery is neither abstract nor final\.$#'
+			rawMessage: Class App\Twig\Component\Battery is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Twig/Component/Battery.php
 
 		-
-			message: '#^Method App\\Twig\\Component\\Battery\:\:formatSeconds\(\) has parameter \$s with a nullable type declaration\.$#'
+			rawMessage: 'Method App\Twig\Component\Battery::formatSeconds() has parameter $s with a nullable type declaration.'
 			identifier: ergebnis.noParameterWithNullableTypeDeclaration
 			count: 1
 			path: ../src/Twig/Component/Battery.php
 
 		-
-			message: '#^Method App\\Twig\\Component\\Battery\:\:onUpdate\(\) has parameter \$chargingTime with a nullable type declaration\.$#'
+			rawMessage: 'Method App\Twig\Component\Battery::onUpdate() has parameter $chargingTime with a nullable type declaration.'
 			identifier: ergebnis.noParameterWithNullableTypeDeclaration
 			count: 1
 			path: ../src/Twig/Component/Battery.php
 
 		-
-			message: '#^Method App\\Twig\\Component\\Battery\:\:onUpdate\(\) has parameter \$dischargingTime with a nullable type declaration\.$#'
+			rawMessage: 'Method App\Twig\Component\Battery::onUpdate() has parameter $dischargingTime with a nullable type declaration.'
 			identifier: ergebnis.noParameterWithNullableTypeDeclaration
 			count: 1
 			path: ../src/Twig/Component/Battery.php
 
 		-
-			message: '#^Argument of an invalid type mixed supplied for foreach, only iterables are supported\.$#'
+			rawMessage: 'Argument of an invalid type mixed supplied for foreach, only iterables are supported.'
 			identifier: foreach.nonIterable
 			count: 1
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Call to an undefined method Symfony\\Component\\String\\ByteString\|Symfony\\Component\\String\\UnicodeString\:\:normalize\(\)\.$#'
+			rawMessage: 'Call to an undefined method Symfony\Component\String\ByteString|Symfony\Component\String\UnicodeString::normalize().'
 			identifier: method.notFound
 			count: 1
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Cannot access offset ''email'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 2
-			path: ../src/Twig/Component/ContactPicker.php
-
-		-
-			message: '#^Cannot access offset ''name'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 2
-			path: ../src/Twig/Component/ContactPicker.php
-
-		-
-			message: '#^Cannot access offset ''tel'' on mixed\.$#'
-			identifier: offsetAccess.nonOffsetAccessible
-			count: 5
-			path: ../src/Twig/Component/ContactPicker.php
-
-		-
-			message: '#^Cannot access offset mixed on mixed\.$#'
+			rawMessage: Cannot access offset mixed on mixed.
 			identifier: offsetAccess.nonOffsetAccessible
 			count: 1
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Class App\\Twig\\Component\\ContactPicker is neither abstract nor final\.$#'
+			rawMessage: Class App\Twig\Component\ContactPicker is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Method App\\Twig\\Component\\ContactPicker\:\:onUpdate\(\) has parameter \$contacts with no value type specified in iterable type array\.$#'
+			rawMessage: 'Method App\Twig\Component\ContactPicker::onUpdate() has parameter $contacts with no value type specified in iterable type array.'
 			identifier: missingType.iterableValue
 			count: 1
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Parameter \#1 \$array of function array_unique expects array, mixed given\.$#'
+			rawMessage: 'Parameter #1 $array of function array_unique expects array, mixed given.'
 			identifier: argument.type
 			count: 3
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Parameter \#1 \$input of method App\\Twig\\Component\\ContactPicker\:\:sanitizePhone\(\) expects string, mixed given\.$#'
+			rawMessage: 'Parameter #1 $input of method App\Twig\Component\ContactPicker::sanitizePhone() expects string, mixed given.'
 			identifier: argument.type
 			count: 1
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Parameter \#2 \$array of function array_key_exists expects array, mixed given\.$#'
+			rawMessage: 'Parameter #2 $array of function array_key_exists expects array, mixed given.'
 			identifier: argument.type
 			count: 1
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Property App\\Twig\\Component\\ContactPicker\:\:\$contacts type has no value type specified in iterable type array\.$#'
+			rawMessage: Property App\Twig\Component\ContactPicker::$contacts type has no value type specified in iterable type array.
 			identifier: missingType.iterableValue
 			count: 1
 			path: ../src/Twig/Component/ContactPicker.php
 
 		-
-			message: '#^Class App\\Twig\\Component\\Geolocation is neither abstract nor final\.$#'
+			rawMessage: Class App\Twig\Component\Geolocation is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Twig/Component/Geolocation.php
 
 		-
-			message: '#^Class App\\Twig\\Component\\Installation is neither abstract nor final\.$#'
+			rawMessage: Class App\Twig\Component\Installation is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Twig/Component/Installation.php
 
 		-
-			message: '#^Class App\\Twig\\Component\\MediaCapture is neither abstract nor final\.$#'
+			rawMessage: Class App\Twig\Component\MediaCapture is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Twig/Component/MediaCapture.php
 
 		-
-			message: '#^Property App\\Twig\\Component\\MediaCapture\:\:\$urlGenerator is never read, only written\.$#'
+			rawMessage: 'Property App\Twig\Component\MediaCapture::$urlGenerator is never read, only written.'
 			identifier: property.onlyWritten
 			count: 1
 			path: ../src/Twig/Component/MediaCapture.php
 
 		-
-			message: '#^Property App\\Twig\\Component\\MediaCapture\:\:\$webpushService is never read, only written\.$#'
+			rawMessage: 'Property App\Twig\Component\MediaCapture::$webpushService is never read, only written.'
 			identifier: property.onlyWritten
 			count: 1
 			path: ../src/Twig/Component/MediaCapture.php
 
 		-
-			message: '#^Should not use function "dd", please change the code\.$#'
+			rawMessage: 'Should not use function "dd", please change the code.'
 			identifier: ekinoBannedCode.function
 			count: 1
 			path: ../src/Twig/Component/MediaCapture.php
 
 		-
-			message: '#^Class App\\Twig\\Component\\Update is neither abstract nor final\.$#'
+			rawMessage: Class App\Twig\Component\Update is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Twig/Component/Update.php
 
 		-
-			message: '#^Class App\\Twig\\Component\\WakeLock is neither abstract nor final\.$#'
+			rawMessage: Class App\Twig\Component\WakeLock is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Twig/Component/WakeLock.php
 
 		-
-			message: '#^Method App\\Twig\\Component\\WakeLock\:\:onUpdate\(\) has parameter \$wakeLock with a nullable type declaration\.$#'
+			rawMessage: 'Method App\Twig\Component\WakeLock::onUpdate() has parameter $wakeLock with a nullable type declaration.'
 			identifier: ergebnis.noParameterWithNullableTypeDeclaration
 			count: 1
 			path: ../src/Twig/Component/WakeLock.php
 
 		-
-			message: '#^Class App\\Twig\\Component\\WebPush is neither abstract nor final\.$#'
+			rawMessage: Class App\Twig\Component\WebPush is neither abstract nor final.
 			identifier: ergebnis.final
 			count: 1
 			path: ../src/Twig/Component/WebPush.php
 
 		-
-			message: '#^Method Symfony\\Component\\Routing\\Generator\\UrlGeneratorInterface\:\:generate\(\) is invoked with named argument for parameter \$referenceType\.$#'
+			rawMessage: 'Method Symfony\Component\Routing\Generator\UrlGeneratorInterface::generate() is invoked with named argument for parameter $referenceType.'
 			identifier: ergebnis.noNamedArgument
 			count: 2
 			path: ../src/Twig/Component/WebPush.php
 
 		-
-			message: '#^Property App\\Twig\\Component\\WebPush\:\:\$subscription \(string\|null\) does not accept string\|false\.$#'
+			rawMessage: 'Property App\Twig\Component\WebPush::$subscription (string|null) does not accept string|false.'
 			identifier: assign.propertyType
 			count: 1
 			path: ../src/Twig/Component/WebPush.php
