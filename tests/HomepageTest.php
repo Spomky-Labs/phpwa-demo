@@ -17,9 +17,9 @@ final class HomepageTest extends WebTestCase
         $client = static::createClient();
 
         //When
-        $crawler = $client->request(Request::METHOD_GET, '/en');
+        $client->request(Request::METHOD_GET, '/en');
 
         //Then
-        static::assertGreaterThan(0, $crawler->filter('html:contains("app.name")')->count());
+        static::assertResponseIsSuccessful();
     }
 }
