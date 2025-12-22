@@ -42,44 +42,44 @@ return [
         'version' => '4.1.0',
     ],
     '@babel/runtime/helpers/esm/typeof' => [
-        'version' => '7.28.3',
+        'version' => '7.28.4',
     ],
     '@babel/runtime/helpers/esm/createForOfIteratorHelper' => [
-        'version' => '7.28.3',
+        'version' => '7.28.4',
     ],
     '@babel/runtime/helpers/esm/assertThisInitialized' => [
-        'version' => '7.28.3',
+        'version' => '7.28.4',
     ],
     '@babel/runtime/helpers/esm/inherits' => [
-        'version' => '7.28.3',
+        'version' => '7.28.4',
     ],
     '@babel/runtime/helpers/esm/createSuper' => [
-        'version' => '7.28.3',
+        'version' => '7.28.4',
     ],
     '@babel/runtime/helpers/esm/classCallCheck' => [
-        'version' => '7.28.3',
+        'version' => '7.28.4',
     ],
     '@babel/runtime/helpers/esm/createClass' => [
-        'version' => '7.28.3',
+        'version' => '7.28.4',
     ],
     '@babel/runtime/helpers/esm/defineProperty' => [
-        'version' => '7.28.3',
+        'version' => '7.28.4',
     ],
     'mustache' => [
         'version' => '4.2.0',
     ],
     'flowbite' => [
-        'version' => '3.1.2',
+        'version' => '4.0.1',
     ],
     '@popperjs/core' => [
         'version' => '2.11.8',
     ],
     'flowbite/dist/flowbite.min.css' => [
-        'version' => '3.1.2',
+        'version' => '4.0.1',
         'type' => 'css',
     ],
     '@hotwired/turbo' => [
-        'version' => '8.0.13',
+        'version' => '8.0.20',
     ],
     'babel-runtime/core-js/promise' => [
         'version' => '6.26.0',
@@ -102,7 +102,7 @@ return [
         'version' => '0.77.1',
     ],
     'three' => [
-        'version' => '0.179.1',
+        'version' => '0.182.0',
     ],
     'reveal.js' => [
         'version' => '5.2.1',
@@ -132,7 +132,7 @@ return [
         'version' => '3.0.3',
     ],
     'debug' => [
-        'version' => '4.4.1',
+        'version' => '4.4.3',
     ],
     'node-gyp-build' => [
         'version' => '4.8.4',
@@ -141,43 +141,43 @@ return [
         'version' => '2.1.3',
     ],
     'flowbite-datepicker' => [
-        'version' => '1.3.2',
+        'version' => '2.0.0',
     ],
     'core-js' => [
-        'version' => '3.45.1',
+        'version' => '3.47.0',
     ],
     '@hotwired/hotwire-native-bridge' => [
         'version' => '1.2.2',
     ],
     'tailwindcss' => [
-        'version' => '4.1.12',
+        'version' => '4.1.18',
     ],
     'tailwindcss/index.min.css' => [
-        'version' => '4.1.12',
+        'version' => '4.1.18',
         'type' => 'css',
     ],
     '@fontsource/roboto' => [
-        'version' => '5.2.6',
+        'version' => '5.2.9',
     ],
     '@fontsource/poppins' => [
-        'version' => '5.2.6',
+        'version' => '5.2.7',
     ],
     '@kurkle/color' => [
         'version' => '0.4.0',
     ],
     '@fontsource/poppins/index.min.css' => [
-        'version' => '5.2.6',
+        'version' => '5.2.7',
         'type' => 'css',
     ],
     'daisyui' => [
-        'version' => '5.0.51',
+        'version' => '5.5.14',
     ],
     'daisyui/daisyui.min.css' => [
-        'version' => '5.0.51',
+        'version' => '5.5.14',
         'type' => 'css',
     ],
     'daisyui/theme' => [
-        'version' => '5.0.51',
+        'version' => '5.5.14',
     ],
     'idb' => [
         'version' => '8.0.3',
