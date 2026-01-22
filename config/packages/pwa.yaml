@@ -1,4 +1,31 @@
 pwa:
+    resource_hints:
+        enabled: true
+#        auto_preconnect: true
+#        preconnect:
+#            - 'https://api.example.com'
+#        dns_prefetch:
+#            - 'https://analytics.example.com'
+#        preload:
+#            - href: '/fonts/custom.woff2'
+#              as: font
+#              type: 'font/woff2'
+#              crossorigin: anonymous
+    early_hints:
+        enabled: true
+#        preload_manifest: true
+#        preload_serviceworker: true
+#        preconnect_workbox_cdn: true
+    speculation_rules:
+        enabled: true
+        prefetch:
+            - source: document
+              href_matches: '/en/*'
+              eagerness: moderate
+#        prerender:
+#            - source: document
+#              selector_matches: 'a.prerender'
+#              eagerness: conservative
     asset_compiler: false
     image_processor: 'imagick' # Or 'gd'
     #logger: 'App\Service\PwaLogger'
@@ -126,11 +153,12 @@ pwa:
                   path: "app_protocol_handler"
 
     serviceworker:
-        enabled: true
+        enabled: false
         src: "sw.js"
         skip_waiting: false
         workbox:
             enabled: true
+            #navigation_preload: true
             offline_fallback:
                 page:
                     path: 'app_homepage'

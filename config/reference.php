@@ -1271,6 +1271,12 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  * }
  * @psalm-type PwaConfig = array{
  *     asset_compiler?: bool|Param, // When true, the assets will be compiled when the command "asset-map:compile" is run. // Default: true
+ *     early_hints?: bool|array{ // Early Hints (HTTP 103) configuration. Requires a compatible server (FrankenPHP, Caddy).
+ *         enabled?: bool|Param, // Default: false
+ *         preload_manifest?: bool|Param, // Preload the PWA manifest file. // Default: true
+ *         preload_serviceworker?: bool|Param, // Preload the service worker script. Disabled by default as SW registration is usually deferred. // Default: false
+ *         preconnect_workbox_cdn?: bool|Param, // Preconnect to Workbox CDN when using CDN mode. // Default: true
+ *     },
  *     favicons?: bool|array{
  *         enabled?: bool|Param, // Default: false
  *         default?: array{ // The favicon source and parameters. When used with "dark", this favicon will become the light version.
@@ -1477,6 +1483,20 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *         }>,
  *     },
  *     path_type_reference?: int|Param, // Deprecated: The "path_type_reference" configuration key is deprecated. Use the "path_type_reference" of URL nodes instead. // The path type reference to generate paths/URLs. See https://symfony.com/doc/current/routing.html#generating-urls-in-controllers for more information. // Default: 1
+ *     resource_hints?: bool|array{ // Resource Hints configuration for preconnect, dns-prefetch, and preload.
+ *         enabled?: bool|Param, // Default: false
+ *         auto_preconnect?: bool|Param, // Automatically add preconnect hints for detected external origins (Workbox CDN, Google Fonts). // Default: true
+ *         preconnect?: list<scalar|null|Param>,
+ *         dns_prefetch?: list<scalar|null|Param>,
+ *         preload?: list<array{ // Default: []
+ *             href: scalar|null|Param, // The URL or path to preload.
+ *             as: "script"|"style"|"font"|"image"|"fetch"|"document"|"audio"|"video"|"track"|"worker"|Param, // The resource type.
+ *             type?: scalar|null|Param, // The MIME type of the resource. // Default: null
+ *             crossorigin?: "anonymous"|"use-credentials"|Param, // The crossorigin attribute value. Required for fonts. // Default: null
+ *             fetchpriority?: "high"|"low"|"auto"|Param, // The fetch priority hint. // Default: null
+ *             media?: scalar|null|Param, // Media query for responsive preloading. // Default: null
+ *         }>,
+ *     },
  *     serviceworker?: bool|string|array{
  *         enabled?: bool|Param, // Default: false
  *         src?: scalar|null|Param, // The path to the service worker source file. Can be served by Asset Mapper.
@@ -1502,6 +1522,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *             offline_fallback_placeholder?: scalar|null|Param, // Deprecated: The "offline_fallback_placeholder" option is deprecated and will be removed in 2.0.0. No replacement. // The placeholder for the offline fallback. Will be replaced by the URL. // Default: "//OFFLINE_FALLBACK_PLACEHOLDER"
  *             widgets_placeholder?: scalar|null|Param, // Deprecated: The "widgets_placeholder" option is deprecated and will be removed in 2.0.0. No replacement. // The placeholder for the widgets. Will be replaced by the widgets management events. // Default: "//WIDGETS_PLACEHOLDER"
  *             clear_cache?: bool|Param, // Whether to clear the cache during the service worker activation. // Default: true
+ *             navigation_preload?: bool|Param, // Whether to enable navigation preload. This speeds up navigation requests by making the network request in parallel with service worker boot-up. Note: Do not enable if you are precaching HTML pages (e.g., with offline_fallback or warm_cache_urls), as it would be redundant. // Default: false
  *             offline_fallback?: array{
  *                 cache_name?: scalar|null|Param, // The name of the offline cache. // Default: "offline"
  *                 page?: string|array{ // The URL of the offline page fallback.
@@ -1544,10 +1565,10 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *                 match_callback: scalar|null|Param, // The regex or callback function to match the URLs.
  *                 cache_name?: scalar|null|Param, // The name of the page cache.
  *                 network_timeout?: int|Param, // The network timeout in seconds before cache is called (for "NetworkFirst" and "NetworkOnly" strategies). // Default: 3
- *                 strategy?: scalar|null|Param, // The caching strategy. Only "NetworkFirst", "CacheFirst" and "StaleWhileRevalidate" are supported. // Default: "NetworkFirst"
+ *                 strategy?: scalar|null|Param, // The caching strategy. Only "NetworkFirst", "CacheFirst" and "StaleWhileRevalidate" are supported. StaleWhileRevalidate provides instant page loads with background updates. // Default: "StaleWhileRevalidate"
  *                 max_entries?: scalar|null|Param, // The maximum number of entries in the cache (for "CacheFirst" and "NetworkFirst" strategy only). // Default: null
  *                 max_age?: scalar|null|Param, // The maximum number of seconds before the cache is invalidated (for "CacheFirst" and "NetWorkFirst" strategy only). // Default: null
- *                 broadcast?: bool|Param, // Whether to broadcast the cache update events (for "StaleWhileRevalidate" strategy only). // Default: false
+ *                 broadcast?: bool|Param, // Whether to broadcast the cache update events (for "StaleWhileRevalidate" strategy only). Enables client notification when content is updated. // Default: true
  *                 range_requests?: bool|Param, // Whether to support range requests (for "CacheFirst" strategy only). // Default: false
  *                 cacheable_response_headers?: list<scalar|null|Param>,
  *                 cacheable_response_statuses?: list<int|Param>,
@@ -1617,6 +1638,31 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *                 params?: list<mixed>,
  *             }>,
  *         },
+ *     },
+ *     speculation_rules?: bool|array{ // Speculation Rules API configuration for prefetching and prerendering pages.
+ *         enabled?: bool|Param, // Default: false
+ *         prefetch?: list<array{ // Default: []
+ *             source?: "list"|"document"|Param, // The source type: "list" for explicit URLs, "document" for link matching. // Default: "document"
+ *             urls?: list<string|array{ // Default: []
+ *                 path: scalar|null|Param, // The URL path or route name.
+ *                 params?: list<mixed>,
+ *             }>,
+ *             selector_matches?: scalar|null|Param, // For "document" source: CSS selector to match links. // Default: null
+ *             href_matches?: scalar|null|Param, // For "document" source: URL pattern to match href attributes. // Default: null
+ *             eagerness?: "immediate"|"eager"|"moderate"|"conservative"|Param, // Eagerness level: "immediate" (viewport), "eager" (hover 200ms), "moderate" (hover 100ms), "conservative" (mousedown/touchstart). // Default: "moderate"
+ *             referrer_policy?: scalar|null|Param, // Referrer policy for the speculative request. // Default: null
+ *         }>,
+ *         prerender?: list<array{ // Default: []
+ *             source?: "list"|"document"|Param, // The source type: "list" for explicit URLs, "document" for link matching. // Default: "document"
+ *             urls?: list<string|array{ // Default: []
+ *                 path: scalar|null|Param, // The URL path or route name.
+ *                 params?: list<mixed>,
+ *             }>,
+ *             selector_matches?: scalar|null|Param, // For "document" source: CSS selector to match links. // Default: null
+ *             href_matches?: scalar|null|Param, // For "document" source: URL pattern to match href attributes. // Default: null
+ *             eagerness?: "immediate"|"eager"|"moderate"|"conservative"|Param, // Eagerness level. For prerender, "conservative" is recommended. // Default: "conservative"
+ *             referrer_policy?: scalar|null|Param, // Referrer policy for the speculative request. // Default: null
+ *         }>,
  *     },
  *     web_client?: scalar|null|Param, // The Panther Client for generating screenshots. If not set, the default client will be used. // Default: null
  *     user_agent?: scalar|null|Param, // The user agent to use when generating screenshots. If not set, the default user agent will be used. When requesting the current application in an environment other than "prod", the profiler will be disabled. // Default: null
